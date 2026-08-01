@@ -1,9 +1,9 @@
 /* ============================================================
-   旅 · Travel PWA — Japandi minimal, mobile-first
+  旅 · Travel PWA — 日式簡約、手機優先
    ============================================================ */
 
 :root {
-  /* Palette: warm paper, ink, bamboo, muted accents */
+  /* 色盤：暖紙色、墨色、竹綠、低彩度重點色 */
   --paper: #f6f4ef;
   --paper-2: #efede6;
   --card: #ffffff;
@@ -14,9 +14,9 @@
   --bamboo: #7d8b6f;
   --bamboo-deep: #5f6f54;
   --indigo: #4a5568;
-  --accent: #b4753c;          /* persimmon */
+  --accent: #b4753c;          /* 柿橙 */
   --accent-soft: #f3e6d8;
-  --tag-food: #c0574a;        /* aka */
+  --tag-food: #c0574a;        /* 赤紅 */
   --tag-food-bg: #fae9e7;
   --tag-menu: #b4753c;
   --tag-menu-bg: #f7ecdd;
@@ -52,7 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- Header ---------- */
+/* ---------- 頁首 ---------- */
 .app-header {
   position: sticky;
   top: 0;
@@ -81,7 +81,7 @@ body {
   margin-top: 1px;
 }
 
-/* ---------- Layout / views ---------- */
+/* ---------- 版面與分頁 ---------- */
 main {
   max-width: 680px;
   margin: 0 auto;
@@ -115,7 +115,7 @@ main {
   font-style: normal;
 }
 
-/* ---------- Day selector (horizontal chips) ---------- */
+/* ---------- 日期選擇器（水平膠囊按鈕） ---------- */
 .day-selector {
   display: flex;
   gap: 8px;
@@ -146,7 +146,7 @@ main {
 }
 .day-chip.active .chip-date { color: #fff; }
 
-/* ---------- Weather bar ---------- */
+/* ---------- 天氣列 ---------- */
 .weather-bar {
   display: flex;
   align-items: center;
@@ -166,7 +166,7 @@ main {
 .weather-bar .w-loc { font-size: .72rem; color: var(--ink-faint); text-align: right; white-space: nowrap; }
 .weather-bar.loading .w-desc { color: var(--ink-faint); }
 
-/* ---------- Day heading ---------- */
+/* ---------- 每日標題 ---------- */
 .day-heading {
   margin: 4px 0 12px;
 }
@@ -180,7 +180,7 @@ main {
   color: var(--ink-soft);
 }
 
-/* ---------- Itinerary cards ---------- */
+/* ---------- 行程卡片 ---------- */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -252,7 +252,7 @@ main {
   flex-wrap: wrap;
 }
 
-/* Navigation button */
+/* 導航按鈕 */
 .btn-nav {
   display: inline-flex;
   align-items: center;
@@ -271,7 +271,7 @@ main {
 .btn-nav:active { transform: scale(.96); }
 .btn-nav .pin { font-size: .9em; }
 
-/* ---------- Smart guide tags ---------- */
+/* ---------- 導遊資訊標籤 ---------- */
 .guide-section {
   margin-top: 12px;
   padding-top: 10px;
@@ -301,13 +301,13 @@ main {
 .tag-value { color: var(--ink-soft); line-height: 1.6; }
 .tag-value b, .tag-value strong { color: var(--ink); }
 
-/* highlight marks inside descriptions */
+/* 行程描述內的重點標記 */
 mark.hl-food    { background: var(--tag-food-bg);    color: var(--tag-food);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
 mark.hl-menu    { background: var(--tag-menu-bg);    color: var(--tag-menu);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
 mark.hl-gift    { background: var(--tag-gift-bg);    color: var(--tag-gift);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
 mark.hl-booking { background: var(--tag-booking-bg); color: var(--tag-booking); padding: 0 3px; border-radius: 4px; font-weight: 600; }
 
-/* ---------- Info view ---------- */
+/* ---------- 旅行資訊分頁 ---------- */
 .info-block { margin-bottom: 8px; }
 .info-card {
   background: var(--card);
@@ -345,7 +345,7 @@ a.tel-link {
 }
 a.tel-link::after { content: " ↗"; font-size: .8em; }
 
-/* ---------- Expense view ---------- */
+/* ---------- 記帳分頁 ---------- */
 .budget-summary {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -484,7 +484,7 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   padding: 26px 0 30px;
 }
 
-/* ---------- Bottom nav ---------- */
+/* ---------- 底部導覽列 ---------- */
 .bottom-nav {
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -525,7 +525,7 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
 .nav-btn.active { color: var(--ink); }
 .nav-btn.active .nav-icon { background: var(--paper-2); color: var(--bamboo-deep); }
 
-/* ---------- Larger screens ---------- */
+/* ---------- 較大螢幕 ---------- */
 @media (min-width: 720px) {
   :root { --header-h: 96px; }
   body { font-size: 1.02rem; }
@@ -541,7 +541,7 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   }
 }
 
-/* ---------- Dark mode ---------- */
+/* ---------- 深色模式 ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #1d1c19;
@@ -572,7 +572,7 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   .expense-form select:focus { background: var(--paper-2); }
 }
 
-/* Reduce motion */
+/* 減少動態效果 */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }

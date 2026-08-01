@@ -16,7 +16,7 @@
 </head>
 <body>
 
-  <!-- Top header -->
+  <!-- 頁首 -->
   <header class="app-header">
     <div class="header-inner">
       <h1 class="app-title" id="trip-title">旅</h1>
@@ -24,16 +24,16 @@
     </div>
   </header>
 
-  <!-- Views -->
+  <!-- 主要分頁 -->
   <main id="main">
 
-    <!-- ===== Itinerary view ===== -->
+    <!-- ===== 每日行程分頁 ===== -->
     <section id="view-itinerary" class="view active" aria-label="每日行程">
       <div class="day-selector" id="day-selector" role="tablist"></div>
       <div id="day-content" class="day-content"></div>
     </section>
 
-    <!-- ===== Info view (flights / stays / contacts) ===== -->
+    <!-- ===== 旅行資訊分頁（航班 / 住宿 / 緊急聯絡） ===== -->
     <section id="view-info" class="view" aria-label="旅行資訊">
       <div class="info-block">
         <h2 class="section-title"><span class="section-icon">✈</span>航班資訊</h2>
@@ -49,7 +49,7 @@
       </div>
     </section>
 
-    <!-- ===== Expense view ===== -->
+    <!-- ===== 記帳與預算分頁 ===== -->
     <section id="view-expense" class="view" aria-label="記帳與預算">
       <div class="budget-summary" id="budget-summary"></div>
 
@@ -84,7 +84,7 @@
 
   </main>
 
-  <!-- Bottom navigation -->
+  <!-- 底部導覽列 -->
   <nav class="bottom-nav" aria-label="主選單">
     <button class="nav-btn active" data-view="view-itinerary" aria-label="行程">
       <span class="nav-icon">行</span><span class="nav-label">行程</span>
@@ -97,7 +97,7 @@
     </button>
   </nav>
 
-  <!-- Firebase is used only for optional Firestore expense sync. Hosting stays on GitHub Pages. -->
+  <!-- Firebase 只用於選用的 Firestore 記帳同步；網站仍由 GitHub Pages 託管。 -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 

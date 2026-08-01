@@ -1,9 +1,9 @@
 /* ============================================================
   db.js — 記帳資料層
   ------------------------------------------------------------
-  GitHub Pages hosts the PWA. Firestore is optional and is used
-  only for cross-device expense sync. Without Firebase config,
-  the app falls back to localStorage.
+  GitHub Pages 負責託管 PWA。Firestore 是選用功能，只用於
+  跨裝置同步記帳資料。未設定 Firebase config 時，App 會
+  自動改用 localStorage。
   ============================================================ */
 
 const ExpenseDB = (() => {
@@ -11,7 +11,7 @@ const ExpenseDB = (() => {
   let firestore = null;
   let ready = false;
 
-  /* ---------- localStorage ---------- */
+  /* ---------- 本機儲存（localStorage） ---------- */
   function lsRead() {
     try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; }
     catch { return []; }
@@ -40,9 +40,9 @@ const ExpenseDB = (() => {
 
   const col = () => firestore.collection(FIRESTORE_COLLECTION);
 
-  /* ---------- CRUD ---------- */
+  /* ---------- 新增 / 讀取 / 刪除 ---------- */
 
-  /** 訂閱所有支出（新→舊），回呼 (items, source) */
+  /** 訂閱所有支出（新→舊），回呼格式：(items, source) */
   function subscribe(callback) {
     callback(lsRead(), 'local');
 

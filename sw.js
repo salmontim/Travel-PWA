@@ -1,7 +1,7 @@
-/* Service Worker — offline-first caching for Travel PWA
+/* Service Worker — Travel PWA 離線優先快取
    注意：每次修改 js/ 或 css/ 後，請遞增 VERSION，
    否則舊快取會讓使用者看到過期程式碼。 */
-const VERSION = 'travel-pwa-v6';
+const VERSION = 'travel-pwa-v7';
 const APP_SHELL = [
   './',
   './index.html',
@@ -32,9 +32,9 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
 
-  // Never cache weather or Firestore API calls — always network.
+  // 天氣與 Firestore API 不進快取，永遠直接走網路。
   if (url.hostname.includes('open-meteo.com')) {
-    return; // fall through to network
+    return; // 交由瀏覽器直接走網路
   }
 
   if (url.hostname.includes('googleapis.com') ||
@@ -42,7 +42,7 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Firebase SDK CDN: stale-while-revalidate.
+  // Firebase SDK CDN：先用快取，同時背景更新。
   if (url.hostname.includes('gstatic.com')) {
     e.respondWith(
       caches.open(VERSION).then(async (cache) => {
@@ -57,7 +57,7 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // App shell: cache-first, network fallback
+  // App 外殼：優先快取，沒有快取時才走網路。
   e.respondWith(
     caches.match(e.request).then((cached) => {
       return cached || fetch(e.request).then((res) => {

@@ -39,7 +39,7 @@
     ['menu',    'menu',    '必點菜單'],
     ['gift',    'gift',    '必買伴手禮'],
     ['booking', 'booking', '預約代號'],
-    ['story',   null,      null]   // story 獨立渲染
+    ['story',   null,      null]   // 景點故事獨立渲染
   ];
 
   /* ================= 行程渲染 ================= */
@@ -119,7 +119,7 @@
     const day = TRIP.days[idx];
     document.querySelectorAll('.day-chip').forEach((c, i) =>
       c.classList.toggle('active', i === idx));
-    // 讓選中的 chip 滾入視野
+    // 讓選中的日期膠囊按鈕滾入視野
     const activeChip = document.querySelectorAll('.day-chip')[idx];
     activeChip?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
 
@@ -134,7 +134,7 @@
     loadWeather(day);
   }
 
-  /* ================= 天氣（Open-Meteo，免 API key） ================= */
+  /* ================= 天氣（Open-Meteo，免 API 金鑰） ================= */
   const WMO = {
     0: ['☀️', '晴朗'], 1: ['🌤', '大致晴朗'], 2: ['⛅', '多雲'], 3: ['☁️', '陰'],
     45: ['🌫', '霧'], 48: ['🌫', '霧凇'],

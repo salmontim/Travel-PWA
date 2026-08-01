@@ -15,9 +15,9 @@
 const TRIP = {
   title: '京阪奈・秋の旅',
   subtitle: '2026/11/14 — 11/20 · 7 天 6 夜',
-  startDate: '2026-11-14',          // YYYY-MM-DD
+  startDate: '2026-11-14',          // 日期格式：YYYY-MM-DD
 
-  // 記帳設定（rate = 1 外幣 → 多少港幣 HKD）
+  // 記帳設定（rate 代表 1 單位外幣可兌換多少港幣 HKD）
   budget: { total: 15000, currency: 'HKD' },
   currencies: [
     { code: 'HKD', rate: 1 },
@@ -32,8 +32,8 @@ const TRIP = {
     { code: 'THB', rate: 0.24 }
   ],
 
-  // 每日天氣地點（Open-Meteo 經緯度，免 API key）
-  // 每天行程要標 weatherCity 對應這裡的 key
+  // 每日天氣地點（Open-Meteo 經緯度，免 API 金鑰）
+  // 每天行程要標 weatherCity，並對應這裡的城市代碼
   weatherCities: {
     osaka: { name: '大阪', lat: 34.6937, lon: 135.5023 },
     kyoto: { name: '京都', lat: 35.0116, lon: 135.7681 },
@@ -100,7 +100,7 @@ const TRIP = {
   ],
 
   // ---------- 每日行程 ----------
-  // type: spot(景點) | food(餐廳) | transport(交通) | stay(住宿) | note(備忘)
+  // type 欄位：spot(景點) | food(餐廳) | transport(交通) | stay(住宿) | note(備忘)
   days: [
     {
       date: '2026-11-14',

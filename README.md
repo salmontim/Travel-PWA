@@ -2,7 +2,7 @@
 
 個人旅行 PWA：每日行程卡片、即時天氣、一鍵導航（自駕友善）、景點攻略標籤、記帳與預算（Firestore 跨裝置同步）。
 
-**零建置**：純 HTML/CSS/JS，無框架、無打包工具。改 [js/data.js](js/data.js) 就能換成你自己的旅程。
+**零建置**：純 HTML/CSS/JS，無框架、無打包工具。修改 [js/data.js](js/data.js) 即可換成你自己的旅程。
 
 ## 功能
 
@@ -10,7 +10,7 @@
 |---|---|
 | 每日行程 | 景點 / 餐廳 / 交通 / 住宿分類卡片，手機優先、底部導覽像原生 App |
 | 導航按鈕 | 卡片有 `location` 就自動產生 Google Maps 導航連結 |
-| 天氣 | 每天卡片上方顯示該城市天氣（Open-Meteo，**免 API key**） |
+| 天氣 | 每天卡片上方顯示該城市天氣（Open-Meteo，**免 API 金鑰**） |
 | 導遊標籤 | 必吃美食（紅）、必點菜單（橙）、必買伴手禮（綠）、預約代號（藍）、景點故事 |
 | 資訊頁 | 航班、住宿（含預約代號）、緊急聯絡電話（可點擊撥號） |
 | 記帳 | 多幣別選擇、每筆同步顯示港幣換算、分類、預算進度條；Firestore 跨裝置同步，未設定時自動落回 localStorage |
@@ -20,10 +20,10 @@
 
 只要編輯 [js/data.js](js/data.js) 中的 `TRIP` 物件：
 
-- `flights` / `stays` / `contacts` → 資訊頁
-- `days[]` → 每日行程；每個 item 的 `type` 決定卡片樣式（`spot` `food` `transport` `stay` `note`）
-- item 加 `location: { name: '...', query: '...' }` → 自動出現「📍導航」按鈕
-- item 加 `guide: { food, menu, gift, booking, story }` → 自動出現彩色攻略標籤
+- `flights` / `stays` / `contacts` → 旅行資訊分頁
+- `days[]` → 每日行程；每個項目的 `type` 決定卡片樣式（`spot` `food` `transport` `stay` `note`）
+- 行程項目加上 `location: { name: '...', query: '...' }` → 自動出現「📍導航」按鈕
+- 行程項目加上 `guide: { food, menu, gift, booking, story }` → 自動出現彩色攻略標籤
 - `weatherCities` → 每天的 `weatherCity` 對應的經緯度（[latlong.net](https://www.latlong.net/) 可查）
 - `budget` / `currencies` → 預算與匯率（預設以 HKD 顯示，`rate` = 1 外幣換多少港幣）
 
@@ -31,7 +31,7 @@
 
 Hosting 使用 GitHub Pages；Firestore 只負責記帳資料同步。兩者可以並行，不需要 Firebase Hosting。
 
-未填 Firebase config 時，App 會自動使用本機 localStorage；填好後，同一個 Firestore collection 會在不同 iPhone / 瀏覽器之間同步記帳資料。
+未填 Firebase 設定時，App 會自動使用本機 localStorage；填好後，同一個 Firestore 資料集合會在不同 iPhone / 瀏覽器之間同步記帳資料。
 
 ### 建立 Firebase / Firestore
 
@@ -39,7 +39,7 @@ Hosting 使用 GitHub Pages；Firestore 只負責記帳資料同步。兩者可�
 2. 專案設定 → 一般 → **新增網頁應用程式**
 3. 複製 `firebaseConfig`，貼到 [js/firebase-config.js](js/firebase-config.js) 的 `FIREBASE_CONFIG`
 4. 左側 **Firestore Database** → 建立資料庫
-5. Collection 名稱預設是 `expenses`，可在 [js/firebase-config.js](js/firebase-config.js) 的 `FIRESTORE_COLLECTION` 修改
+5. 資料集合名稱預設是 `expenses`，可在 [js/firebase-config.js](js/firebase-config.js) 的 `FIRESTORE_COLLECTION` 修改
 
 ### 測試用 Firestore Rules
 
@@ -56,11 +56,11 @@ service cloud.firestore {
 }
 ```
 
-這組 rules 是公開讀寫，只適合短期測試。正式旅行使用前，建議加入 Firebase Authentication 或 App Check，再限制只有你自己的裝置/帳號可以存取。
+這組規則是公開讀寫，只適合短期測試。正式旅行使用前，建議加入 Firebase Authentication 或 App Check，再限制只有你自己的裝置/帳號可以存取。
 
 ## 部署到 GitHub Pages
 
-這個專案是純靜態 PWA，不需要 build step，首選直接用 GitHub Pages 部署。Firestore 只作為資料同步服務，不需要 Firebase Hosting。
+這個專案是純靜態 PWA，不需要建置步驟，首選直接用 GitHub Pages 部署。Firestore 只作為資料同步服務，不需要 Firebase Hosting。
 
 ### 上傳 GitHub
 
@@ -72,12 +72,12 @@ git push origin main
 
 ### 開啟 GitHub Pages
 
-1. 到 GitHub repo：`https://github.com/salmontim/Travel-PWA`
+1. 到 GitHub 儲存庫：`https://github.com/salmontim/Travel-PWA`
 2. 進入 **Settings → Pages**
-3. **Build and deployment** 選：
-   - Source：**Deploy from a branch**
-   - Branch：**main**
-   - Folder：**/ (root)**
+3. **Build and deployment（建置與部署）** 選：
+   - Source（來源）：**Deploy from a branch（從分支部署）**
+   - Branch（分支）：**main**
+   - Folder（資料夾）：**/ (root)**
 4. 按 **Save**
 
 等待 1-3 分鐘後，GitHub 會產生網址：
@@ -98,16 +98,16 @@ https://salmontim.github.io/Travel-PWA/
 
 ## Netlify（後續可選）
 
-測試 GitHub Pages 成功後，可以再把同一個 GitHub repo 接到 Netlify：
+測試 GitHub Pages 成功後，可以再把同一個 GitHub 儲存庫接到 Netlify：
 
-1. 到 [Netlify](https://www.netlify.com/) → **Add new site → Import an existing project**
-2. 選 GitHub repo：`salmontim/Travel-PWA`
-3. Build settings：
-   - Build command：留空
-   - Publish directory：`.`
-4. Deploy
+1. 到 [Netlify](https://www.netlify.com/) → **Add new site → Import an existing project（新增網站 → 匯入現有專案）**
+2. 選 GitHub 儲存庫：`salmontim/Travel-PWA`
+3. Build settings（建置設定）：
+   - Build command（建置指令）：留空
+   - Publish directory（發布目錄）：`.`
+4. 按 **Deploy（部署）**
 
-Netlify 會提供 `https://你的站名.netlify.app`。如果之後想用自訂網域、表單、Preview Deploy，Netlify 會比 GitHub Pages 彈性更高。
+Netlify 會提供 `https://你的站名.netlify.app`。如果之後想用自訂網域、表單、預覽部署，Netlify 會比 GitHub Pages 彈性更高。
 
 ## 本地預覽
 
@@ -122,7 +122,7 @@ python -m http.server 8080
 
 ```
 ├── index.html              # 三個分頁的骨架
-├── css/style.css           # Japandi 極簡、手機優先、深色模式
+├── css/style.css           # 日式簡約、手機優先、深色模式
 ├── js/
 │   ├── data.js             # ⭐ 你的行程資料（改這個）
 │   ├── firebase-config.js  # ⭐ Firestore 同步設定（改這個）
@@ -135,4 +135,4 @@ python -m http.server 8080
 
 ## 天氣 API
 
-使用 [Open-Meteo](https://open-meteo.com/)，免費、免 key。預報範圍為未來 16 天；超過範圍的日期會顯示「暫時無法取得」，出發前幾天就會正常。
+使用 [Open-Meteo](https://open-meteo.com/)，免費、免金鑰。預報範圍為未來 16 天；超過範圍的日期會顯示「暫時無法取得」，出發前幾天就會正常。
