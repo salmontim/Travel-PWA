@@ -355,7 +355,10 @@
       li.style.opacity = '.35';
       try {
         await ExpenseDB.remove(id);
-        if (dbMode !== 'firestore') renderExpenses();
+        if (dbMode !== 'firestore') {
+          expenses = expenses.filter((item) => item.id !== id);
+          renderExpenses();
+        }
       } catch {
         li.style.opacity = '';
       }

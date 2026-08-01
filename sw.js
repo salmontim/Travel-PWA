@@ -1,7 +1,7 @@
 /* Service Worker — offline-first caching for Travel PWA
    注意：每次修改 js/ 或 css/ 後，請遞增 VERSION，
    否則舊快取會讓使用者看到過期程式碼。 */
-const VERSION = 'travel-pwa-v3';
+const VERSION = 'travel-pwa-v4';
 const APP_SHELL = [
   './',
   './index.html',
