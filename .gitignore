@@ -1,14 +1,4 @@
-# Firebase
-.firebaserc
-firebase.json
-.firebase/
-firebase-debug.log
-firestore-debug.log
-
 # OS / editor
 Thumbs.db
 .DS_Store
 .vscode/
-
-# Node (for firebase-tools workflows)
-node_modules/

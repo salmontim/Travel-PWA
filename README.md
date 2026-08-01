@@ -1,6 +1,6 @@
 # 旅 · Travel PWA
 
-個人旅行 PWA：每日行程卡片、即時天氣、一鍵導航（自駕友善）、景點攻略標籤、記帳與預算（Firebase Firestore 雲端同步）。
+個人旅行 PWA：每日行程卡片、即時天氣、一鍵導航（自駕友善）、景點攻略標籤、記帳與預算（本機儲存）。
 
 **零建置**：純 HTML/CSS/JS，無框架、無打包工具。改 [js/data.js](js/data.js) 就能換成你自己的旅程。
 
@@ -13,7 +13,7 @@
 | 天氣 | 每天卡片上方顯示該城市天氣（Open-Meteo，**免 API key**） |
 | 導遊標籤 | 必吃美食（紅）、必點菜單（橙）、必買伴手禮（綠）、預約代號（藍）、景點故事 |
 | 資訊頁 | 航班、住宿（含預約代號）、緊急聯絡電話（可點擊撥號） |
-| 記帳 | 多幣別選擇、每筆同步顯示港幣換算、分類、預算進度條；Firestore 同步，離線自動落回 localStorage |
+| 記帳 | 多幣別選擇、每筆同步顯示港幣換算、分類、預算進度條；資料儲存在瀏覽器 localStorage |
 | PWA | 可安裝到主畫面、Service Worker 離線快取、深色模式 |
 
 ## 換成你的行程
@@ -27,28 +27,9 @@
 - `weatherCities` → 每天的 `weatherCity` 對應的經緯度（[latlong.net](https://www.latlong.net/) 可查）
 - `budget` / `currencies` → 預算與匯率（預設以 HKD 顯示，`rate` = 1 外幣換多少港幣）
 
-## Firebase 設定（記帳同步）
-
-> 沒設也能用 — 會自動跑「本機模式」（localStorage）。
-
-1. 到 [Firebase Console](https://console.firebase.google.com) → **新增專案**（可關掉 Analytics）
-2. 專案設定 → 一般 → **新增應用程式 → 網頁**（`</>`）→ 複製 `firebaseConfig`
-3. 貼到 [js/firebase-config.js](js/firebase-config.js) 的 `FIREBASE_CONFIG`
-4. 左側 **Firestore Database → 建立資料庫** → 選「正式環境模式」→ 地區建議 `asia-east1`
-5. **規則** 分頁先暫用（個人測試，之後請收緊）：
-   ```
-   rules_version = '2';
-   service cloud.firestore {
-     match /databases/{database}/documents {
-       match /expenses/{doc} { allow read, write: if true; }
-     }
-   }
-   ```
-   ⚠️ 這是公開寫入規則，知道網址的人都能寫。個人一次性旅行可接受；要更安全請加 [Firebase App Check](https://firebase.google.com/docs/app-check) 或匿名驗證。
-
 ## 部署到 GitHub Pages
 
-這個專案是純靜態 PWA，不需要 build step，最簡單可以直接用 GitHub Pages 部署。Firebase 只保留給 Firestore 記帳同步，不需要再用 Firebase Hosting。
+這個專案是純靜態 PWA，不需要 build step，首選直接用 GitHub Pages 部署。記帳資料只存在使用者自己的瀏覽器 localStorage，不需要 Firebase Hosting、Firestore 或任何後端服務。
 
 ### 上傳 GitHub
 
@@ -81,7 +62,7 @@ https://salmontim.github.io/Travel-PWA/
 - `manifest.webmanifest` 的 `start_url` / `scope` 已使用 `./`，可以在 `/Travel-PWA/` 子路徑正常運作。
 - Service Worker 只會控制 GitHub Pages 網址底下的 `/Travel-PWA/` 範圍，這是正常行為。
 - 每次修改 `js/` 或 `css/` 後，請遞增 [sw.js](sw.js) 裡的 `VERSION`，避免手機繼續讀到舊快取。
-- Firestore 記帳同步可照前一節 Firebase 設定；Hosting 改用 GitHub Pages 不影響 Firestore。
+- 記帳資料儲存在目前瀏覽器的 localStorage；換手機或清除瀏覽器資料後不會自動同步。
 
 ## Netlify（後續可選）
 
@@ -112,8 +93,7 @@ python -m http.server 8080
 ├── css/style.css           # Japandi 極簡、手機優先、深色模式
 ├── js/
 │   ├── data.js             # ⭐ 你的行程資料（改這個）
-│   ├── firebase-config.js  # ⭐ Firebase config（改這個）
-│   ├── db.js               # 記帳資料層（Firestore ⇄ localStorage）
+│   ├── db.js               # 記帳資料層（localStorage）
 │   └── app.js              # 渲染、天氣、導航、記帳 UI
 ├── sw.js                   # Service Worker（離線快取）
 ├── manifest.webmanifest    # PWA 安裝資訊
