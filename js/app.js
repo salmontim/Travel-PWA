@@ -233,6 +233,7 @@
   /* ================= 記帳 ================= */
   const CAT_ICON = { food: '🍜', transport: '🚌', shopping: '🛍', ticket: '🎫', stay: '🏨', other: '📦' };
   let expenses = [];
+  let dbMode = 'local';
 
   function rateOf(code) {
     const c = (TRIP.currencies || []).find((x) => x.code === code);
@@ -306,11 +307,13 @@
     $('#exp-date').value = new Date().toISOString().slice(0, 10);
 
     // 資料層
-    ExpenseDB.init();
-    setSync('', '📱 本機儲存');
+    const { mode } = ExpenseDB.init();
+    dbMode = mode;
+    setSync(mode === 'firestore' ? 'ok' : '', mode === 'firestore' ? '☁ Firestore 同步' : '📱 本機儲存');
     ExpenseDB.subscribe((items, source) => {
       expenses = items;
       renderExpenses();
+      if (source === 'cloud') setSync('ok', '☁ Firestore 同步');
       if (source === 'local-error') setSync('err', '☁ 連線失敗，顯示本機資料');
     });
 
@@ -332,8 +335,10 @@
         $('#exp-title').value = '';
         $('#exp-amount').value = '';
         $('#exp-title').focus();
-        expenses.unshift(saved);
-        renderExpenses();
+        if (dbMode !== 'firestore') {
+          expenses.unshift(saved);
+          renderExpenses();
+        }
       } catch (e) {
         console.warn(e);
         setSync('err', '☁ 寫入失敗');
@@ -351,8 +356,10 @@
       li.style.opacity = '.35';
       try {
         await ExpenseDB.remove(id);
-        expenses = expenses.filter((item) => item.id !== id);
-        renderExpenses();
+        if (dbMode !== 'firestore') {
+          expenses = expenses.filter((item) => item.id !== id);
+          renderExpenses();
+        }
       } catch {
         li.style.opacity = '';
       }
