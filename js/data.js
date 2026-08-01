@@ -17,11 +17,19 @@ const TRIP = {
   subtitle: '2026/11/14 — 11/20 · 7 天 6 夜',
   startDate: '2026-11-14',          // YYYY-MM-DD
 
-  // 記帳設定
-  budget: { total: 60000, currency: 'TWD' },
+  // 記帳設定（rate = 1 外幣 → 多少港幣 HKD）
+  budget: { total: 15000, currency: 'HKD' },
   currencies: [
-    { code: 'JPY', rate: 0.21 },    // rate = 1 外幣 → 多少本幣(TWD)
-    { code: 'TWD', rate: 1 }
+    { code: 'HKD', rate: 1 },
+    { code: 'JPY', rate: 0.052 },
+    { code: 'TWD', rate: 0.243 },
+    { code: 'USD', rate: 7.8 },
+    { code: 'CNY', rate: 1.08 },
+    { code: 'KRW', rate: 0.0057 },
+    { code: 'EUR', rate: 9.1 },
+    { code: 'GBP', rate: 10.5 },
+    { code: 'SGD', rate: 6.05 },
+    { code: 'THB', rate: 0.24 }
   ],
 
   // 每日天氣地點（Open-Meteo 經緯度，免 API key）

@@ -457,7 +457,15 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
 .expense-item .e-main { flex: 1; min-width: 0; }
 .expense-item .e-title { font-size: .9rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .expense-item .e-date { font-size: .72rem; color: var(--ink-faint); }
-.expense-item .e-amount { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .92rem; white-space: nowrap; }
+.expense-item .e-amount {
+  display: grid;
+  justify-items: end;
+  gap: 1px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.expense-item .e-amount strong { font-size: .92rem; }
+.expense-item .e-amount small { font-size: .7rem; color: var(--ink-faint); font-weight: 600; }
 .expense-item .e-del {
   border: none;
   background: none;

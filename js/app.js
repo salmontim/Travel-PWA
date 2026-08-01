@@ -241,8 +241,11 @@
   }
   const baseCur = () => TRIP.budget?.currency || 'TWD';
   const toBase = (e) => e.amount * rateOf(e.currency);
-  const fmt = (n, code) =>
-    `${code} ${n.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+  const fmt = (n, code, digits = 0) =>
+    `${code} ${n.toLocaleString(undefined, {
+      minimumFractionDigits: digits,
+      maximumFractionDigits: digits
+    })}`;
 
   function renderBudget() {
     const total = TRIP.budget?.total || 0;
@@ -281,7 +284,10 @@
           <div class="e-title">${esc(e.title)}</div>
           <div class="e-date">${esc(e.date)}</div>
         </div>
-        <span class="e-amount">${esc(e.currency)} ${Number(e.amount).toLocaleString()}</span>
+        <span class="e-amount">
+          <strong>${esc(e.currency)} ${Number(e.amount).toLocaleString()}</strong>
+          <small>≈ ${fmt(toBase(e), baseCur(), 2)}</small>
+        </span>
         <button class="e-del" aria-label="刪除" title="刪除">✕</button>
       </li>`).join('');
     renderBudget();

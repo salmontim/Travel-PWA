@@ -13,7 +13,7 @@
 | 天氣 | 每天卡片上方顯示該城市天氣（Open-Meteo，**免 API key**） |
 | 導遊標籤 | 必吃美食（紅）、必點菜單（橙）、必買伴手禮（綠）、預約代號（藍）、景點故事 |
 | 資訊頁 | 航班、住宿（含預約代號）、緊急聯絡電話（可點擊撥號） |
-| 記帳 | 多幣別換算、分類、預算進度條；Firestore 同步，離線自動落回 localStorage |
+| 記帳 | 多幣別選擇、每筆同步顯示港幣換算、分類、預算進度條；Firestore 同步，離線自動落回 localStorage |
 | PWA | 可安裝到主畫面、Service Worker 離線快取、深色模式 |
 
 ## 換成你的行程
@@ -25,7 +25,7 @@
 - item 加 `location: { name: '...', query: '...' }` → 自動出現「📍導航」按鈕
 - item 加 `guide: { food, menu, gift, booking, story }` → 自動出現彩色攻略標籤
 - `weatherCities` → 每天的 `weatherCity` 對應的經緯度（[latlong.net](https://www.latlong.net/) 可查）
-- `budget` / `currencies` → 預算與匯率（`rate` = 1 外幣換多少本幣）
+- `budget` / `currencies` → 預算與匯率（預設以 HKD 顯示，`rate` = 1 外幣換多少港幣）
 
 ## Firebase 設定（記帳同步）
 
@@ -46,31 +46,55 @@
    ```
    ⚠️ 這是公開寫入規則，知道網址的人都能寫。個人一次性旅行可接受；要更安全請加 [Firebase App Check](https://firebase.google.com/docs/app-check) 或匿名驗證。
 
-## 部署到 Firebase Hosting
+## 部署到 GitHub Pages
 
-```bash
-npm install -g firebase-tools
-firebase login
-firebase init hosting
-#   ? Use existing project → 選你的專案
-#   ? public directory → . （直接輸入一個點）
-#   ? single-page app → No
-#   ? overwrite index.html → No
-#   ? Set up GitHub Action deploys → 可先 No
-firebase deploy
-```
-
-部署後會得到 `https://你的專案.web.app`，用手機瀏覽器開啟 → 「加到主畫面」即成為 PWA。
+這個專案是純靜態 PWA，不需要 build step，最簡單可以直接用 GitHub Pages 部署。Firebase 只保留給 Firestore 記帳同步，不需要再用 Firebase Hosting。
 
 ### 上傳 GitHub
 
 ```bash
 git add -A
 git commit -m "Travel PWA"
-git push
+git push origin main
 ```
 
-（選配）`firebase init hosting:github` 可設定 push 到 main 就自動部署。
+### 開啟 GitHub Pages
+
+1. 到 GitHub repo：`https://github.com/salmontim/Travel-PWA`
+2. 進入 **Settings → Pages**
+3. **Build and deployment** 選：
+   - Source：**Deploy from a branch**
+   - Branch：**main**
+   - Folder：**/ (root)**
+4. 按 **Save**
+
+等待 1-3 分鐘後，GitHub 會產生網址：
+
+```text
+https://salmontim.github.io/Travel-PWA/
+```
+
+用手機瀏覽器開啟後，選「加到主畫面」即可安裝成 PWA。
+
+### GitHub Pages 注意事項
+
+- `manifest.webmanifest` 的 `start_url` / `scope` 已使用 `./`，可以在 `/Travel-PWA/` 子路徑正常運作。
+- Service Worker 只會控制 GitHub Pages 網址底下的 `/Travel-PWA/` 範圍，這是正常行為。
+- 每次修改 `js/` 或 `css/` 後，請遞增 [sw.js](sw.js) 裡的 `VERSION`，避免手機繼續讀到舊快取。
+- Firestore 記帳同步可照前一節 Firebase 設定；Hosting 改用 GitHub Pages 不影響 Firestore。
+
+## Netlify（後續可選）
+
+測試 GitHub Pages 成功後，可以再把同一個 GitHub repo 接到 Netlify：
+
+1. 到 [Netlify](https://www.netlify.com/) → **Add new site → Import an existing project**
+2. 選 GitHub repo：`salmontim/Travel-PWA`
+3. Build settings：
+   - Build command：留空
+   - Publish directory：`.`
+4. Deploy
+
+Netlify 會提供 `https://你的站名.netlify.app`。如果之後想用自訂網域、表單、Preview Deploy，Netlify 會比 GitHub Pages 彈性更高。
 
 ## 本地預覽
 
