@@ -29,7 +29,7 @@
 
 ## 部署到 GitHub Pages
 
-這個專案是純靜態 PWA，不需要 build step，首選直接用 GitHub Pages 部署。記帳資料只存在使用者自己的瀏覽器 localStorage，不需要 Firebase Hosting、Firestore 或任何後端服務。
+這個專案是純靜態 PWA，不需要 build step，首選直接用 GitHub Pages 部署。記帳資料只存在使用者自己的瀏覽器 localStorage，不需要任何後端服務。
 
 ### 上傳 GitHub
 
