@@ -13,12 +13,12 @@
    ============================================================ */
 
 const TRIP = {
-  title: '京阪奈・秋の旅',
-  subtitle: '2026/11/14 — 11/20 · 7 天 6 夜',
-  startDate: '2026-11-14',          // 日期格式：YYYY-MM-DD
+  title: '濟州島・自駕之旅',
+  subtitle: '2026/9/26 — 10/3 · 8 天 7 夜',
+  startDate: '2026-09-26',          // 日期格式：YYYY-MM-DD
 
   // 記帳設定（rate 代表 1 單位外幣可兌換多少港幣 HKD）
-  budget: { total: 15000, currency: 'HKD' },
+  budget: { total: 18000, currency: 'HKD' },
   currencies: [
     { code: 'HKD', rate: 1 },
     { code: 'JPY', rate: 0.052 },
@@ -35,31 +35,34 @@ const TRIP = {
   // 每日天氣地點（Open-Meteo 經緯度，免 API 金鑰）
   // 每天行程要標 weatherCity，並對應這裡的城市代碼
   weatherCities: {
-    osaka: { name: '大阪', lat: 34.6937, lon: 135.5023 },
-    kyoto: { name: '京都', lat: 35.0116, lon: 135.7681 },
-    nara:  { name: '奈良', lat: 34.6851, lon: 135.8048 }
+    jeju:     { name: '濟州市', lat: 33.4996, lon: 126.5312 },
+    seongsan: { name: '城山', lat: 33.4586, lon: 126.9406 },
+    east:     { name: '月汀里', lat: 33.5516, lon: 126.7993 },
+    aewol:    { name: '涯月', lat: 33.4679, lon: 126.3280 },
+    south:    { name: '南線', lat: 33.3061, lon: 126.2890 },
+    seogwipo: { name: '西歸浦', lat: 33.2544, lon: 126.5600 }
   },
 
   // ---------- 航班 ----------
   flights: [
     {
-      title: '去程 · 台北 → 大阪',
-      sub: '2026-11-14 (六)',
+      title: '去程 · 香港 → 濟州（凌晨機）',
+      sub: '2026-09-26 (六)',
       fields: [
-        ['航班', 'MM028', true],
-        ['起飛', 'TPE 桃園 T1 · 10:25'],
-        ['抵達', 'KIX 關西 T1 · 14:05'],
-        ['訂位代號', 'XJ7K2P', true]
+        ['航班', 'UO698', true],
+        ['起飛', 'HKG 香港 · 02:30'],
+        ['抵達', 'CJU 濟州 · 06:30'],
+        ['提醒', '凌晨機！建議 00:30 前到香港機場辦理手續']
       ]
     },
     {
-      title: '回程 · 大阪 → 台北',
-      sub: '2026-11-20 (五)',
+      title: '回程 · 濟州 → 香港',
+      sub: '2026-10-03 (六)',
       fields: [
-        ['航班', 'MM029', true],
-        ['起飛', 'KIX 關西 T1 · 15:35'],
-        ['抵達', 'TPE 桃園 T1 · 17:40'],
-        ['訂位代號', 'XJ7K2P', true]
+        ['航班', 'UO699', true],
+        ['起飛', 'CJU 濟州 · 07:30'],
+        ['抵達', 'HKG 香港 · 09:40'],
+        ['提醒', '05:30 前抵達濟州機場，預留 2 小時辦理離境']
       ]
     }
   ],
@@ -67,363 +70,424 @@ const TRIP = {
   // ---------- 住宿 ----------
   stays: [
     {
-      title: '大阪本町微笑飯店',
-      sub: '11/14 — 11/17 · 3 晚',
-      location: { name: 'Smile Hotel Osaka Hommachi', query: 'スマイルホテル大阪本町' },
+      title: '濟州市區住宿（未定）',
+      sub: '9/26 起 · 尚待訂房',
       fields: [
-        ['地址', '大阪市中央区南本町2丁目'],
-        ['電話', '+81-6-6263-1111', false, 'tel:+81662631111'],
-        ['Check-in', '15:00 / Check-out 11:00'],
-        ['預約代號', 'BK-88213', true]
+        ['備註', 'Day 1 抵達後先寄放行李或提早 check-in'],
+        ['每晚預算', 'KRW 60,000–160,000 · 約 HKD 350–900']
       ]
     },
     {
-      title: '京都祇園 柚子屋旅館',
-      sub: '11/17 — 11/20 · 3 晚',
-      location: { name: 'Yuzuya Ryokan Kyoto', query: '柚子屋旅館' },
+      title: '機場周邊住宿（未定）',
+      sub: '10/2 還車後入住 · 1 晚',
       fields: [
-        ['地址', '京都市東山区祇園町南側'],
-        ['電話', '+81-75-533-6110', false, 'tel:+81755336110'],
-        ['Check-in', '16:00 / Check-out 10:00'],
-        ['預約代號', 'RK-10298', true]
+        ['備註', '選近機場飯店，10/3 清晨 05:00 出發'],
+        ['Check-out', '10/3 約 04:30–05:00']
       ]
     }
   ],
 
   // ---------- 緊急聯絡 ----------
   contacts: [
-    { label: '日本緊急電話（警察）', value: '110', tel: 'tel:110' },
-    { label: '日本緊急電話（救護/火警）', value: '119', tel: 'tel:119' },
-    { label: '駐大阪辦事處', value: '+81-6-6443-8481', tel: 'tel:+81664438481' },
-    { label: '旅遊平安險專線', value: '+886-2-2345-6789', tel: 'tel:+886223456789' },
-    { label: '同行友人 A', value: '+886-912-345-678', tel: 'tel:+886912345678' }
+    { label: '韓國緊急電話（警察）', value: '112', tel: 'tel:112' },
+    { label: '韓國緊急電話（救護/火警）', value: '119', tel: 'tel:119' },
+    { label: '韓國旅遊諮詢熱線（24h 外語）', value: '1330', tel: 'tel:1330' },
+    { label: '入境處協助在外港人 24h 熱線', value: '+852 1868', tel: 'tel:+8521868' },
+    { label: '同行家人', value: '+852-9123-4567', tel: 'tel:+85291234567' }
   ],
 
   // ---------- 每日行程 ----------
   // type 欄位：spot(景點) | food(餐廳) | transport(交通) | stay(住宿) | note(備忘)
   days: [
     {
-      date: '2026-11-14',
+      date: '2026-09-26',
       label: 'Day 1',
-      theme: '抵達大阪・道頓堀夜遊',
-      weatherCity: 'osaka',
+      theme: '抵達濟州・貝果早餐・市區夜遊',
+      weatherCity: 'jeju',
       items: [
         {
-          time: '10:25',
+          time: '06:30',
           type: 'transport',
-          title: '樂桃 MM028 → 關西機場',
-          desc: '提早 2 小時到機場。抵達後搭 <strong>南海電鐵 rapi:t</strong> 直達難波，約 38 分鐘。',
-          guide: { booking: '機票訂位代號 <b>XJ7K2P</b>' }
+          title: '抵達濟州機場 CJU',
+          desc: 'UO698 凌晨 02:30 從香港起飛、06:30 抵達，入境後直接往 Rent-a-Car House 移動，不要先吃早餐。',
+          guide: { booking: '去程機票 <b>UO698</b>' }
         },
         {
-          time: '15:30',
-          type: 'stay',
-          title: '大阪本町微笑飯店 Check-in',
-          location: { name: 'Smile Hotel Osaka Hommachi' },
-          desc: '地鐵本町站 13 號出口步行 3 分鐘。',
-          guide: { booking: '預約代號 <b>BK-88213</b>' }
-        },
-        {
-          time: '17:30',
-          type: 'spot',
-          title: '道頓堀・心齋橋散策',
-          location: { name: '道頓堀', query: 'Dotonbori Osaka' },
-          desc: '固力果跑跑人、蟹道樂大螃蟹。運河兩側霓虹燈是大阪的象徵，黄昏時分最美。',
-          guide: {
-            story: '道頓堀運河開鑿於 1612 年，原本是商業水路，如今成為大阪「吃到倒下」文化的中心。',
-            food: '<b>章魚燒</b>、<b>大阪燒</b>、<b>串炸</b>',
-            gift: '<b>固力果 Pocky 限定口味</b>、<b>食倒太郎周邊</b>'
-          }
-        },
-        {
-          time: '19:00',
-          type: 'food',
-          title: '一蘭拉麵 道頓堀店',
-          location: { name: '一蘭拉麵 道頓堀店', query: '一蘭 道頓堀店本館' },
-          desc: '經典一人食吧台，湯頭濃度、蔥量都能客製。',
-          guide: {
-            menu: '<b>天然豚骨拉麵</b> + <b>半熟鹽味蛋</b>，加點「替玉」（加麵）',
-            food: '先買食券再排隊，尖峰時段約等 30 分鐘'
-          }
-        }
-      ]
-    },
-    {
-      date: '2026-11-15',
-      label: 'Day 2',
-      theme: '大阪城・黑門市場・梅田空中庭園',
-      weatherCity: 'osaka',
-      items: [
-        {
-          time: '08:30',
-          type: 'food',
-          title: '黑門市場早餐',
-          location: { name: '黑門市場', query: 'Kuromon Ichiba Market' },
-          desc: '大阪的廚房，170 年歷史的市場，邊走邊吃。',
-          guide: {
-            food: '<b>黑門三平</b> 海鮮丼、<b>石橋食品</b> 關東煮',
-            menu: '<b>烤干貝</b>、<b>現切鮪魚中落</b>、<b>豆漿甜甜圈</b>'
-          }
-        },
-        {
-          time: '10:30',
-          type: 'spot',
-          title: '大阪城天守閣',
-          location: { name: '大阪城', query: 'Osaka Castle' },
-          desc: '豐臣秀吉的居城，天守閣 8 樓展望台可眺望大阪市區。秋季銀杏大道金黃一片。',
-          guide: {
-            story: '現在的天守閣是 1931 年重建的第三代，內部為博物館，展示豐臣家與大阪之陣史料。',
-            food: '城內 <b>MIRAIZA 大阪城</b> 有本陣特色餐廳'
-          }
-        },
-        {
-          time: '15:00',
-          type: 'spot',
-          title: '梅田空中庭園展望台',
-          location: { name: '梅田藍天大廈', query: 'Umeda Sky Building' },
-          desc: '173 公尺高、360 度露天展望台「空中庭園」，夕陽與夜景都震撼。建議日落前 1 小時上去。',
-          guide: {
-            story: '兩棟大樓以「空中庭園」連接，建築師原廣司代表作，曾被英國媒體選為世界 20 大建築。',
-            booking: 'Klook 預購門票代號 <b>SKY-5566</b>'
-          }
-        },
-        {
-          time: '19:00',
-          type: 'food',
-          title: 'はがくれ うどん（梅田）',
-          location: { name: 'はがくれ 梅田店', query: 'はがくれ うどん 梅田' },
-          guide: {
-            menu: '<b>冷たい肉うどん</b>（冷肉烏龍麵），麵條極粗有嚼勁'
-          }
-        }
-      ]
-    },
-    {
-      date: '2026-11-16',
-      label: 'Day 3',
-      theme: '奈良一日遊・東大寺與鹿',
-      weatherCity: 'nara',
-      items: [
-        {
-          time: '08:00',
+          time: '06:45',
           type: 'transport',
-          title: '近鐵難波 → 近鐵奈良（急行約 40 分）',
-          location: { name: '近鐵奈良站', query: 'Kintetsu Nara Station' },
-          desc: '自駕者注意：奈良公園周邊停車場假日易爆滿，建議停「奈良縣廳前停車場」。'
+          title: 'SK Rent-a-Car 接駁',
+          location: { name: '濟州機場 Rent-a-Car House', query: '제주공항 렌터카하우스' },
+          desc: '機場 <strong>Gate 5</strong> 過馬路 → Rent-a-Car House → <strong>Zone 1, Platform 2</strong> 搭 SK 接駁車。'
         },
-        {
-          time: '09:30',
-          type: 'spot',
-          title: '東大寺・奈良公園',
-          location: { name: '東大寺', query: 'Todaiji Temple' },
-          desc: '世界最大木造建築「大佛殿」，供奉 15 公尺高盧舍那大佛。園內 1,200 頭鹿自由漫步。',
-          guide: {
-            story: '東大寺建於 752 年聖武天皇時代。大佛鼻孔柱（大佛殿右後方木柱）鑽過可得「開運」。',
-            food: '奈良公園門口的 <b>鹿仙貝</b>（¥200），舉高鹿會鞠躬',
-            gift: '<b>大佛布丁</b>、<b>鹿角鑰匙圈</b>'
-          }
-        },
-        {
-          time: '12:30',
-          type: 'food',
-          title: '志津香 釜飯（奈良公園店）',
-          location: { name: '志津香 公園店', query: '志津香 釜めし 公園店' },
-          desc: '創業 60 年的釜飯名店，現點現炊需等 20 分鐘。',
-          guide: {
-            menu: '<b>奈良七種釜飯</b>（七種食材的招牌）、<b>鰻魚釜飯</b>',
-            booking: '熱門時段要抽號碼牌，建議 11:30 前登記'
-          }
-        },
-        {
-          time: '15:00',
-          type: 'spot',
-          title: '春日大社',
-          location: { name: '春日大社', query: 'Kasuga Taisha' },
-          desc: '朱紅社殿與 3,000 座石燈籠，被登錄為世界遺產。參道林蔭幽靜，鹿群穿梭其間如神使。',
-          guide: {
-            story: '春日大社的鹿被視為神的使者，傳說藤原氏守護神乘白鹿而來。'
-          }
-        }
-      ]
-    },
-    {
-      date: '2026-11-17',
-      label: 'Day 4',
-      theme: '移動京都・祇園和風之夜',
-      weatherCity: 'kyoto',
-      items: [
-        {
-          time: '10:00',
-          type: 'transport',
-          title: '大阪 → 京都（JR 新快速 30 分）',
-          desc: '難波 → 梅田轉 JR 京都線。自駕可走名神高速，京都站前停車位少，建議停飯店配合停車場。'
-        },
-        {
-          time: '12:00',
-          type: 'food',
-          title: '錦市場午餐散策',
-          location: { name: '錦市場', query: 'Nishiki Market' },
-          desc: '「京都的廚房」，400 公尺長的商店街擠滿 130 家店鋪。',
-          guide: {
-            food: '<b>三木雞卵</b> 玉子燒、<b>豆乳甜甜圈</b>、<b>烤鰻串</b>',
-            gift: '<b>七味粉</b>（七味家本舖）、<b>漬物組合</b>'
-          }
-        },
-        {
-          time: '16:00',
-          type: 'stay',
-          title: '柚子屋旅館 Check-in',
-          location: { name: '柚子屋旅館', query: '柚子屋旅館' },
-          desc: '八坂神社旁的老鋪旅館，全館僅 8 間房。',
-          guide: { booking: '預約代號 <b>RK-10298</b>，晚餐 18:30 開始' }
-        },
-        {
-          time: '17:30',
-          type: 'spot',
-          title: '花見小路・祇園白川散策',
-          location: { name: '祇園白川', query: 'Gion Shirakawa' },
-          desc: '石板路、木造茶屋、柳樹與白川，傍晚最有機會遇見趕場的藝伎。',
-          guide: {
-            story: '祇園從江戶時代就是花街，「花見小路」的茶屋仍保留傳統「一見さんお断り」（謝絕生客）規矩。',
-            food: '<b>祇園きなな</b> 黃豆粉冰淇淋、<b>ぎをん小森</b> 抹茶蕨餅'
-          }
-        }
-      ]
-    },
-    {
-      date: '2026-11-18',
-      label: 'Day 5',
-      theme: '清水寺・二年坂三年坂・賞楓',
-      weatherCity: 'kyoto',
-      items: [
         {
           time: '07:30',
-          type: 'spot',
-          title: '清水寺（清晨早鳥）',
-          location: { name: '清水寺', query: 'Kiyomizu-dera' },
-          desc: '7:30 前抵達可避開人潮。「清水舞台」懸空 13 公尺，全靠 139 根櫸木柱支撐，未用一根釘子。秋季夜楓點燈必看。',
+          type: 'transport',
+          title: '取車：Hyundai Ioniq 5 Long Range',
+          desc: '已含 <strong>Full CDW 全保</strong>。SK 濟州分店常見營業 08:00–22:00，07:30 取車已確認可行。',
           guide: {
-            story: '「清水の舞台から飛び降りる」（從清水舞台跳下）是日文「下定決心」的俗諺。',
-            booking: '夜楓特別參拜需分時段預約 <b>KYOTO-NDP</b>'
+            booking: '租車 <b>SK Rent-a-Car</b> · Full CDW · <b>KRW 743,940</b>',
+            story: '電動車建議每天維持中高電量，不要拖到剩很少才找充電樁。'
           }
         },
         {
-          time: '10:00',
-          type: 'spot',
-          title: '二年坂・三年坂・八坂塔',
-          location: { name: '三年坂', query: 'Sannenzaka' },
-          desc: '京都最上鏡的石板坡道，兩旁是百年町家改建的小店。八坂塔（法觀寺）是經典取景位。',
-          guide: {
-            gift: '<b>よーじや</b> 吸油面紙、<b>京小物衣笠</b> 和風扭蛋、<b>抹茶 KitKat</b>',
-            food: '<b>% Arabica 東山店</b> 拿鐵、<b>阿古屋茶屋</b> 茶泡飯自助'
-          }
-        },
-        {
-          time: '12:30',
+          time: '09:00',
           type: 'food',
-          title: '菊乃井 露庵（米其林二星・午餐）',
-          location: { name: '菊乃井 露庵', query: '菊乃井 露庵' },
-          desc: '懷石料理入門首選，午餐「時雨便當」價格親民許多。',
+          title: 'London Bagel Museum Jeju 早餐',
+          location: { name: 'London Bagel Museum Jeju', query: '런던베이글뮤지엄 제주' },
+          desc: '濟州市舊左邑東福路 85 第2棟1樓，08:00–18:00。從機場開車約 30–40 分鐘。',
           guide: {
-            booking: '需提前一個月預約，代號 <b>ROAN-L12</b>',
-            menu: '<b>時雨便當</b>（季節八寸 + 焚合 + 御飯）'
+            booking: '可用 <b>Catch Table</b> App 候位',
+            food: '<b>招牌貝果</b>＋<b>奶油乳酪</b>'
           }
         },
         {
-          time: '15:30',
-          type: 'spot',
-          title: '永觀堂（禪林寺）賞楓',
-          location: { name: '永觀堂', query: 'Eikando Zenrinji' },
-          desc: '京都賞楓第一名所，3,000 株楓樹倒映在放生池。多寶塔展望台可遠眺京都市區。',
-          guide: {
-            story: '「永觀堂的回眸阿彌陀」——阿彌陀佛回頭的罕見姿態，源自永觀律師修行的傳說。'
-          }
-        }
-      ]
-    },
-    {
-      date: '2026-11-19',
-      label: 'Day 6',
-      theme: '嵐山竹林・金閣寺',
-      weatherCity: 'kyoto',
-      items: [
-        {
-          time: '08:00',
-          type: 'spot',
-          title: '嵐山竹林小徑',
-          location: { name: '嵐山竹林', query: 'Arashiyama Bamboo Grove' },
-          desc: '8 點前的竹林幾乎無人，風吹竹葉的沙沙聲被選為「日本聲音百選」。',
-          guide: {
-            story: '竹林小徑全長約 400 公尺，連接大河內山莊與野宮神社。野宮神社求緣分與安產靈驗。'
-          }
-        },
-        {
-          time: '10:00',
-          type: 'spot',
-          title: '天龍寺庭園',
-          location: { name: '天龍寺', query: 'Tenryuji Temple' },
-          desc: '世界遺產，曹源池庭園 700 年來保持原貌，借景嵐山的「枯山水+池泉回遊」傑作。'
+          time: '10:15',
+          type: 'stay',
+          title: '回濟州市區飯店寄放行李',
+          desc: '先到飯店寄放行李或提早 check-in，再輕裝逛市區。'
         },
         {
           time: '12:00',
           type: 'food',
-          title: '嵐山 よしむら（蕎麥麵）',
-          location: { name: '嵐山よしむら', query: '嵐山 よしむら そば' },
-          desc: '渡月橋畔二樓窗景座，邊吃手打蕎麥麵邊看桂川。',
-          guide: { menu: '<b>天ざる蕎麥</b>、季節限定 <b>柚子蕎麥</b>' }
+          title: '東門市場午餐',
+          location: { name: '東門市場', query: '동문재래시장' },
+          desc: '濟州最大的傳統市場，午餐選擇多。',
+          guide: {
+            food: '<b>豬肉湯麵</b>、<b>海鮮湯飯</b>、<b>黑豬肉串</b>'
+          }
         },
         {
-          time: '14:30',
+          time: '14:00',
           type: 'spot',
-          title: '金閣寺（鹿苑寺）',
-          location: { name: '金閣寺', query: 'Kinkakuji' },
-          desc: '貼滿金箔的三層舍利殿倒映在鏡湖池，是京都最具代表性的畫面。午後順光最金。',
+          title: '龍頭岩（或梨湖小馬燈塔）',
+          location: { name: '龍頭岩', query: '용두암' },
+          desc: '全天開放、免費。市區海岸最輕鬆的散步點；也可改去梨湖海邊小馬燈塔，二選一。',
           guide: {
-            story: '1950 年曾被見習僧人放火燒毀（三島由紀夫《金閣寺》以此為題），1955 年重建。',
-            gift: '出口處 <b>金閣寺限定御守</b>、<b>金箔冰淇淋</b>'
+            story: '龍頭岩是濟州島地標之一，火山岩被海浪長期沖刷形似龍頭，傳說有龍在此被射落化為岩石。'
           }
         },
         {
-          time: '18:30',
+          time: '18:00',
           type: 'food',
-          title: '先斗町 鳥彌三（地雞料理）',
-          location: { name: '鳥彌三 先斗町', query: '鳥彌三 先斗町' },
-          desc: '先斗町是鴨川旁的狹窄美食街，夏有川床（納涼床）。',
-          guide: {
-            menu: '<b>親子丼</b>（創業 200 年的元祖）、<b>地雞刺身拼盤</b>',
-            booking: '晚餐建議預約 <b>TO-8810</b>'
-          }
+          title: '東門市場晚餐與夜市',
+          location: { name: '東門市場', query: '동문재래시장' },
+          desc: '免轉場，晚餐與夜市一起解決，順便採買伴手禮。'
         }
       ]
     },
     {
-      date: '2026-11-20',
-      label: 'Day 7',
-      theme: '返程・臨空城 Outlet',
-      weatherCity: 'osaka',
+      date: '2026-09-27',
+      label: 'Day 2',
+      theme: '城山日出峰・牛島・涉地可支',
+      weatherCity: 'seongsan',
       items: [
         {
           time: '09:00',
           type: 'transport',
-          title: '京都 → 關西機場（Haruka 特急 75 分）',
-          desc: '京都站搭 Haruka 直達關西機場。自駕者走阪神高速灣岸線，機場還車點在 Aeroplaza。'
+          title: '濟州市區 → 城山',
+          desc: '開車約 1 小時，往濟州東端。'
         },
         {
-          time: '10:30',
+          time: '10:00',
           type: 'spot',
-          title: '臨空城 Premium Outlets',
-          location: { name: 'りんくうプレミアムアウトレット', query: 'Rinku Premium Outlets' },
-          desc: '機場前一站，250 家店鋪，最後衝刺採購。有行李寄存櫃。',
+          title: '城山日出峰',
+          location: { name: '城山日出峰', query: '성산일출봉' },
+          desc: '9–10 月常見 05:00–19:00 開放，最晚售票為閉館前 1 小時；成人 5,000 韓元。步道約 30 分鐘可登頂。',
           guide: {
-            gift: '<b>Royce 生巧克力</b>、<b>白色戀人</b>、<b>LeTAO 雙層起司蛋糕</b>（機場免稅店也有）'
+            story: '世界自然遺產，10 萬年前海底火山噴發形成的巨大穹丘，頂部是凹陷火山口，濟州東端的地標。'
           }
         },
         {
-          time: '15:35',
+          time: '12:00',
           type: 'transport',
-          title: '樂桃 MM029 → 台北',
-          desc: '國際線建議起飛前 2 小時報到。',
-          guide: { booking: '訂位代號 <b>XJ7K2P</b>' }
+          title: '前往城山港',
+          location: { name: '城山港', query: '성산항' }
+        },
+        {
+          time: '13:00',
+          type: 'spot',
+          title: '牛島環島',
+          location: { name: '牛島', query: '우도' },
+          desc: '搭渡輪上島，先在碼頭確認最晚回程船班。島上可租電動車／腳踏車簡單環島。',
+          guide: {
+            food: '<b>海鮮麵</b>、<b>花生冰淇淋</b>',
+            story: '牛島是濟州最大的附屬島嶼，以花生、海女與黑色玄武岩海岸聞名，又稱「小濟州」。'
+          }
+        },
+        {
+          time: '16:30',
+          type: 'spot',
+          title: '涉地可支',
+          location: { name: '涉地可支', query: '섭지코지' },
+          desc: '免費、戶外全天可散步。黃昏海岸步道特別適合拍照。',
+          guide: {
+            story: '濟州東岸的火山岩海角，因韓劇《All In》在此取景而聲名大噪。'
+          }
+        },
+        {
+          time: '18:00',
+          type: 'food',
+          title: '晚餐：黑豬肉燒烤或海鮮鍋',
+          desc: '城山一帶或回市區吃，二選一。',
+          guide: {
+            food: '<b>黑豬肉燒烤</b>、<b>海鮮鍋</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-09-28',
+      label: 'Day 3',
+      theme: '月汀里・鹹德海水浴場',
+      weatherCity: 'east',
+      items: [
+        {
+          time: '09:00',
+          type: 'spot',
+          title: '月汀里海邊與咖啡',
+          location: { name: '月汀里海水浴場', query: '월정리해수욕장' },
+          desc: '免費、全天開放。白色風車與漸層海水，濟州最具代表性的海岸咖啡街，放慢節奏喝杯咖啡。',
+          guide: {
+            food: '<b>海邊咖啡廳</b>'
+          }
+        },
+        {
+          time: '11:30',
+          type: 'food',
+          title: '午餐：海鮮麵或鮑魚粥',
+          desc: '東岸海女村一帶的海鮮料理。',
+          guide: {
+            food: '<b>海鮮麵</b>、<b>鮑魚粥</b>'
+          }
+        },
+        {
+          time: '14:00',
+          type: 'note',
+          title: '彈性時段：補拍或休息',
+          desc: '上午玩太趕的話，這段時間剛好補拍或回飯店小睡。'
+        },
+        {
+          time: '16:00',
+          type: 'spot',
+          title: '鹹德海水浴場',
+          location: { name: '鹹德海水浴場', query: '함덕해수욕장' },
+          desc: '免費、全天開放。濟州最受歡迎的海水浴場之一，白沙灘與珊瑚砂，黃昏最舒服。'
+        },
+        {
+          time: '18:30',
+          type: 'food',
+          title: '晚餐：白帶魚定食或海鮮鍋',
+          guide: {
+            food: '<b>白帶魚定食</b>、<b>海鮮鍋</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-09-29',
+      label: 'Day 4',
+      theme: '涯月海岸・Haejigae Cafe・翰林／挾才',
+      weatherCity: 'aewol',
+      items: [
+        {
+          time: '09:00',
+          type: 'spot',
+          title: '涯月海岸公路慢走',
+          location: { name: '涯月海岸公路', query: '애월해안도로' },
+          desc: '免費、全天開放。黑色玄武岩與湛藍海水的海岸公路，沿途慢慢走、慢慢拍。'
+        },
+        {
+          time: '10:30',
+          type: 'food',
+          title: 'Haejigae Cafe 咖啡休息',
+          location: { name: 'Haejigae Cafe', query: '해지개 카페' },
+          desc: '濟州市涯月邑涯月北西路 52，09:00–21:00，最後點餐約 20:20。常見低消一人一杯。',
+          guide: {
+            story: '海景第一排的韓屋風格咖啡廳，涯月海岸的熱門打卡點。',
+            menu: '<b>咖啡</b>＋<b>麵包</b>'
+          }
+        },
+        {
+          time: '12:30',
+          type: 'food',
+          title: '午餐：黑豬肉飯或湯麵',
+          guide: {
+            food: '<b>黑豬肉飯</b>、<b>湯麵</b>'
+          }
+        },
+        {
+          time: '14:00',
+          type: 'spot',
+          title: '翰林公園或挾才海水浴場（二選一）',
+          location: { name: '挾才海水浴場', query: '협재해수욕장' },
+          desc: '挾才海水浴場免費、全天開放，想省門票就選它；翰林公園需門票。'
+        },
+        {
+          time: '18:00',
+          type: 'food',
+          title: '晚餐：烤魚或家常定食',
+          guide: {
+            food: '<b>烤魚</b>、<b>家常定食</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-09-30',
+      label: 'Day 5',
+      theme: '南線・茶園與海岸步道',
+      weatherCity: 'south',
+      items: [
+        {
+          time: '09:00',
+          type: 'spot',
+          title: '雪綠茶博物館（或山茶花之丘）',
+          location: { name: '雪綠茶博物館', query: '오설록 티뮤지엄' },
+          desc: '二選一：雪綠茶博物館多數主館免費、輕鬆拍照；山茶花之丘約 8,000–10,000 韓元，非花季可考慮改茶博物館。',
+          guide: {
+            story: '雪綠茶博物館位於濟州綠茶園中央，除了茶園景觀，館內還有綠茶產品與咖啡廳。',
+            gift: '<b>綠茶伴手禮</b>'
+          }
+        },
+        {
+          time: '12:00',
+          type: 'food',
+          title: '午餐：鮑魚料理或黑豬肉套餐',
+          guide: {
+            food: '<b>鮑魚料理</b>、<b>黑豬肉套餐</b>'
+          }
+        },
+        {
+          time: '14:00',
+          type: 'spot',
+          title: '外岩海岸步道',
+          location: { name: '外岩海岸步道', query: '외암 해안산책로' },
+          desc: '免費、全天開放。安靜、人少的海岸步道，慢慢走很舒服。'
+        },
+        {
+          time: '18:00',
+          type: 'food',
+          title: '晚餐：海鮮鍋或黑豬肉',
+          guide: {
+            food: '<b>海鮮鍋</b>、<b>黑豬肉</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-10-01',
+      label: 'Day 6',
+      theme: '西歸浦瀑布・市場慢行',
+      weatherCity: 'seogwipo',
+      items: [
+        {
+          time: '09:00',
+          type: 'spot',
+          title: '天地淵瀑布（或正房瀑布）',
+          location: { name: '天地淵瀑布', query: '천지연폭포' },
+          desc: '擇一即可。天地淵瀑布有壯觀懸崖瀑布；正房瀑布是亞洲少數直接落入海的瀑布。門票另計。',
+          guide: {
+            story: '天地淵瀑布意為「天之淵」，高約 22 公尺，位於西歸浦市區附近的河谷。'
+          }
+        },
+        {
+          time: '12:00',
+          type: 'food',
+          title: '西歸浦每日偶來市場午餐',
+          location: { name: '西歸浦每日偶來市場', query: '서귀포 매일올레시장' },
+          desc: '在地市場小吃與新鮮食材。',
+          guide: {
+            food: '<b>市場小吃</b>、<b>黑豬肉湯飯</b>'
+          }
+        },
+        {
+          time: '14:00',
+          type: 'note',
+          title: '市區散步・咖啡廳・伴手禮',
+          desc: '西歸浦市區慢慢逛，累了找家咖啡廳坐。'
+        },
+        {
+          time: '18:30',
+          type: 'food',
+          title: '晚餐：海鮮湯或黑豬肉',
+          guide: {
+            food: '<b>海鮮湯</b>、<b>黑豬肉</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-10-02',
+      label: 'Day 7',
+      theme: '回市區・Waboda Bakery・20:00 還車',
+      weatherCity: 'jeju',
+      items: [
+        {
+          time: '09:00',
+          type: 'transport',
+          title: '西歸浦 → 濟州市區',
+          desc: '開車約 1 小時回濟州市區。'
+        },
+        {
+          time: '10:00',
+          type: 'food',
+          title: 'Waboda Bakery 早午餐',
+          location: { name: 'Waboda Bakery', query: '와보다 베이커리' },
+          desc: '出發前請以 Naver Map 最新頁面為準；若查無穩定營業資訊，可改 Abebe Bakery 或 Jejudang Bakery Café。',
+          guide: {
+            booking: '需出發前核對營業狀態'
+          }
+        },
+        {
+          time: '12:00',
+          type: 'food',
+          title: '東門市場或市區簡單午餐',
+          location: { name: '東門市場', query: '동문재래시장' }
+        },
+        {
+          time: '13:30',
+          type: 'note',
+          title: '最後採購與市區散步',
+          guide: {
+            gift: '<b>柑橘巧克力</b>、<b>石頭爺爺周邊</b>'
+          }
+        },
+        {
+          time: '16:00',
+          type: 'note',
+          title: '回飯店整行李・幫電動車補電',
+          desc: '還車前預留至少 1 次補電時間，避免最後趕還車才找充電位。'
+        },
+        {
+          time: '20:00',
+          type: 'transport',
+          title: '還車 SK Rent-a-Car → 入住機場周邊飯店',
+          location: { name: 'SK Rent-a-Car 濟州', query: 'SK렌터카 제주' },
+          desc: '20:00 還車後入住機場周邊飯店，10/3 清晨只需叫車或用飯店接駁到機場。',
+          guide: {
+            booking: '還車時間 <b>2026-10-02 20:00</b>'
+          }
+        }
+      ]
+    },
+    {
+      date: '2026-10-03',
+      label: 'Day 8',
+      theme: '回程日',
+      weatherCity: 'jeju',
+      items: [
+        {
+          time: '05:00',
+          type: 'transport',
+          title: '飯店 → 濟州機場',
+          desc: '05:30 前抵達機場，保留至少 2 小時辦理登機與離境。'
+        },
+        {
+          time: '07:30',
+          type: 'transport',
+          title: 'UO699 → 香港',
+          desc: '濟州 07:30 起飛，香港約 09:40 抵達。',
+          guide: { booking: '回程機票 <b>UO699</b>' }
         }
       ]
     }
