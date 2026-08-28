@@ -9,6 +9,7 @@
 | 功能 | 說明 |
 |---|---|
 | 每日行程 | 景點 / 餐廳 / 交通 / 住宿分類卡片，手機優先、底部導覽像原生 App |
+| 每日 Google 地圖 | 每天行程上方嵌入 Google Maps，顯示當日全部景點路線；「Google Maps 全日路線」按鈕可一鍵開路線（免 API 金鑰） |
 | 導航按鈕 | 卡片有 `location` 就自動產生 **Naver 導航**（自駕）＋ **Google 地圖**（出發前查看地址）兩個按鈕 |
 | 天氣 | 每天卡片上方顯示該城市天氣（Open-Meteo，**免 API 金鑰**） |
 | 導遊標籤 | 必吃美食（紅）、必點菜單（橙）、必買伴手禮（綠）、預約代號（藍）、景點故事 |
@@ -23,6 +24,7 @@
 - `flights` / `stays` / `contacts` → 旅行資訊分頁
 - `days[]` → 每日行程；每個項目的 `type` 決定卡片樣式（`spot` `food` `transport` `stay` `note`）
 - 行程項目加上 `location: { name: '...', query: '...' }` → 自動出現「Naver 導航」按鈕（可另加 `lat`/`lng` 直開路線規劃）
+- 行程項目加上 `lat`/`lng`（經緯度）→ 會標示喺該日嘅 Google 地圖上；有 `lat`/`lng` 嘅地點愈多，地圖路線愈完整（[latlong.net](https://www.latlong.net/) 可查座標）
 - 行程項目加上 `guide: { food, menu, gift, booking, story }` → 自動出現彩色攻略標籤
 - `weatherCities` → 每天的 `weatherCity` 對應的經緯度（[latlong.net](https://www.latlong.net/) 可查）
 - `budget` / `currencies` → 預算與匯率（預設以 HKD 顯示，`rate` = 1 外幣換多少港幣）

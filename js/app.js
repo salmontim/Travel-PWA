@@ -63,6 +63,45 @@
       </a>
     </div>`;
 
+  /* ================= 每日 Google 地圖（嵌入 iframe，免 API 金鑰） ================= */
+  /** 收集當日有經緯度嘅地點（有 lat/lng 先會標示喺地圖上） */
+  const dayPins = (day) => day.items
+    .filter((it) => it.location && it.location.lat && it.location.lng)
+    .map((it) => ({ name: it.location.name, lat: it.location.lat, lng: it.location.lng }));
+
+  /** Google Maps 全日路線網址（開 Google Maps app／網頁） */
+  const dayRouteUrl = (day) =>
+    'https://www.google.com/maps/dir/' + dayPins(day).map((p) => `${p.lat},${p.lng}`).join('/');
+
+  /** 每日地圖卡片：嵌入 Google Maps，顯示當日全部景點路線 */
+  const dayMapHtml = (day) => {
+    const pins = dayPins(day);
+    if (!pins.length) return '';
+    let src;
+    if (pins.length === 1) {
+      src = `https://maps.google.com/maps?q=${pins[0].lat},${pins[0].lng}&z=14&output=embed`;
+    } else {
+      const [first, ...rest] = pins;
+      src = 'https://maps.google.com/maps?saddr=' + first.lat + ',' + first.lng +
+            '&daddr=' + rest.map((p) => `${p.lat},${p.lng}`).join('+to:') +
+            '&output=embed';
+    }
+    return `
+      <div class="day-map">
+        <div class="day-map-head">
+          <span class="day-map-title">📌 本日路線地圖</span>
+          <a class="btn-map" href="${dayRouteUrl(day)}" target="_blank" rel="noopener">
+            Google Maps 全日路線
+          </a>
+        </div>
+        <div class="day-map-frame">
+          <iframe src="${src}" loading="lazy" allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="本日 Google 地圖"></iframe>
+        </div>
+      </div>`;
+  };
+
   const TYPE_META = {
     spot:      { badge: '景點', cls: 'card--spot' },
     food:      { badge: '餐廳', cls: 'card--food' },
@@ -155,6 +194,7 @@
 
     document.getElementById('day-content').innerHTML = `
       ${weatherBarHtml(day)}
+      ${dayMapHtml(day)}
       <div class="day-heading">
         <h2>${day.label} · ${esc(day.theme)}</h2>
         <div class="day-theme">${day.date}</div>

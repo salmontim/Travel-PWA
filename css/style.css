@@ -166,6 +166,55 @@ main {
 .weather-bar .w-loc { font-size: .72rem; color: var(--ink-faint); text-align: right; white-space: nowrap; }
 .weather-bar.loading .w-desc { color: var(--ink-faint); }
 
+/* ---------- 每日 Google 地圖 ---------- */
+.day-map {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin: 8px 0 16px;
+}
+.day-map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.day-map-title {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.btn-map {
+  font-size: .76rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--bamboo-deep);
+  border-radius: 999px;
+  padding: 5px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.btn-map:active { opacity: .75; }
+.day-map-frame {
+  position: relative;
+  height: 240px;
+  background: var(--paper-2);
+}
+.day-map-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* ---------- 每日標題 ---------- */
 .day-heading {
   margin: 4px 0 12px;
