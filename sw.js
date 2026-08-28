@@ -1,7 +1,7 @@
 /* Service Worker — Travel PWA 離線優先快取
    注意：每次修改 js/ 或 css/ 後，請遞增 VERSION，
    否則舊快取會讓使用者看到過期程式碼。 */
-const VERSION = 'travel-pwa-v14';
+const VERSION = 'travel-pwa-v15';
 const APP_SHELL = [
   './',
   './index.html',

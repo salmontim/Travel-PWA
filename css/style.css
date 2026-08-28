@@ -210,9 +210,6 @@ main {
 .btn-google {
   background: #4285f4;
 }
-.btn-naver {
-  background: #03c75a;
-}
 .day-map-frame {
   position: relative;
   height: 240px;
@@ -289,6 +286,13 @@ main {
   font-weight: 600;
   flex: 1;
   line-height: 1.4;
+}
+.card-ko {
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+  letter-spacing: .02em;
+  margin-left: 6px;
 }
 .card-time {
   font-size: .74rem;

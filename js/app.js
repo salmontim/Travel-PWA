@@ -63,7 +63,7 @@
       </a>
     </div>`;
 
-  /* ================= 每日路線地圖（嵌入 Google Maps 顯示真實地名；Naver Map 開新視窗） ================= */
+  /* ================= 每日路線地圖（嵌入 Google Maps 顯示真實地名） ================= */
   /** 收集當日有經緯度嘅地點（有 lat/lng 先會標示喺地圖上） */
   const dayPins = (day) => day.items
     .filter((it) => it.location && it.location.lat && it.location.lng)
@@ -78,24 +78,23 @@
   const gq = (p) => (p.query.includes('제주') ? p.query : `${p.query} 제주`);
 
   /** Google Maps 全日路線網址（開 Google Maps app／網頁，用真實地名） */
-  const googleRouteUrl = (day) =>
-    'https://www.google.com/maps/dir/' + dayPins(day).map((p) => `${p.lat},${p.lng}`).join('/');
-
-  /** Naver Map 全日路線網址（多站 directions，開新視窗） */
-  const naverRouteUrl = (day) => {
+  const googleRouteUrl = (day) => {
     const pins = dayPins(day);
     if (!pins.length) return '#';
     if (pins.length === 1) {
-      return `https://map.naver.com/v5/search/${encodeURIComponent(pins[0].query)}`;
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gq(pins[0]))}`;
     }
-    const seg = pins.map((p) => `${p.lng},${p.lat}`);
-    const start = seg[0];
-    const end = seg[seg.length - 1];
-    const via = seg.slice(1, -1).map((s) => `/-/${s}`).join('');
-    return `https://map.naver.com/v5/directions/${start}/${end}${via}`;
+    const [first, ...rest] = pins;
+    const dest = rest[rest.length - 1];
+    const via = rest.slice(0, -1);
+    return 'https://www.google.com/maps/dir/?api=1' +
+      '&origin=' + encodeURIComponent(gq(first)) +
+      '&destination=' + encodeURIComponent(gq(dest)) +
+      (via.length ? '&waypoints=' + via.map((p) => encodeURIComponent(gq(p))).join('|') : '') +
+      '&travelmode=driving';
   };
 
-  /** 每日路線地圖卡片：嵌入 Google Maps（真實地名），加 Naver／Google 路線按鈕 */
+  /** 每日路線地圖卡片：嵌入 Google Maps（真實地名）＋ Google 路線按鈕 */
   const dayMapHtml = (day) => {
     const pins = dayPins(day);
     if (!pins.length) return '';
@@ -113,7 +112,6 @@
           <span class="day-map-title">📌 本日路線地圖</span>
           <span class="day-map-actions">
             <a class="btn-map btn-google" href="${googleRouteUrl(day)}" target="_blank" rel="noopener">Google 路線</a>
-            <a class="btn-map btn-naver" href="${naverRouteUrl(day)}" target="_blank" rel="noopener">Naver Map 全日路線</a>
           </span>
         </div>
         <div class="day-map-frame">
@@ -158,11 +156,13 @@
   function itemCard(item) {
     const meta = TYPE_META[item.type] || TYPE_META.note;
     const nav = item.location ? navActions(item.location) : '';
+    const ko = item.location && item.location.query
+      ? `<span class="card-ko">${esc(item.location.query)}</span>` : '';
     return `
       <article class="card ${meta.cls}">
         <div class="card-head">
           <span class="card-type-badge">${meta.badge}</span>
-          <h3>${esc(item.title)}</h3>
+          <h3>${esc(item.title)}${ko}</h3>
           ${item.time ? `<span class="card-time">${esc(item.time)}</span>` : ''}
         </div>
         ${item.desc ? `<p class="card-desc">${item.desc}</p>` : ''}
