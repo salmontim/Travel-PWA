@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-gen_pdf.py — 將「濟州島7天自駕行程.md」轉成 PDF
+gen_pdf.py — 將「jeju_7day_itinerary.md」轉成 PDF
 
 用法（在專案根目錄）：
     .venv\\Scripts\\python.exe scripts\\gen_pdf.py
@@ -20,8 +20,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MD = ROOT / "濟州島7天自駕行程.md"
-PDF = ROOT / "濟州島7天自駕行程.pdf"
+MD = ROOT / "jeju_7day_itinerary.md"
+PDF = ROOT / "jeju_7day_itinerary.pdf"
 HTML_TMP = ROOT / "_itinerary_tmp.html"
 
 # 候選瀏覽器（優先 Edge，其次 Chrome）
