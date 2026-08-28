@@ -2,8 +2,9 @@
    旅程資料 — 改成你自己的行程即可（結構勿動）
    ------------------------------------------------------------
    欄位說明：
-   - location.name : 地點名（會自動產生 Google Maps 導航按鈕）
+   - location.name : 地點名（會自動產生「Naver 導航」＋「Google 地圖」兩個按鈕）
    - location.query: （可省略）導航搜尋用字，預設用 name
+   - location.lat / location.lng: （可省略）經緯度；有提供時 Naver 直接開啟路線規劃
    - guide         : 導遊導覽資訊，會以彩色標籤呈現
        food    → 必吃美食（紅）
        menu    → 必點菜單（橙）

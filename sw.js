@@ -1,7 +1,7 @@
 /* Service Worker — Travel PWA 離線優先快取
    注意：每次修改 js/ 或 css/ 後，請遞增 VERSION，
    否則舊快取會讓使用者看到過期程式碼。 */
-const VERSION = 'travel-pwa-v9';
+const VERSION = 'travel-pwa-v12';
 const APP_SHELL = [
   './',
   './index.html',
@@ -12,7 +12,9 @@ const APP_SHELL = [
   './js/firebase-config.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/icon-512.png',
+  './icons/icon-512-maskable.png',
+  './icons/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (e) => {

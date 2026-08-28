@@ -269,7 +269,16 @@ main {
   transition: transform .12s ease, background .18s ease;
 }
 .btn-nav:active { transform: scale(.96); }
-.btn-nav .pin { font-size: .9em; }
+.btn-nav .pin { display: inline-flex; }
+.btn-nav .pin svg { width: 15px; height: 15px; }
+
+/* Google 地圖檢視按鈕（次要按鈕：查看地址用） */
+.btn-nav.btn-google {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-nav.btn-google:active { background: var(--paper-2); }
 
 /* ---------- 導遊資訊標籤 ---------- */
 .guide-section {
@@ -513,17 +522,23 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   padding: 6px 0;
 }
 .nav-btn .nav-icon {
-  font-family: var(--serif);
-  font-size: 1.1rem;
   display: grid;
   place-items: center;
-  width: 42px; height: 26px;
+  width: 46px; height: 28px;
   border-radius: 999px;
-  transition: background .2s ease;
+  transition: background .2s ease, transform .15s ease;
 }
+.nav-btn .nav-icon svg {
+  width: 23px; height: 23px;
+  display: block;
+}
+.nav-btn:active .nav-icon { transform: scale(.88); }
 .nav-btn .nav-label { font-size: .64rem; letter-spacing: .12em; }
 .nav-btn.active { color: var(--ink); }
-.nav-btn.active .nav-icon { background: var(--paper-2); color: var(--bamboo-deep); }
+.nav-btn.active .nav-icon {
+  background: var(--paper-2);
+  color: var(--bamboo-deep);
+}
 
 /* ---------- 較大螢幕 ---------- */
 @media (min-width: 720px) {

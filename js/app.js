@@ -23,8 +23,45 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-  /** Google Maps 導航連結（自駕導航用） */
-  const navUrl = (q) => 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(q);
+  /**
+   * Naver Map 導航連結（濟州自駕導航用）
+   * - 有 lat/lng 時：直接開「出發地 → 目的地」路線
+   * - 沒有經緯度時：以韓文關鍵字搜尋，點選結果即可規劃路線
+   */
+  const navUrl = (loc) => {
+    const q = encodeURIComponent(loc.query || loc.name);
+    if (loc.lat && loc.lng) {
+      return `https://m.map.naver.com/mapLink?menu=route&mapType=0&pathType=0` +
+             `&destName=${q}&destLng=${loc.lng}&destLat=${loc.lat}`;
+    }
+    return 'https://map.naver.com/p/search/' + q;
+  };
+
+  /**
+   * Google Maps 地點捷徑（出發前查看景點地址用；
+   * 南韓境內 Google 不支援實際駕車導航，僅作地址查詢）
+   */
+  const googleUrl = (loc) =>
+    'https://www.google.com/maps/search/?api=1&query=' +
+    encodeURIComponent(loc.query || loc.name);
+
+  /** 地圖釘圖示（導航按鈕用） */
+  const PIN_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/>
+        <circle cx="12" cy="10" r="2.6"/>
+      </svg>`;
+
+  /** 地點按鈕組：Naver 導航（自駕）＋ Google 地圖（出發前查看地址） */
+  const navActions = (loc) => `
+    <div class="card-actions">
+      <a class="btn-nav" href="${navUrl(loc)}" target="_blank" rel="noopener">
+        <span class="pin">${PIN_SVG}</span>Naver 導航
+      </a>
+      <a class="btn-nav btn-google" href="${googleUrl(loc)}" target="_blank" rel="noopener">
+        <span class="pin">${PIN_SVG}</span>Google 地圖
+      </a>
+    </div>`;
 
   const TYPE_META = {
     spot:      { badge: '景點', cls: 'card--spot' },
@@ -59,14 +96,7 @@
 
   function itemCard(item) {
     const meta = TYPE_META[item.type] || TYPE_META.note;
-    const nav = item.location
-      ? `<div class="card-actions">
-           <a class="btn-nav" href="${navUrl(item.location.query || item.location.name)}"
-              target="_blank" rel="noopener">
-             <span class="pin">📍</span>導航
-           </a>
-         </div>`
-      : '';
+    const nav = item.location ? navActions(item.location) : '';
     return `
       <article class="card ${meta.cls}">
         <div class="card-head">
@@ -205,11 +235,7 @@
       const val = link ? `<a class="tel-link" href="${link}">${esc(v)}</a>` : esc(v);
       return `<dt>${esc(k)}</dt><dd class="${mono ? 'mono' : ''}">${val}</dd>`;
     }).join('');
-    const nav = entry.location
-      ? `<div class="card-actions">
-           <a class="btn-nav" href="${navUrl(entry.location.query || entry.location.name)}"
-              target="_blank" rel="noopener"><span class="pin">📍</span>導航</a>
-         </div>` : '';
+    const nav = entry.location ? navActions(entry.location) : '';
     return `
       <div class="info-card">
         <div class="ic-title">${esc(entry.title)}<span class="ic-sub">${esc(entry.sub || '')}</span></div>
