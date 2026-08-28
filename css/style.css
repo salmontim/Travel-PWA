@@ -202,6 +202,17 @@ main {
   transition: opacity .15s;
 }
 .btn-map:active { opacity: .75; }
+.day-map-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.btn-google {
+  background: #4285f4;
+}
+.btn-naver {
+  background: #03c75a;
+}
 .day-map-frame {
   position: relative;
   height: 240px;

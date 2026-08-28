@@ -82,18 +82,18 @@ const TRIP = {
       ]
     },
     {
-      title: '西歸浦市酒店（9/28–9/29・2 晚）',
+      title: '西歸浦市酒店（9/28–9/30・3 晚）',
       sub: '首選 Nine Boutique',
       location: { name: 'Nine Boutique Hotel Seogwipo', query: '나인부티크호텔 서귀포' },
       fields: [
         ['區域', '西歸浦市（近每日偶來市場）'],
         ['備選', 'Poong Gyung Hotel、Beomseom Punggyeong'],
         ['自駕', '均有停車；較方便市場及市內景點'],
-        ['備註', '9/30 退房後行李上車，傍晚北返機場']
+        ['備註', '10/1 退房後行李上車，傍晚北返機場']
       ]
     },
     {
-      title: '機場附近酒店（9/30–10/2・3 晚）',
+      title: '機場附近酒店（10/1–10/2・2 晚）',
       sub: '首選 Hotel JM',
       location: { name: 'Hotel JM Jeju', query: '호텔 제이엠 제주' },
       fields: [
@@ -420,17 +420,11 @@ const TRIP = {
     {
       date: '2026-09-30',
       label: 'Day 5',
-      theme: '轉場日：西歸浦市內 → 傍晚北返機場',
+      theme: '西歸浦市內：正房瀑布・市場・中文區',
       weatherCity: 'seogwipo',
       items: [
         {
-          time: '07:30',
-          type: 'transport',
-          title: '退房・行李上車（轉場日）',
-          desc: '方案二：維持機場酒店 3 晚。朝早西歸浦退房、行李上車，日間照玩市內。'
-        },
-        {
-          time: '08:15',
+          time: '09:00',
           type: 'spot',
           title: '正房瀑布',
           location: { name: '正房瀑布', query: '정방폭포', lat: 33.2449, lng: 126.5715 },
@@ -440,7 +434,7 @@ const TRIP = {
           }
         },
         {
-          time: '09:30',
+          time: '10:30',
           type: 'food',
           title: '西歸浦每日偶來市場',
           location: { name: '西歸浦每日偶來市場', query: '서귀포매일올레시장', lat: 33.2487, lng: 126.5641 },
@@ -474,50 +468,27 @@ const TRIP = {
           desc: '10:30–15:00、16:00–22:30；時間出發前電話 064-739-7200 確認。'
         },
         {
-          time: '17:15',
-          type: 'transport',
-          title: '北返機場酒店（約 70–80 分鐘）',
-          desc: '沿 1132 道北上，20:15 前抵達機場附近酒店。'
-        },
-        {
-          time: '19:00',
+          time: '18:00',
           type: 'stay',
-          title: '入住機場附近酒店',
-          desc: '三晚機場酒店的第一晚（9/30、10/1、10/2）。'
+          title: '返回西歸浦酒店・休息',
+          desc: '西歸浦酒店第三晚（9/30），全程最輕鬆的一天，晚餐後返回酒店休息。'
         }
       ]
     },
     {
       date: '2026-10-01',
       label: 'Day 6',
-      theme: '西南環線：茶園・花園・龍頭海岸',
+      theme: '西南環線：花園・茶園・龍頭海岸',
       weatherCity: 'south',
       items: [
         {
-          time: '08:20',
+          time: '08:15',
           type: 'transport',
-          title: '機場酒店 → Osulloc',
-          desc: '方案二：由機場反序行西南線。約 40 分鐘車程。'
+          title: '退房・行李上車 → Camellia Hill',
+          desc: '西歸浦退房、行李上車，往 Camellia Hill 約 30–35 分鐘。'
         },
         {
-          time: '09:00',
-          type: 'spot',
-          title: 'Osulloc 雪綠茶博物館',
-          location: { name: 'Osulloc 雪綠茶博物館', query: '오설록 티뮤지엄', lat: 33.3059, lng: 126.2894 },
-          desc: '09:00–18:00，全年無休；入場費以現場為準。茶園景觀與綠茶產品。',
-          guide: {
-            gift: '<b>綠茶伴手禮</b>'
-          }
-        },
-        {
-          time: '10:30',
-          type: 'food',
-          title: 'Jejudang 咖啡及簡餐',
-          location: { name: 'Jejudang Bakery Cafe', query: '제주당' },
-          desc: '10:00–21:00，無固定休息日；大型停車場；招牌蔬菜造型麵包套裝約 19,800 韓元。'
-        },
-        {
-          time: '11:55',
+          time: '09:05',
           type: 'spot',
           title: 'Camellia Hill',
           location: { name: 'Camellia Hill', query: '카멜리아힐', lat: 33.2896, lng: 126.3699 },
@@ -527,7 +498,24 @@ const TRIP = {
           }
         },
         {
-          time: '14:05',
+          time: '11:05',
+          type: 'spot',
+          title: 'Osulloc 雪綠茶博物館',
+          location: { name: 'Osulloc 雪綠茶博物館', query: '오설록 티뮤지엄', lat: 33.3059, lng: 126.2894 },
+          desc: '09:00–18:00，全年無休；入場費以現場為準。茶園景觀與綠茶產品。',
+          guide: {
+            gift: '<b>綠茶伴手禮</b>'
+          }
+        },
+        {
+          time: '12:35',
+          type: 'food',
+          title: 'Jejudang 咖啡及簡餐',
+          location: { name: 'Jejudang Bakery Cafe', query: '제주당' },
+          desc: '10:00–21:00，無固定休息日；大型停車場；招牌蔬菜造型麵包套裝約 19,800 韓元。'
+        },
+        {
+          time: '14:00',
           type: 'spot',
           title: '龍頭海岸（或山房窟寺）',
           location: { name: '龍頭海岸', query: '용머리해안', lat: 33.2333, lng: 126.3131 },
@@ -537,7 +525,7 @@ const TRIP = {
           }
         },
         {
-          time: '16:05',
+          time: '15:45',
           type: 'food',
           title: 'Chunsimine 早晚餐',
           location: { name: 'Chunsimine 本店', query: '춘심이네', lat: 33.2645, lng: 126.3705 },
@@ -547,10 +535,16 @@ const TRIP = {
           }
         },
         {
-          time: '17:35',
+          time: '17:15',
           type: 'transport',
-          title: '返回機場酒店',
-          desc: '約 60–70 分鐘。晚上自由休息。'
+          title: '北返機場酒店（約 70–80 分鐘）',
+          desc: 'Chunsimine 後北上，入住機場附近酒店（Hotel JM／Sweet／Major）。'
+        },
+        {
+          time: '18:35',
+          type: 'stay',
+          title: '入住機場附近酒店',
+          desc: '機場酒店第一晚（10/1、10/2 共 2 晚）。'
         }
       ]
     },
@@ -564,7 +558,7 @@ const TRIP = {
           time: '09:00',
           type: 'note',
           title: '酒店早餐・整理行李',
-          desc: '方案二慳返南下車程，還車日朝頭好鬆動。行李可先寄存酒店。'
+          desc: '還車日由機場出發，無需南下，朝頭好鬆動。行李可先寄存酒店。'
         },
         {
           time: '09:30',

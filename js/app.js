@@ -63,41 +63,63 @@
       </a>
     </div>`;
 
-  /* ================= 每日 Google 地圖（嵌入 iframe，免 API 金鑰） ================= */
+  /* ================= 每日路線地圖（嵌入 Google Maps 顯示真實地名；Naver Map 開新視窗） ================= */
   /** 收集當日有經緯度嘅地點（有 lat/lng 先會標示喺地圖上） */
   const dayPins = (day) => day.items
     .filter((it) => it.location && it.location.lat && it.location.lng)
-    .map((it) => ({ name: it.location.name, lat: it.location.lat, lng: it.location.lng }));
+    .map((it) => ({
+      name: it.location.name,
+      query: it.location.query || it.location.name,
+      lat: it.location.lat,
+      lng: it.location.lng
+    }));
 
-  /** Google Maps 全日路線網址（開 Google Maps app／網頁） */
-  const dayRouteUrl = (day) =>
+  /** Google 搜尋用地名（加「제주」後綴減少歧義） */
+  const gq = (p) => (p.query.includes('제주') ? p.query : `${p.query} 제주`);
+
+  /** Google Maps 全日路線網址（開 Google Maps app／網頁，用真實地名） */
+  const googleRouteUrl = (day) =>
     'https://www.google.com/maps/dir/' + dayPins(day).map((p) => `${p.lat},${p.lng}`).join('/');
 
-  /** 每日地圖卡片：嵌入 Google Maps，顯示當日全部景點路線 */
+  /** Naver Map 全日路線網址（多站 directions，開新視窗） */
+  const naverRouteUrl = (day) => {
+    const pins = dayPins(day);
+    if (!pins.length) return '#';
+    if (pins.length === 1) {
+      return `https://map.naver.com/v5/search/${encodeURIComponent(pins[0].query)}`;
+    }
+    const seg = pins.map((p) => `${p.lng},${p.lat}`);
+    const start = seg[0];
+    const end = seg[seg.length - 1];
+    const via = seg.slice(1, -1).map((s) => `/-/${s}`).join('');
+    return `https://map.naver.com/v5/directions/${start}/${end}${via}`;
+  };
+
+  /** 每日路線地圖卡片：嵌入 Google Maps（真實地名），加 Naver／Google 路線按鈕 */
   const dayMapHtml = (day) => {
     const pins = dayPins(day);
     if (!pins.length) return '';
     let src;
     if (pins.length === 1) {
-      src = `https://maps.google.com/maps?q=${pins[0].lat},${pins[0].lng}&z=14&output=embed`;
+      src = `https://maps.google.com/maps?q=${encodeURIComponent(gq(pins[0]))}&z=14&output=embed`;
     } else {
-      const [first, ...rest] = pins;
-      src = 'https://maps.google.com/maps?saddr=' + first.lat + ',' + first.lng +
-            '&daddr=' + rest.map((p) => `${p.lat},${p.lng}`).join('+to:') +
+      src = 'https://maps.google.com/maps?saddr=' + encodeURIComponent(gq(pins[0])) +
+            '&daddr=' + pins.slice(1).map((p) => encodeURIComponent(gq(p))).join('+to:') +
             '&output=embed';
     }
     return `
       <div class="day-map">
         <div class="day-map-head">
           <span class="day-map-title">📌 本日路線地圖</span>
-          <a class="btn-map" href="${dayRouteUrl(day)}" target="_blank" rel="noopener">
-            Google Maps 全日路線
-          </a>
+          <span class="day-map-actions">
+            <a class="btn-map btn-google" href="${googleRouteUrl(day)}" target="_blank" rel="noopener">Google 路線</a>
+            <a class="btn-map btn-naver" href="${naverRouteUrl(day)}" target="_blank" rel="noopener">Naver Map 全日路線</a>
+          </span>
         </div>
         <div class="day-map-frame">
           <iframe src="${src}" loading="lazy" allowfullscreen
                   referrerpolicy="no-referrer-when-downgrade"
-                  title="本日 Google 地圖"></iframe>
+                  title="本日路線地圖"></iframe>
         </div>
       </div>`;
   };

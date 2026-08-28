@@ -2,3 +2,10 @@
 Thumbs.db
 .DS_Store
 .vscode/
+
+# PDF 生成臨時檔（scripts/gen_pdf.py）
+_itinerary_tmp.html
+_itinerary_tmp.pdf
+.itinerary_tmp.html
+.itinerary_tmp.pdf
+_edge_profile/
