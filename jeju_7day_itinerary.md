@@ -29,7 +29,7 @@ last_verified: 2026-08-27
 - **9/27 西部日**：涯月、Haejigae、翰林公園、協才海灘，約 68 km，淨車程約 2 小時。
 - **9/28 東部轉場日**：咸德、London Bagel、月汀里、萬丈窟、城山午餐，再入住西歸浦。
 - **9/29 城山與牛島日**：租車停城山港，改乘牛島循環巴士或租單車；一般租車不得上島。
-- **9/30 西歸浦慢遊日**：正房瀑布、每日偶來市場、外돌개、中文區，車程最少。
+- **9/30 西歸浦慢遊日**：正房瀑布、每日偶來市場、外돌개、中文區、天地淵夜景，車程最少。
 - **10/1 西南日**：Camellia Hill、Osulloc、山房山與龍頭海岸；龍頭海岸以潮汐及風浪公告為準。
 - **10/2 還車日**：由機場出發，Waboda、最後採買、梨湖日落、充電及 20:00 前還車，入住機場附近。
 
@@ -93,9 +93,9 @@ last_verified: 2026-08-27
 
 ### Day 1：9/26 星期六｜抵達與濟州市輕鬆日
 
-**路線：濟州機場／SK Rent-a-car > 酒店寄存行李 > 龍頭岩 > 梨湖木筏海邊馬燈塔 > 酒店休息 > 東門市場**
+**路線：濟州機場／SK Rent-a-car > 梨湖木筏海邊馬燈塔 > 龍頭岩 > 黑豬肉午餐 > 酒店入住休息 > 東門市場**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&destination=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5&waypoints=%EC%9A%A9%EB%91%90%EC%95%94|%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80&travelmode=driving)｜Naver Map 各站搜尋：[제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD) · [용두암](https://map.naver.com/p/search/%EC%9A%A9%EB%91%90%EC%95%94) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&destination=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5&waypoints=%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80|%EC%9A%A9%EB%91%90%EC%95%94&travelmode=driving)｜Naver Map 各站搜尋：[제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [용두암](https://map.naver.com/p/search/%EC%9A%A9%EB%91%90%EC%95%94) · [동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5)
 
 **規劃里程：約 25 km｜淨車程：約 50 分鐘｜SK 取車點至市中心：約 4.4 km，實際預留 20 分鐘**
 
@@ -103,9 +103,9 @@ last_verified: 2026-08-27
 |---|---|---|---|
 | 06:30-07:30 | 抵達、入境、提取行李 | 60 分鐘 | 機場 |
 | 07:30-08:30 | 接駁至 SK、取車、拍攝車況 | 60 分鐘 | 以訂單指示為準 |
-| 08:30-09:15 | 機場簡單早餐、開往酒店寄存行李 | 約 20 分鐘車程 | 避免疲勞空腹駕駛 |
-| 09:30-10:10 | 龍頭岩 용두암 | 停留 40 分鐘 | 免費；有停車場，費率現場確認 |
-| 10:25-11:10 | 梨湖木筏海邊馬燈塔 이호테우해변 | 停留 45 分鐘 | 免費；停車資料未核實 |
+| 08:30-09:10 | 機場簡單早餐（行李留車內、不外露） | 40 分鐘 | 避免疲勞空腹駕駛 |
+| 09:15-10:00 | 梨湖木筏海邊馬燈塔 이호테우해변 | 停留 45 分鐘 | 免費；停車資料未核實 |
+| 10:15-10:55 | 龍頭岩 용두암 | 停留 40 分鐘 | 免費；有停車場，費率現場確認 |
 | 11:30-13:00 | 黑豬肉午餐 | 90 分鐘 | Donsadon 12:30 開門，免費大型停車場 |
 | 13:30-16:30 | 入住或寄存後休息 | 3 小時 | 把通宵航班疲勞留在酒店 |
 | 17:00-18:00 | Abebe Bakery、塔洞海旁 | 60 分鐘 | Abebe 無專用停車場 |
@@ -119,9 +119,9 @@ last_verified: 2026-08-27
 
 ### Day 2：9/27 星期日｜西部涯月、翰林與協才
 
-**路線：濟州市 > 涯月漢潭海岸步道 > Haejigae Cafe > Jeju Gwanghae 午餐 > 翰林公園 > 協才海灘 > 濟州市**
+**路線：濟州市 > 涯月漢潭海岸步道 > Jeju Gwanghae 午餐 > Haejigae Cafe > 翰林公園 > 協才海灘 > 濟州市**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C&destination=%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&waypoints=%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98|%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90|%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90&travelmode=driving)｜Naver Map 各站搜尋：[애월 한담해안산책로](https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C) · [해지개 카페](https://map.naver.com/p/search/%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98) · [제주광해 애월점](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90) · [한림공원](https://map.naver.com/p/search/%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90) · [협재해수욕장](https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C&destination=%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&waypoints=%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90|%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98|%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90&travelmode=driving)｜Naver Map 各站搜尋：[애월 한담해안산책로](https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C) · [제주광해 애월점](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90) · [해지개 카페](https://map.naver.com/p/search/%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98) · [한림공원](https://map.naver.com/p/search/%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90) · [협재해수욕장](https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5)
 
 **規劃里程：約 67.5 km｜自由流車程約 79 分鐘｜連同找位及市區交通預留約 2 小時**
 
@@ -129,8 +129,8 @@ last_verified: 2026-08-27
 |---|---|---|---|
 | 08:30-09:10 | 濟州市至涯月漢潭 | 約 35 至 40 分鐘 | 咖啡街停車位或付費場 |
 | 09:10-10:20 | 漢潭海岸步道 애월 한담해안산책로 | 70 分鐘 | 免費；風大時縮短 |
-| 10:25-11:35 | Haejigae Cafe 해지개 | 70 分鐘 | 飲品約 6,000 至 8,500 韓元；停車未核實 |
-| 11:45-13:00 | Jeju Gwanghae 午餐 | 75 分鐘 | 1 樓及地下停車；CatchTable 取號 |
+| 10:25-11:40 | Jeju Gwanghae 午餐 | 75 分鐘 | 1 樓及地下停車；CatchTable 取號 |
+| 11:50-13:00 | Haejigae Cafe 해지개 | 70 分鐘 | 飲品約 6,000 至 8,500 韓元；停車未核實 |
 | 13:00-13:35 | 開往翰林公園 | 約 30 至 35 分鐘 | 免費停車 |
 | 13:35-16:05 | 翰林公園 한림공원 | 2 小時 30 分 | 成人 15,000 韓元；免費停車 |
 | 16:10-17:15 | 協才海灘 협재해수욕장 | 65 分鐘 | 免費；免費停車場 |
@@ -147,9 +147,9 @@ last_verified: 2026-08-27
 
 ### Day 3：9/28 星期一｜東北海岸與轉場西歸浦
 
-**路線：濟州市退房 > 咸德海灘 > London Bagel Museum > 月汀里 > 萬丈窟 > 城山午餐 > 西歸浦入住 > 天地淵夜景**
+**路線：濟州市退房 > 咸德海灘 > London Bagel Museum > 月汀里 > 萬丈窟 > 城山午餐 > 西歸浦入住（晚餐留在酒店附近）**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&destination=%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC&waypoints=%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90|%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80|%EB%A7%8C%EC%9E%A5%EA%B5%B4|%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&travelmode=driving)｜Naver Map 各站搜尋：[함덕해수욕장](https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5) · [런던베이글뮤지엄 제주점](https://map.naver.com/p/search/%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90) · [월정리해변](https://map.naver.com/p/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80) · [만장굴](https://map.naver.com/p/search/%EB%A7%8C%EC%9E%A5%EA%B5%B4) · [성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89) · [천지연폭포](https://map.naver.com/p/search/%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&destination=%EC%84%9C%EA%B7%80%ED%8F%AC&waypoints=%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90|%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80|%EB%A7%8C%EC%9E%A5%EA%B5%B4|%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&travelmode=driving)｜Naver Map 各站搜尋：[함덕해수욕장](https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5) · [런던베이글뮤지엄 제주점](https://map.naver.com/p/search/%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90) · [월정리해변](https://map.naver.com/p/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80) · [만장굴](https://map.naver.com/p/search/%EB%A7%8C%EC%9E%A5%EA%B5%B4) · [성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89) · [서귀포](https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC)
 
 **規劃里程：約 105 至 115 km｜淨車程約 2.5 至 3 小時｜全程向東再轉南，不折返濟州市**
 
@@ -167,13 +167,12 @@ last_verified: 2026-08-27
 | 13:40-14:50 | 城山午餐 | 70 分鐘 | Dolhareubang Ttukbaegi 只供午市 |
 | 14:50-16:05 | 前往西歸浦 | 約 70 至 75 分鐘 | 入住西歸浦酒店 |
 | 16:05-18:30 | 入住、休息 | 2 小時以上 | 不再安排長車程 |
-| 19:00-20:30 | 晚餐及天地淵瀑布夜景 | 90 分鐘 | 成人 2,000 韓元；免費停車 |
+| 19:00-20:30 | 西歸浦市內晚餐 | 90 分鐘 | 酒店附近餐廳 |
 
 **重要核實**
 
 - **萬丈窟**已於 2026 年 5 月 30 日重開，不是 9 月 28 日才重開。開放 09:00-18:00，最後入場 17:00；每月第一個星期三休館，9/28 不受影響；洞內濕滑，建議穿抓地鞋及薄外套。[濟州世界自然遺產官方頁](https://www.jeju.go.kr/jejuwnh/heritage/lavatube/manjanggul.htm)
 - **London Bagel Museum Jeju 런던베이글뮤지엄 제주점**：位於舊左邑東福路 85，不在涯月；08:00-18:00，適合排在東部轉場日。[店家資料](https://kr.trip.com/restaurant/south-korea/jeju-city/detail/london-bagel-museum-140714409/)
-- **天地淵瀑布 천지연폭포**：09:00-22:00，最後入場 21:20；全年無休；成人 2,000 韓元；免費停車。[VisitJeju](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500618)
 
 ### Day 4：9/29 星期二｜城山日出峰、牛島與涉地可支
 
@@ -209,9 +208,9 @@ last_verified: 2026-08-27
 
 ### Day 5：9/30 星期三｜西歸浦市內瀑布與中文區
 
-**路線：西歸浦 > 正房瀑布 > 每日偶來市場 > 外돌개 > 中文區／天帝淵 > 西歸浦**
+**路線：西歸浦 > 正房瀑布 > 每日偶來市場 > 外돌개 > 中文區／天帝淵 > 西歸浦 > 天地淵夜景**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC&destination=%EC%B2%9C%EC%A0%9C%EC%97%B0%ED%8F%AD%ED%8F%AC&waypoints=%EC%84%9C%EA%B7%80%ED%8F%AC%EB%A7%A4%EC%9D%BC%EC%98%AC%EB%A0%88%EC%8B%9C%EC%9E%A5|%EC%99%B8%EB%8F%8C%EA%B0%9C&travelmode=driving)｜Naver Map 各站搜尋：[정방폭포](https://map.naver.com/p/search/%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC) · [서귀포매일올레시장](https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%EB%A7%A4%EC%9D%BC%EC%98%AC%EB%A0%88%EC%8B%9C%EC%9E%A5) · [외돌개](https://map.naver.com/p/search/%EC%99%B8%EB%8F%8C%EA%B0%9C) · [천제연폭포](https://map.naver.com/p/search/%EC%B2%9C%EC%A0%9C%EC%97%B0%ED%8F%AD%ED%8F%AC)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC&destination=%EC%B2%9C%EC%A0%9C%EC%97%B0%ED%8F%AD%ED%8F%AC&waypoints=%EC%84%9C%EA%B7%80%ED%8F%AC%EB%A7%A4%EC%9D%BC%EC%98%AC%EB%A0%88%EC%8B%9C%EC%9E%A5|%EC%99%B8%EB%8F%8C%EA%B0%9C&travelmode=driving)｜Naver Map 各站搜尋：[정방폭포](https://map.naver.com/p/search/%EC%A0%95%EB%B0%A9%ED%8F%AD%ED%8F%AC) · [서귀포매일올레시장](https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%EB%A7%A4%EC%9D%BC%EC%98%AC%EB%A0%88%EC%8B%9C%EC%9E%A5) · [외돌개](https://map.naver.com/p/search/%EC%99%B8%EB%8F%8C%EA%B0%9C) · [천제연폭포](https://map.naver.com/p/search/%EC%B2%9C%EC%A0%9C%EC%97%B0%ED%8F%AD%ED%8F%AC) · [천지연폭포](https://map.naver.com/p/search/%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC)
 
 **規劃里程：約 36.1 km｜淨車程約 1.5 小時｜全程最輕鬆的一天**
 
@@ -226,10 +225,12 @@ last_verified: 2026-08-27
 | 15:10-16:30 | 天帝淵瀑布或中文海岸散步 | 80 分鐘 | 時間與票價未核實 |
 | 16:30-17:00 | 返回酒店 | 約 20 至 30 分鐘 | 休息 |
 | 18:00-19:30 | 海鮮湯晚餐 | 90 分鐘 | 建議電話訂位 |
+| 19:30-20:30 | 天地淵瀑布夜景 천지연폭포 | 60 分鐘 | 成人 2,000 韓元；免費停車；夜間點燈 |
 
 **景點與餐飲**
 
 - **正房瀑布 정방폭포**：09:00-17:50，最後入場 17:30；全年無休；成人 2,000 韓元。海邊石階濕滑，雨天改天地淵。[VisitJeju](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500531)
+- **天地淵瀑布 천지연폭포**：09:00-22:00，最後入場 21:20；全年無休；成人 2,000 韓元；免費停車；夜間點燈，適合晚飯後散步。[VisitJeju](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500618)
 - **外돌개 외돌개**：全天、免費；免費停車；下午較適合海岸攝影。[VisitJeju](https://www.visitjeju.net/en/detail/view?contentsid=CNTS_000000000018409)
 - **天帝淵瀑布 천제연폭포**：本次無法從官方可讀頁核實時間、票價及停車。出發前致電濟州旅遊諮詢 064-740-6000；若無法確認，改在中文海岸、柱狀節理附近外圍散步。
 - **삼성혈 해물탕 서귀포점**：10:30-15:00、16:00-22:30；地址 서귀포시 서호남로32번길 31-1；時間出發前電話 064-739-7200 再確認。[店家資料](https://triple.guide/restaurants/4f1de600-cbc0-4771-a99e-31596b0d44e4)
@@ -267,7 +268,7 @@ last_verified: 2026-08-27
 
 **路線：機場酒店出發 > Waboda Bakery > 東門市場／塔洞 > 梨湖馬燈塔 > 早晚餐 > 充電整理 > SK Rent-a-car 還車 > 機場酒店**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5&destination=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&waypoints=%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80&travelmode=driving)｜Naver Map 各站搜尋：[동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%99%80%EB%B3%B4%EB%8B%A4&destination=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&waypoints=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5|%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80&travelmode=driving)｜Naver Map 各站搜尋：[와보다](https://map.naver.com/p/search/%EC%99%80%EB%B3%B4%EB%8B%A4) · [동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD)
 
 **規劃里程：約 15 至 20 km｜淨車程約 40 分鐘｜19:15 到還車點，保留 45 分鐘**
 
