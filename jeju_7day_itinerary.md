@@ -21,14 +21,14 @@ last_verified: 2026-08-27
 
 **日期：2026 年 9 月 26 日至 10 月 3 日｜2 位成人｜7 晚｜Hyundai Ioniq 5 Long Range**
 
-這份行程以 SK Rent-a-car 濟州機場店取車為起點，採「濟州市 2 晚、西歸浦 3 晚、機場附近 2 晚」住宿配置（方案一已定案，方案二保留作備案，詳見〈住宿調整方案〉）。行程重點是自然景觀、攝影、美食咖啡與輕鬆節奏；車程採地圖自由流時間再加 20% 至 30% 緩衝，所有距離均為規劃估算。
+這份行程以 SK Rent-a-car 濟州機場店取車為起點，採「濟州市 2 晚、城山 1 晚、西歸浦 2 晚、機場附近 2 晚」住宿配置（詳見〈住宿調整方案〉）。行程重點是自然景觀、攝影、美食咖啡與輕鬆節奏；車程採地圖自由流時間再加 20% 至 30% 緩衝，所有距離均為規劃估算。
 
 ## 先看結論
 
-- **9/26 抵達日**：只走濟州市區、龍頭岩、梨湖馬燈塔與東門市場，不在通宵航班後長途駕駛。
-- **9/27 西部日**：涯月、Haejigae、翰林公園、協才海灘，約 68 km，淨車程約 2 小時。
-- **9/28 東部轉場日**：咸德、London Bagel、月汀里、萬丈窟、城山午餐，再入住西歸浦。
-- **9/29 城山與牛島日**：租車停城山港，改乘牛島循環巴士或租單車；一般租車不得上島。
+- **9/26 抵達日**：只走梨湖馬燈塔、黑豬肉午餐、龍頭岩與東門市場，不在通宵航班後長途駕駛。
+- **9/27 西部日**：Jeju Gwanghae 早午餐（最近機場、先到先向西）、涯月漢潭、Haejigae、翰林公園、協才海灘日落，約 68 km，由東向西單向、零折返。
+- **9/28 東部轉場日**：咸德、London Bagel、月汀里、萬丈窟、城山午餐，**入住城山**（唔再南下西歸浦）。
+- **9/29 城山與牛島日**：由城山酒店出發（日出峰、牛島、涉地可支全在附近），傍晚轉場入住西歸浦；租車停城山港，改乘牛島循環巴士或租單車。
 - **9/30 西歸浦慢遊日**：正房瀑布、每日偶來市場、外돌개、中文區、天地淵夜景，車程最少。
 - **10/1 西南日**：Camellia Hill、Osulloc、山房山與龍頭海岸；龍頭海岸以潮汐及風浪公告為準。
 - **10/2 還車日**：由機場出發，Waboda、最後採買、梨湖日落、充電及 20:00 前還車，入住機場附近。
@@ -54,50 +54,40 @@ last_verified: 2026-08-27
 | 晚數 | 日期 | 區域 | 首選 | 備選 | 自駕理由 |
 |---|---|---|---|---|---|
 | 2 晚 | 9/26、9/27 | 濟州市 | Hotel Leo | Diamond Hotel Jeju、Jeju Oriental Hotel | 三間均有停車；新濟州或塔洞位置方便首兩日 |
-| 3 晚 | 9/28、9/29、9/30 | 西歸浦市 | Nine Boutique | Poong Gyung Hotel、Beomseom Punggyeong | 均有停車；前兩間較方便市場及市內景點 |
+| 1 晚 | 9/28 | 城山（성산읍） | Co-op City Hotel Seongsan | 더베스트 제주 성산 호텔、Sunrise Hotel Seongsan | 近城山日出峰、城山港及涉地可支；Day 4 唔使朝早北上 |
+| 2 晚 | 9/29、9/30 | 西歸浦市 | Nine Boutique | Poong Gyung Hotel、Beomseom Punggyeong | 均有停車；前兩間較方便市場及市內景點 |
 | 2 晚 | 10/1、10/2 | 機場附近 | Hotel JM | Sweet Hotel、Major Hotel | 均有停車；官方資料稱距機場約 5 至 10 分鐘 |
 
-> ✅ 已採用〈住宿調整方案〉方案一：西歸浦改為 **9/28–9/30 共 3 晚**、機場酒店改為 **10/1–10/2 共 2 晚**，9/30 保留最輕鬆的西歸浦市內日（36 km／1.5 小時、零折返）。原方案二（機場 3 晚）保留作備案，詳見下一節。訂房時請以實際可取消／改期為準。
+> ✅ 已定案：**9/28 晚改住城山 1 晚、西歸浦 9/29–9/30 共 2 晚、機場 10/1–10/2 共 2 晚**（詳見〈住宿調整方案〉）。城山及西歸浦酒店均須確認停車、可免費取消及可為 Ioniq 5 充電。訂房時請以實際可取消／改期為準。
 
 住宿位置與停車資料來源：[Hotel Leo](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500784)、[Diamond Hotel Jeju](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500824)、[Jeju Oriental Hotel](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000501059)、[Nine Boutique](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000501029)、[Poong Gyung Hotel](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000501106)、[Beomseom Punggyeong](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500898)、[Hotel JM](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000501139)、[Sweet Hotel](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500947)、[Major Hotel](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500868)。
 
-## 住宿調整方案
+## 住宿調整方案（已按路線更新）
 
-原訂單 9/30 晚為機場酒店，與「西歸浦 4 晚」原設計衝突。**已採用方案一**（改訂單、9/30 改返西歸浦），方案二保留作備案。
+> ✅ 已定案：**城山 1 晚（9/28）＋ 西歸浦 2 晚（9/29–9/30）＋ 機場 2 晚（10/1–10/2）**。
 
-### 方案一（✅ 已採用）：改訂單，9/30 改返西歸浦
+**點解要改？** 原案 Day 3 傍晚由城山南下西歸浦（70–75 分鐘），Day 4 朝早又要由西歸浦北上城山（70–75 分鐘）——兩日嚟回淨係車程就多約 2.5 小時。改住城山後：
 
-- 西歸浦改為 **9/28–9/30 共 3 晚**；機場酒店改為 **10/1–10/2 共 2 晚**。
-- 前提：機場酒店訂單可**免費取消或改期**。
-- 效果：
-  - 9/30 保留原「西歸浦市內日」設計（正房瀑布＋偶來市場＋外돌개＋中文區），零折返、慢遊。
-  - 10/1 西南環線照原設計由西歸浦出發（去 Camellia Hill 約 30–35 分鐘），傍晚 Chunsimine 後約 70–80 分鐘北返機場酒店。
-  - 10/2 還車日由機場出發、無需南下，慳返約 70–75 分鐘，Waboda、採買、充電、19:15 還車全部鬆動。
-- 對每日行程改動：**最少**，住宿表改回 3+2 分配即可，Day 5–7 路線維持現有寫法。
+- **Day 3 傍晚**：城山午餐後 10–15 分鐘即到酒店，唔使再趕 70–75 分鐘南行；休息時間更長。
+- **Day 4 朝早**：城山日出峰、城山港、涉地可支全在酒店附近，慳返朝早 70–75 分鐘北上車程；傍晚才南下西歸浦順路入住。
+- **Day 5**：完整保留「西歸浦市內日」（正房瀑布＋偶來市場＋外돌개＋天地淵夜景），零折返、慢遊。
+- **Day 6**：照原設計由西歸浦出發行西南環線，傍晚北返機場。
 
-### 方案二（備案）：維持機場 3 晚唔改
-
-- 維持 **9/30、10/1、10/2 三晚機場酒店**。
-- 9/30 改成**轉場日**：朝早西歸浦退房、行李上車，日間照玩市內瀑布＋市場＋中文區，傍晚約 19:00 北返機場酒店（約 70–80 分鐘，20:15 前到）。
-- 10/1 由機場**反序行西南線**：Osulloc → Camellia Hill → 山房山／龍頭海岸 → Chunsimine → 機場，比原設計更順（由機場去 Camellia Hill 估算約 55–65 分鐘，比由西歸浦多約 30 分鐘）。
-- 效果：
-  - 10/2 還車日朝頭慳返 70–75 分鐘，還車日鬆動。
-  - 代價：9/30 慢遊日多約 2.5 小時車程，需把當日改為轉場邏輯。
-- 對每日行程改動：Day 5、Day 6 需按轉場／反序邏輯重寫路線與時間。
-
-### 不建議
-
-- 9/30 朝由機場落西歸浦玩一日、夜晚再返機場——單日 2.5 小時折返，係全程最攰嘅排法。
+**城山住宿候選（9/28 一晚）**
+- **Co-op City Hotel Seongsan 코업시티호텔 성산**：近城山日出峰及城山港，客房面向日出峰／海景，適合 Day 4 一早去日出峰及搭牛島船。
+- **더베스트 제주 성산 호텔 The Best Jeju Seongsan Hotel**：近城山日出峰，官方資料含早餐。
+- **Sunrise Hotel Seongsan 썬라이즈호텔 성산**：城山邑內，價位較親民。
+- 訂房前確認：停車、免費取消／改期、可為 Ioniq 5 充電；如滿房，改住城山邑內海邊民宿亦可，Day 4 行程可彈性互換（先牛島後日出峰）。
 
 ## 每日詳細行程
 
 ### Day 1：9/26 星期六｜抵達與濟州市輕鬆日
 
-**路線：濟州機場／SK Rent-a-car > 梨湖木筏海邊馬燈塔 > 龍頭岩 > 黑豬肉午餐 > 酒店入住休息 > 東門市場**
+**路線：濟州機場／SK Rent-a-car > 梨湖木筏海邊馬燈塔 > 黑豬肉午餐 > 龍頭岩 > 酒店入住休息 > 東門市場**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&destination=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5&waypoints=%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80|%EC%9A%A9%EB%91%90%EC%95%94&travelmode=driving)｜Naver Map 各站搜尋：[제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [용두암](https://map.naver.com/p/search/%EC%9A%A9%EB%91%90%EC%95%94) · [동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&destination=%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5&waypoints=%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80|%EB%8F%88%EC%82%AC%EB%8F%88%20%EB%B3%B8%EC%A0%90|%EC%9A%A9%EB%91%90%EC%95%94&travelmode=driving)｜Naver Map 各站搜尋：[제주국제공항](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD) · [이호테우해변](https://map.naver.com/p/search/%EC%9D%B4%ED%98%B8%ED%85%8C%EC%9A%B0%ED%95%B4%EB%B3%80) · [돈사돈 본점](https://map.naver.com/p/search/%EB%8F%88%EC%82%AC%EB%8F%88%20%EB%B3%B8%EC%A0%90) · [용두암](https://map.naver.com/p/search/%EC%9A%A9%EB%91%90%EC%95%94) · [동문재래시장](https://map.naver.com/p/search/%EB%8F%99%EB%AC%B8%EC%9E%AC%EB%9E%98%EC%8B%9C%EC%9E%A5)
 
-**規劃里程：約 25 km｜淨車程：約 50 分鐘｜SK 取車點至市中心：約 4.4 km，實際預留 20 分鐘**
+**規劃里程：約 25 至 30 km｜淨車程：約 55 分鐘｜SK 取車點至市中心：約 4.4 km，實際預留 20 分鐘**
 
 | 時間 | 行程 | 車程／停留 | 門票與停車 |
 |---|---|---|---|
@@ -105,9 +95,11 @@ last_verified: 2026-08-27
 | 07:30-08:30 | 接駁至 SK、取車、拍攝車況 | 60 分鐘 | 以訂單指示為準 |
 | 08:30-09:10 | 機場簡單早餐（行李留車內、不外露） | 40 分鐘 | 避免疲勞空腹駕駛 |
 | 09:15-10:00 | 梨湖木筏海邊馬燈塔 이호테우해변 | 停留 45 分鐘 | 免費；停車資料未核實 |
-| 10:15-10:55 | 龍頭岩 용두암 | 停留 40 分鐘 | 免費；有停車場，費率現場確認 |
-| 11:30-13:00 | 黑豬肉午餐 | 90 分鐘 | Donsadon 12:30 開門，免費大型停車場 |
-| 13:30-16:30 | 入住或寄存後休息 | 3 小時 | 把通宵航班疲勞留在酒店 |
+| 10:15-11:15 | 新濟州咖啡小憩 | 60 分鐘 | 順路往午餐；等 Donsadon 12:30 開門 |
+| 11:15-12:15 | 前往 Donsadon、現場登記候位 | 60 分鐘 | Donsadon 12:30 開門，免費大型停車場 |
+| 12:30-14:00 | 黑豬肉午餐 | 90 分鐘 | Donsadon 免費大型停車場 |
+| 14:15-15:00 | 龍頭岩 용두암（東面、午餐後才去） | 停留 45 分鐘 | 免費；有停車場，費率現場確認 |
+| 15:15-16:45 | 酒店入住或寄存後休息 | 90 分鐘 | 把通宵航班疲勞留在酒店 |
 | 17:00-18:00 | Abebe Bakery、塔洞海旁 | 60 分鐘 | Abebe 無專用停車場 |
 | 18:15-20:30 | 東門市場晚餐及夜市 | 2 小時 15 分 | 免費入場；公營停車場收費 |
 
@@ -119,39 +111,40 @@ last_verified: 2026-08-27
 
 ### Day 2：9/27 星期日｜西部涯月、翰林與協才
 
-**路線：濟州市 > 涯月漢潭海岸步道 > Jeju Gwanghae 午餐 > Haejigae Cafe > 翰林公園 > 協才海灘 > 濟州市**
+**路線：濟州市 > Jeju Gwanghae 早午餐（最近機場、先到先向西）> 涯月漢潭海岸步道 > Haejigae Cafe > 翰林公園 > 協才海灘 > 濟州市**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C&destination=%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&waypoints=%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90|%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98|%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90&travelmode=driving)｜Naver Map 各站搜尋：[애월 한담해안산책로](https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C) · [제주광해 애월점](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90) · [해지개 카페](https://map.naver.com/p/search/%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98) · [한림공원](https://map.naver.com/p/search/%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90) · [협재해수욕장](https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90&destination=%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&waypoints=%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C|%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98|%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90&travelmode=driving)｜Naver Map 各站搜尋：[제주광해 애월점](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B4%91%ED%95%B4%20%EC%95%A0%EC%9B%94%EC%A0%90) · [애월 한담해안산책로](https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C) · [해지개 카페](https://map.naver.com/p/search/%ED%95%B4%EC%A7%80%EA%B0%9C%20%EC%B9%B4%ED%8E%98) · [한림공원](https://map.naver.com/p/search/%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90) · [협재해수욕장](https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5)
 
-**規劃里程：約 67.5 km｜自由流車程約 79 分鐘｜連同找位及市區交通預留約 2 小時**
+**規劃里程：約 68 km｜自由流車程約 80 分鐘｜連同找位及市區交通預留約 2 小時｜由東向西單向，零折返**
 
 | 時間 | 行程 | 車程／停留 | 門票與停車 |
 |---|---|---|---|
-| 08:30-09:10 | 濟州市至涯月漢潭 | 約 35 至 40 分鐘 | 咖啡街停車位或付費場 |
-| 09:10-10:20 | 漢潭海岸步道 애월 한담해안산책로 | 70 分鐘 | 免費；風大時縮短 |
-| 10:25-11:40 | Jeju Gwanghae 午餐 | 75 分鐘 | 1 樓及地下停車；CatchTable 取號 |
-| 11:50-13:00 | Haejigae Cafe 해지개 | 70 分鐘 | 飲品約 6,000 至 8,500 韓元；停車未核實 |
-| 13:00-13:35 | 開往翰林公園 | 約 30 至 35 分鐘 | 免費停車 |
-| 13:35-16:05 | 翰林公園 한림공원 | 2 小時 30 分 | 成人 15,000 韓元；免費停車 |
-| 16:10-17:15 | 協才海灘 협재해수욕장 | 65 分鐘 | 免費；免費停車場 |
-| 17:15-18:10 | 返回濟州市 | 約 50 至 55 分鐘 | 進城預留緩衝 |
-| 18:30-20:00 | 海鮮湯或自由晚餐 | 90 分鐘 | 建議先電話訂位 |
+| 09:00-09:25 | 濟州市至 Jeju Gwanghae（最近機場） | 約 15 至 20 分鐘 | 有停車場 |
+| 09:25-10:00 | 高內海邊散步或附近咖啡（等開門） | 35 分鐘 | Gwanghae 10:00 開門 |
+| 10:00-11:30 | Jeju Gwanghae 早午餐 | 90 分鐘 | 1 樓及地下停車；CatchTable 取號 |
+| 11:40-12:50 | 涯月漢潭海岸步道 애월 한담해안산책로 | 70 分鐘 | 免費；風大時縮短 |
+| 13:00-14:00 | Haejigae Cafe 해지개 | 60 分鐘 | 飲品約 6,000 至 8,500 韓元；停車未核實 |
+| 14:00-14:35 | 開往翰林公園 | 約 30 至 35 分鐘 | 免費停車 |
+| 14:35-17:05 | 翰林公園 한림공원 | 2 小時 30 分 | 成人 15,000 韓元；免費停車 |
+| 17:15-18:25 | 協才海灘 협재해수욕장（日落約 18:20） | 70 分鐘 | 免費；免費停車場 |
+| 18:35-19:30 | 返回濟州市 | 約 50 至 55 分鐘 | 進城預留緩衝 |
+| 19:45-21:00 | 海鮮湯或自由晚餐 | 90 分鐘 | 建議先電話訂位 |
 
 **餐飲建議**
 
-- **Haejigae Cafe 해지개 카페**：09:00-21:00；海景咖啡及烘焙；現場入座，營業時間與停車在出發前以 Naver Place 再查。[Trip.com 店家指南](https://kr.trip.com/moments/theme/poi-haejigae-cafe-137474015-comprehensive-guides-993136/)
-- **제주광해 애월점 Jeju Gwanghae Aewol**：10:00-20:00，最後點餐 19:00；全年無休；帶魚燉煮小份約 41,000 韓元；有停車場，適合 2 人。[Korea Trip Tips](https://www.ktriptips.com/kor/food/2758900)
+- **제주광해 애월점 Jeju Gwanghae Aewol**：10:00-20:00，最後點餐 19:00；全年無休；帶魚燉煮小份約 41,000 韓元；有停車場，適合 2 人。位置最近機場／市內（애월읍 애월해안로 867 附近），所以排喺全日第一站做早午餐，先到先向西，唔使折返。[Korea Trip Tips](https://www.ktriptips.com/kor/food/2758900)
+- **Haejigae Cafe 해지개 카페**：09:00-21:00；海景咖啡及烘焙；現場入座，營業時間與停車在出發前以 Naver Place 再查。位於漢潭海岸步道旁，跟步道一齊排。[Trip.com 店家指南](https://kr.trip.com/moments/theme/poi-haejigae-cafe-137474015-comprehensive-guides-993136/)
 - **삼성혈 해물탕 1호점**：11:00-21:00，15:00-17:00休息，每星期二休；海鮮湯小份約 60,000 韓元；可停車及預約。[Tabling](https://tabling.co.kr/place/677ccd3c66de5f069880a51f)
 
 > 2026 年濟州指定海水浴期於 9 月 6 日結束，協才在本行程只作散步與日落攝影，不安排下水。[VisitJeju](https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500697)
 
 ### Day 3：9/28 星期一｜東北海岸與轉場西歸浦
 
-**路線：濟州市退房 > 咸德海灘 > London Bagel Museum > 月汀里 > 萬丈窟 > 城山午餐 > 西歸浦入住（晚餐留在酒店附近）**
+**路線：濟州市退房 > 咸德海灘 > London Bagel Museum > 月汀里 > 萬丈窟 > 城山午餐 > 城山入住（唔再南下西歸浦）**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&destination=%EC%84%9C%EA%B7%80%ED%8F%AC&waypoints=%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90|%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80|%EB%A7%8C%EC%9E%A5%EA%B5%B4|%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&travelmode=driving)｜Naver Map 各站搜尋：[함덕해수욕장](https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5) · [런던베이글뮤지엄 제주점](https://map.naver.com/p/search/%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90) · [월정리해변](https://map.naver.com/p/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80) · [만장굴](https://map.naver.com/p/search/%EB%A7%8C%EC%9E%A5%EA%B5%B4) · [성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89) · [서귀포](https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5&destination=%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&waypoints=%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90|%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80|%EB%A7%8C%EC%9E%A5%EA%B5%B4&travelmode=driving)｜Naver Map 各站搜尋：[함덕해수욕장](https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5) · [런던베이글뮤지엄 제주점](https://map.naver.com/p/search/%EB%9F%B0%EB%8D%98%EB%B2%A0%EC%9D%B4%EA%B8%80%EB%AE%A4%EC%A7%80%EC%97%84%20%EC%A0%9C%EC%A3%BC%EC%A0%90) · [월정리해변](https://map.naver.com/p/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%80) · [만장굴](https://map.naver.com/p/search/%EB%A7%8C%EC%9E%A5%EA%B5%B4) · [성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89)
 
-**規劃里程：約 105 至 115 km｜淨車程約 2.5 至 3 小時｜全程向東再轉南，不折返濟州市**
+**規劃里程：約 65 至 75 km｜淨車程約 1.5 至 2 小時｜全程向東，終點城山，唔折返濟州市**
 
 | 時間 | 行程 | 車程／停留 | 門票與停車 |
 |---|---|---|---|
@@ -163,11 +156,11 @@ last_verified: 2026-08-27
 | 10:35-11:25 | 月汀里海灘 월정리해변 | 50 分鐘 | 免費 |
 | 11:25-11:40 | 前往萬丈窟 | 約 15 分鐘 | 免費停車 |
 | 11:40-13:00 | 萬丈窟 만장굴 | 80 分鐘 | 成人 4,000 韓元；135 個免費車位 |
-| 13:00-13:40 | 前往城山午餐 | 約 35 至 40 分鐘 | 路線順往西歸浦 |
+| 13:00-13:40 | 前往城山午餐 | 約 35 至 40 分鐘 | 路線順往城山 |
 | 13:40-14:50 | 城山午餐 | 70 分鐘 | Dolhareubang Ttukbaegi 只供午市 |
-| 14:50-16:05 | 前往西歸浦 | 約 70 至 75 分鐘 | 入住西歸浦酒店 |
-| 16:05-18:30 | 入住、休息 | 2 小時以上 | 不再安排長車程 |
-| 19:00-20:30 | 西歸浦市內晚餐 | 90 分鐘 | 酒店附近餐廳 |
+| 14:50-15:10 | 前往城山酒店 | 約 10 至 15 分鐘 | 入住城山（성산읍）酒店 |
+| 15:10-17:30 | 入住、休息 | 2 小時以上 | 不再安排長車程 |
+| 18:00-19:30 | 城山晚餐、早睡 | 90 分鐘 | 酒店附近餐廳；明日 08:00 城山日出峰 |
 
 **重要核實**
 
@@ -176,23 +169,23 @@ last_verified: 2026-08-27
 
 ### Day 4：9/29 星期二｜城山日出峰、牛島與涉地可支
 
-**路線：西歸浦 > 城山日出峰 > 城山港停車 > 渡輪往牛島 > 牛島循環巴士／單車 > 城山港 > 涉地可支 > 西歸浦**
+**路線：城山 > 城山日出峰 > 城山港停車 > 渡輪往牛島 > 牛島循環巴士／單車 > 城山港 > 涉地可支 > 西歸浦入住**
 
-**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&destination=%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80&waypoints=%EC%84%B1%EC%82%B0%ED%95%AD|%EC%9A%B0%EB%8F%84&travelmode=driving)｜Naver Map 各站搜尋：[성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89) · [성산항](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%ED%95%AD) · [우도](https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84) · [섭지코지](https://map.naver.com/p/search/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80)
+**地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89&destination=%EC%84%9C%EA%B7%80%ED%8F%AC&waypoints=%EC%84%B1%EC%82%B0%ED%95%AD|%EC%9A%B0%EB%8F%84|%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80&travelmode=driving)｜Naver Map 各站搜尋：[성산일출봉](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89) · [성산항](https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%ED%95%AD) · [우도](https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84) · [섭지코지](https://map.naver.com/p/search/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80) · [서귀포](https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC)
 
-**規劃里程：約 113.5 km｜淨車程約 2.5 至 3 小時，另加渡輪｜本行程車程最長的一天**
+**規劃里程：約 90 km｜淨車程約 1.5 至 2 小時，另加渡輪｜由城山出發，傍晚轉場西歸浦｜比原案慳約 70 分鐘車程**
 
 | 時間 | 行程 | 車程／停留 | 門票與停車 |
 |---|---|---|---|
-| 06:45-08:00 | 西歸浦至城山日出峰 | 約 70 至 75 分鐘 | 免費停車 |
-| 08:00-09:30 | 城山日出峰 성산일출봉 | 90 分鐘 | 成人 5,000 韓元 |
-| 09:30-09:45 | 前往城山港 | 約 10 至 15 分鐘 | 港口停車 |
-| 09:45-10:30 | 停車、購票、填資料 | 45 分鐘 | 車留城山港 |
-| 10:30-15:30 | 牛島 우도 | 約 5 小時，含船程 | 船費出發前確認；海洋公園成人 1,000 韓元 |
-| 15:30-16:00 | 回城山港取車 | 約 30 分鐘 | 勿搭末班船 |
-| 16:00-16:20 | 前往涉地可支 | 約 15 至 20 分鐘 | 當日停車上限 3,000 韓元 |
-| 16:20-17:30 | 涉地可支 섭지코지 | 70 分鐘 | 免費入場 |
-| 17:30-18:45 | 返回西歸浦 | 約 70 至 75 分鐘 | 晚餐留在市內 |
+| 08:00-09:30 | 城山日出峰 성산일출봉（酒店步行或 5 分鐘車程） | 90 分鐘 | 成人 5,000 韓元；免費停車；9/29 星期二開放 |
+| 09:30-10:15 | 城山港停車、購票、填資料 | 45 分鐘 | 車留城山港 |
+| 10:15-10:45 | 渡輪往牛島 | 30 分鐘 | 船費出發前確認 |
+| 10:45-15:15 | 牛島 우도 | 約 4 小時 30 分，含船程 | 海洋公園成人 1,000 韓元 |
+| 15:15-15:45 | 回城山港取車 | 約 30 分鐘 | 勿搭末班船 |
+| 15:45-16:05 | 前往涉地可支 | 約 15 至 20 分鐘 | 當日停車上限 3,000 韓元 |
+| 16:05-17:15 | 涉地可支 섭지코지 | 70 分鐘 | 免費入場 |
+| 17:15-18:30 | 前往西歸浦入住 | 約 70 至 75 分鐘 | 入住西歸浦酒店 |
+| 18:30-20:00 | 西歸浦市內晚餐 | 90 分鐘 | 晚餐留在市內 |
 
 **牛島操作重點**
 
@@ -241,7 +234,7 @@ last_verified: 2026-08-27
 
 **地圖路線：** Google Maps 多站路線（地點定位用，南韓境內 Google Maps 暫未開放實際駕車導航）：[開啟路線](https://www.google.com/maps/dir/?api=1&origin=%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84%ED%9E%90&destination=%EC%B6%98%EC%8B%AC%EC%9D%B4%EB%84%A4&waypoints=%EC%98%A4%EC%84%A4%EB%A1%9D%20%ED%8B%B0%EB%AE%A4%EC%A7%80%EC%97%84|%EC%A0%9C%EC%A3%BC%EB%8B%B9|%EC%82%B0%EB%B0%A9%EC%82%B0|%EC%9A%A9%EB%A8%B8%EB%A6%AC%ED%95%B4%EC%95%88&travelmode=driving)｜Naver Map 各站搜尋：[카멜리아힐](https://map.naver.com/p/search/%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84%ED%9E%90) · [오설록 티뮤지엄](https://map.naver.com/p/search/%EC%98%A4%EC%84%A4%EB%A1%9D%20%ED%8B%B0%EB%AE%A4%EC%A7%80%EC%97%84) · [제주당](https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EB%8B%B9) · [산방산](https://map.naver.com/p/search/%EC%82%B0%EB%B0%A9%EC%82%B0) · [용머리해안](https://map.naver.com/p/search/%EC%9A%A9%EB%A8%B8%EB%A6%AC%ED%95%B4%EC%95%88) · [춘심이네](https://map.naver.com/p/search/%EC%B6%98%EC%8B%AC%EC%9D%B4%EB%84%A4)
 
-**規劃里程：約 60 km（另加 Chunsimine 北返機場約 70–80 分鐘）｜淨車程約 2 小時＋北返｜龍頭海岸按當日潮汐決定**
+**規劃里程：約 100 至 110 km｜淨車程約 2.5 小時（另加 Chunsimine 北返機場約 70–80 分鐘）｜本行程車程最長的一天｜龍頭海岸按當日潮汐決定**
 
 | 時間 | 行程 | 車程／停留 | 門票與停車 |
 |---|---|---|---|
@@ -337,9 +330,11 @@ last_verified: 2026-08-27
 | SK／機場至涯月漢潭 | 18.9 km | 25 分鐘 | 35 至 40 分鐘 |
 | SK／機場至協才海灘 | 29.8 km | 36 分鐘 | 50 分鐘 |
 | SK／機場至西歸浦市 | 42.0 km | 54 分鐘 | 70 至 75 分鐘 |
-| Day 2 西部環線 | 67.5 km | 79 分鐘 | 約 2 小時 |
-| Day 3 東部轉場 | 約 105 至 115 km | 約 2 小時 10 分 | 2.5 至 3 小時 |
-| Day 4 牛島日陸路 | 113.5 km | 133 分鐘 | 2.5 至 3 小時 |
+| 濟州市至 Jeju Gwanghae（Day 2 第一站） | 約 10 至 12 km | 約 15 分鐘 | 15 至 20 分鐘 |
+| Day 2 西部環線 | 約 68 km | 約 80 分鐘 | 約 2 小時 |
+| Day 3 東部轉場（終點城山） | 約 65 至 75 km | 約 1 小時 35 分 | 1.5 至 2 小時 |
+| Day 4 牛島日陸路（由城山出發） | 約 90 km | 約 1 小時 50 分 | 2 至 2.5 小時 |
+| 城山至西歸浦（Day 4 傍晚轉場） | 約 65 km | 約 60 分鐘 | 70 至 75 分鐘 |
 | Day 5 西歸浦市內 | 36.1 km | 47 分鐘 | 1.5 小時 |
 | Day 6 西南環線＋北返 | 約 100 至 110 km | 約 2.5 小時 | 3 小時 |
 | Chunsimine 北返機場 | 約 45 km | 約 55 分鐘 | 70 至 80 分鐘 |
@@ -363,10 +358,11 @@ last_verified: 2026-08-27
 
 ## 天氣與備案
 
-- **牛島停航**：取消登島，保留城山日出峰、涉地可支、東部咖啡與較長午餐；不要在港口無限等待。
+- **牛島停航**：取消登島，保留城山日出峰、涉地可支與較長午餐；可提早前往西歸浦入住。不要在港口無限等待。
 - **龍頭海岸關閉**：改山房窟寺、山房山外圍、社溪海岸或提早到 Chunsimine。
 - **大雨或強風**：取消海岸步道與外돌개，優先萬丈窟、Osulloc、咖啡店、市場及酒店休息。
-- **萬丈窟臨時關閉**：改金寧海岸、月汀里咖啡及提早前往城山／西歸浦。
+- **萬丈窟臨時關閉**：改金寧海岸、月汀里咖啡及提早前往城山。
+- **城山酒店滿房**：改住城山邑內其他酒店或海邊民宿；Day 4 行程可彈性互換（先牛島後日出峰）。
 - **疲勞管理**：Day 1 下午固定休息；Day 4 不安排晚間景點；任何一天如延誤 60 分鐘以上，先刪咖啡或次要海灘，不壓縮還車時間。
 
 ## 出發前 3 至 5 天檢查清單
@@ -375,6 +371,7 @@ last_verified: 2026-08-27
 - 以 SK 訂單確認接駁車位置、門店時間、Ioniq 5 還車電量及充電卡。
 - 以 Naver Map 儲存全部韓文地點，下載離線截圖。
 - 致電城山港 064-782-5671 確認牛島船費、船班及外國旅客文件。
+- 確認城山酒店（9/28）及西歸浦酒店（9/29–9/30）停車、可取消及可為 Ioniq 5 充電。
 - 10/1 晚核實 Waboda 10/2 是否營業；不確定即改 Abebe。
 - 10/1 晚及 10/2 當日查看龍頭海岸 `@6sot_official`。
 - 致電 064-740-6000 核實天帝淵；致電 064-794-4010 核實 Chunsimine。
@@ -384,4 +381,4 @@ last_verified: 2026-08-27
 
 ## 資料可靠性說明
 
-本行程於 2026 年 8 月 27 日核實。景點時間、門票、休館日及停車優先採用 VisitJeju、濟州道世界自然遺產及濟州市官方頁；餐廳以官方觀光資料、店家頁或韓國訂位平台為主。酒店價格、牛島 2026 船費、Waboda 營業時間、天帝淵資料及 SK 分店細節未能可靠核實，已明確標示為「出發前確認」，沒有使用推測值填補。
+本行程於 2026 年 8 月 27 日核實。景點時間、門票、休館日及停車優先採用 VisitJeju、濟州道世界自然遺產及濟州市官方頁；餐廳以官方觀光資料、店家頁或韓國訂位平台為主。酒店價格（含城山新候選）、牛島 2026 船費、Waboda 營業時間、天帝淵資料及 SK 分店細節未能可靠核實，已明確標示為「出發前確認」，沒有使用推測值填補。
