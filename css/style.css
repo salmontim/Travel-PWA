@@ -409,6 +409,7 @@ mark.hl-booking { background: var(--tag-booking-bg); color: var(--tag-booking); 
 .info-grid dt { color: var(--ink-faint); white-space: nowrap; }
 .info-grid dd { color: var(--ink); font-variant-numeric: tabular-nums; word-break: break-all; }
 .info-grid dd.mono { font-family: ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: .03em; }
+.info-grid .ic-sub { font-size: .72rem; color: var(--ink-faint); font-weight: 400; }
 .info-card .card-actions { margin-top: 12px; }
 
 a.tel-link {

@@ -318,6 +318,65 @@
       </div>`;
   }
 
+  /* ================= 後備方案頁 ================= */
+  /** 產生一節：標題 + 單張 info-card（兩欄 dt/dd 列表） */
+  function backupSection(icon, title, rows) {
+    return `
+      <h2 class="section-title"><span class="section-icon">${icon}</span>${esc(title)}</h2>
+      <div class="info-card"><dl class="info-grid">${rows}</dl></div>`;
+  }
+
+  function renderBackup() {
+    if (typeof BACKUP === 'undefined') return;
+    const el = $('#backup-content');
+    if (!el) return;
+    let html = '';
+
+    // 海岸評比
+    html += backupSection('🏖', '海岸評比（連結 3）',
+      BACKUP.beaches.map((b) =>
+        `<dt>${esc(b.rank)} ${esc(b.name)} <span class="ic-sub">${esc(b.ko)}</span></dt>` +
+        `<dd>${esc(b.note)}</dd>`).join(''));
+
+    // 備用景點（按方位）
+    html += `<h2 class="section-title"><span class="section-icon">📍</span>備用景點</h2>`;
+    BACKUP.spots.forEach((region) => {
+      html += `<div class="info-card">
+        <div class="ic-title">${esc(region.region)}</div>
+        <dl class="info-grid">${region.items.map((s) =>
+          `<dt>${esc(s.name)}</dt><dd>${esc(s.note)}</dd>`).join('')}</dl>
+      </div>`;
+    });
+
+    // 備用餐廳／咖啡／甜點
+    html += backupSection('🍜', '備用餐廳／咖啡／甜點',
+      BACKUP.food.map((f) => {
+        const tag = [f.type, f.area !== '—' ? f.area : ''].filter(Boolean).join(' · ');
+        return `<dt>${esc(f.name)}</dt>` +
+          `<dd>${tag ? `<span class="ic-sub">${esc(tag)}</span> ` : ''}${esc(f.note)}</dd>`;
+      }).join(''));
+
+    // 備用互動活動
+    html += backupSection('🎯', '備用互動活動（陸上）',
+      BACKUP.activities.map((a) =>
+        `<dt>${esc(a.name)}</dt><dd>${esc(a.area)} · ${esc(a.note)}</dd>`).join(''));
+
+    // 備用住宿
+    html += backupSection('🏨', '備用住宿',
+      BACKUP.stays.map((s) =>
+        `<dt>${esc(s.name)}</dt><dd>${esc(s.area)}${s.note ? ' · ' + esc(s.note) : ''}</dd>`).join(''));
+
+    // 天氣／突發備案
+    html += `<h2 class="section-title"><span class="section-icon">🌧</span>天氣與突發備案</h2>`;
+    html += BACKUP.weatherPlans.map((w) => `
+      <div class="info-card">
+        <div class="ic-title">${esc(w.scenario)}</div>
+        <p class="card-desc">${esc(w.plan)}</p>
+      </div>`).join('');
+
+    el.innerHTML = html;
+  }
+
   /* ================= 記帳 ================= */
   const CAT_ICON = { food: '🍜', transport: '🚌', shopping: '🛍', ticket: '🎫', stay: '🏨', other: '📦' };
   let expenses = [];
@@ -457,5 +516,6 @@
   /* ================= 啟動 ================= */
   renderDays();
   renderInfo();
+  renderBackup();
   initExpenses();
 })();

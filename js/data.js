@@ -14,8 +14,8 @@
    ============================================================ */
 
 const TRIP = {
-  title: '濟州島・自駕之旅',
-  subtitle: '2026/9/26 — 10/3 · 8 天 7 夜',
+  title: '濟州島・自駕之旅 v2',
+  subtitle: '2026/9/26 — 10/3 · 8 天 7 夜 · 順時針環島',
   startDate: '2026-09-26',          // 日期格式：YYYY-MM-DD
 
   // 記帳設定（rate 代表 1 單位外幣可兌換多少港幣 HKD）
@@ -71,34 +71,34 @@ const TRIP = {
   // ---------- 住宿 ----------
   stays: [
     {
-      title: '濟州市酒店（9/26–9/27・2 晚）',
+      title: '濟州市酒店（9/26・1 晚）',
       sub: '首選 Hotel Leo',
       location: { name: 'Hotel Leo Jeju', query: '호텔 레오 제주' },
       fields: [
         ['區域', '濟州市新濟州／塔洞一帶'],
-        ['備選', 'Diamond Hotel Jeju、Jeju Oriental Hotel'],
-        ['自駕', '三間均有停車；位置方便首兩日'],
+        ['備選', 'Elin Hotel（蓮洞）、Bed Radio Dongmoon（青旅）'],
+        ['自駕', '均有停車；位置方便抵達日'],
         ['備註', 'Day 1 抵達後先寄存行李或提早 check-in']
       ]
     },
     {
-      title: '城山酒店（9/28・1 晚）',
+      title: '城山酒店（9/27–9/28・2 晚）',
       sub: '首選 Co-op City Hotel Seongsan',
       location: { name: 'Co-op City Hotel Seongsan', query: '코업시티호텔 성산' },
       fields: [
-        ['區域', '西歸浦市城山邑（성산읍）'],
+        ['區域', '城山邑（성산읍）'],
         ['備選', '더베스트 제주 성산 호텔、Sunrise Hotel Seongsan'],
-        ['自駕', '近城山日出峰、城山港及涉地可支；泊車及充電出發前核實'],
-        ['備註', 'Day 3 晚入住；Day 4 一早去城山日出峰及搭牛島船']
+        ['自駕', '近日出峰＋城山港；泊車及充電出發前核實'],
+        ['備註', 'Day 2 到埗；Day 3 睇日出＋去牛島都唔使早起長途']
       ]
     },
     {
-      title: '西歸浦市酒店（9/29–9/30・2 晚）',
-      sub: '首選 Nine Boutique',
-      location: { name: 'Nine Boutique Hotel Seogwipo', query: '나인부티크호텔 서귀포' },
+      title: '西歸浦酒店（9/29–9/30・2 晚）',
+      sub: '首選 Shinshin Hotel Seogwipo',
+      location: { name: 'Shinshin Hotel Seogwipo', query: '신신호텔 서귀포' },
       fields: [
         ['區域', '西歸浦市（近每日偶來市場）'],
-        ['備選', 'Poong Gyung Hotel、Beomseom Punggyeong'],
+        ['備選', 'Nine Boutique、Poong Gyung Hotel'],
         ['自駕', '均有停車；較方便市場及市內景點'],
         ['備註', '9/29 傍晚由城山南下入住；9/30 西歸浦市內日；10/1 退房行李上車']
       ]
@@ -131,14 +131,14 @@ const TRIP = {
     {
       date: '2026-09-26',
       label: 'Day 1',
-      theme: '抵達濟州・梨湖・龍頭岩・東門市場夜市',
+      theme: '抵達濟州・梨湖・黑豬肉・龍頭岩・東門市場',
       weatherCity: 'jeju',
       items: [
         {
           time: '06:30',
           type: 'transport',
           title: '抵達濟州機場 CJU',
-          desc: 'UO698 凌晨 02:30 從香港起飛、06:30 抵達，入境後直接往 Rent-a-Car House 移動，不要先吃早餐。',
+          desc: 'UO698 凌晨 02:30 從香港起飛、06:30 抵達，入境後直接往 Rent-a-Car House 移動。',
           guide: { booking: '去程機票 <b>UO698</b>' }
         },
         {
@@ -146,9 +146,9 @@ const TRIP = {
           type: 'transport',
           title: '取車：Hyundai Ioniq 5 Long Range',
           location: { name: '濟州機場 Rent-a-Car House', query: '제주공항 렌터카하우스', lat: 33.5053, lng: 126.4927 },
-          desc: '機場 <strong>Gate 5</strong> 過馬路 → Rent-a-Car House → <strong>Zone 1, Platform 2</strong> 搭 SK 接駁車。已含 <strong>Full CDW 全保</strong>，預留 45–60 分鐘取車及拍攝車況。',
+          desc: '機場 Gate 5 過馬路 → Rent-a-Car House → 搭 SK 接駁車。已含 Full CDW 全保，預留 45–60 分鐘取車及拍攝車況。',
           guide: {
-            booking: '租車 <b>SK Rent-a-Car</b> · Full CDW · <b>KRW 743,940</b>',
+            booking: '租車 <b>SK Rent-a-Car</b> · Full CDW',
             story: '取車及還車各拍一段完整環車影片，記錄輪圈、擋風玻璃、內裝及電量。'
           }
         },
@@ -156,36 +156,36 @@ const TRIP = {
           time: '08:30',
           type: 'transport',
           title: '機場早餐（行李留車內）→ 梨湖',
-          desc: '行李留車內、不外露；簡單早餐後直接開往梨湖馬燈塔（約 10–15 分鐘），避免疲勞空腹駕駛。'
+          desc: '行李留車內、不外露；簡單早餐後開往梨湖馬燈塔（約 10–15 分鐘），避免疲勞空腹駕駛。'
         },
         {
           time: '09:15',
           type: 'spot',
           title: '梨湖木筏海邊馬燈塔',
           location: { name: '梨湖木筏海邊', query: '이호테우해변', lat: 33.4977, lng: 126.4528 },
-          desc: '免費、全天開放。海邊兩座小馬燈塔是濟州打卡地標，停留約 45 分鐘。'
+          desc: '免費、全天開放。海邊紅白小馬燈塔是濟州打卡地標，停留約 45 分鐘。'
         },
         {
           time: '10:15',
           type: 'note',
           title: '新濟州咖啡小憩',
-          desc: '順路往午餐方向，在新濟州（Yeon-dong）一帶咖啡小憩，等 Donsadon 12:30 開門。'
+          desc: '順路往午餐方向，在新濟州（Yeon-dong）一帶咖啡小憩。'
         },
         {
           time: '11:15',
           type: 'transport',
-          title: '前往 Donsadon・現場登記候位',
-          desc: '約 5–10 分鐘車程，提早到場取號，Donsadon 12:30 開門。'
+          title: '前往黑豬肉店・現場登記候位',
+          desc: '提早到場取號，名店排隊時間長，建議 12:00 前到。'
         },
         {
           time: '12:30',
           type: 'food',
-          title: '黑豬肉午餐：Donsadon',
-          location: { name: 'Donsadon 本店', query: '돈사돈 본점', lat: 33.4789, lng: 126.4641 },
-          desc: '濟州必吃黑豬肉燒烤，12:30 開門，現場登記候位；免費大型停車場。黑豬肉 400g 約 44,000 韓元（2 人份）。',
+          title: '黑豬肉午餐：熟成到',
+          location: { name: '熟成到', query: '숙성도', lat: 33.5020, lng: 126.5270 },
+          desc: '濟州名店，專人代烤黑豬肉、肉味濃；備選 돈사돈（400g 約 44,000 韓元、免費大停車場）。',
           guide: {
-            booking: '12:30 開門；每月第 2、4 個星期二休息',
-            menu: '<b>黑豬肉</b> 400g 約 <b>44,000 韓元</b>（適合 2 人）'
+            booking: '排隊時間長，建議 12:00 前到',
+            menu: '<b>黑豬肉</b>（熟成到專人代烤）｜備選 돈사돈 400g 約 44,000 韓元'
           }
         },
         {
@@ -193,9 +193,9 @@ const TRIP = {
           type: 'spot',
           title: '龍頭岩',
           location: { name: '龍頭岩', query: '용두암', lat: 33.5160, lng: 126.5120 },
-          desc: '免費、全天開放；有停車場（費率現場確認）。龍頭岩位於市區東面，午餐後順路前往，下午光線較適合拍照。',
+          desc: '免費、全天開放；有停車場（費率現場確認）。下午光線較適合拍照。',
           guide: {
-            story: '龍頭岩是濟州島地標之一，火山岩被海浪長期沖刷形似龍頭，傳說有龍在此被射落化為岩石。'
+            story: '龍頭岩是濟州島地標之一，火山岩被海浪長期沖刷形似龍頭。'
           }
         },
         {
@@ -207,341 +207,284 @@ const TRIP = {
         {
           time: '17:00',
           type: 'food',
-          title: 'Abebe Bakery・塔洞海旁',
-          location: { name: 'Abebe Bakery', query: '아베베 베이커리', lat: 33.5127, lng: 126.5288 },
-          desc: '東門市場 12 號門旁，10:00–21:00；甜甜圈約 2,700 韓元起；無自有停車場，停東門市場公營停車場。'
-        },
-        {
-          time: '18:15',
-          type: 'food',
-          title: '東門市場晚餐及夜市',
+          title: '東門市場／中央地下街＋甜點',
           location: { name: '東門市場', query: '동문재래시장', lat: 33.5122, lng: 126.5276 },
-          desc: '市場約 07:00–21:00（各店不同）；5–10 月夜市 19:00–24:00 位於 8 號門。免費入場。',
+          desc: '市場約 07:00–21:00；甜點店巡禮：umu 海藻布丁、Mochiron 達克瓦茲。',
           guide: {
-            food: '<b>豬肉湯麵</b>、<b>海鮮湯飯</b>、<b>黑豬肉串</b>',
+            food: '<b>umu 布丁</b>、<b>Mochiron 達克瓦茲</b>',
             gift: '<b>柑橘巧克力</b>、<b>石頭爺爺周邊</b>'
           }
+        },
+        {
+          time: '18:30',
+          type: 'food',
+          title: '東門夜市晚餐',
+          desc: '5–10 月夜市 19:00–24:00 位於 8 號門；炸壽司、老奶奶年糕。免費入場。'
+        },
+        {
+          time: '20:00',
+          type: 'note',
+          title: '亂打秀 Nanta（選項）',
+          desc: '濟州市互動式打擊樂劇，英語導向、不需韓文底；建議 Klook 預訂。'
         }
       ]
     },
     {
       date: '2026-09-27',
       label: 'Day 2',
-      theme: '西部日：涯月・翰林公園・協才海灘',
-      weatherCity: 'aewol',
+      theme: '東岸南下：London Bagel・月汀里・入住城山',
+      weatherCity: 'east',
       items: [
         {
-          time: '09:00',
+          time: '08:30',
           type: 'transport',
-          title: '濟州市 → Jeju Gwanghae（早午餐）',
-          desc: '約 15–20 分鐘車程。Gwanghae 係全日最近機場／市內嘅一站（애월읍 애월해안로 867），所以排喺第一站，先到先向西，零折返。10:00 開門。'
+          title: '退房 → London Bagel（舊左邑）',
+          desc: '行李留車內不外露，車程約 40 分鐘。'
         },
         {
-          time: '10:00',
+          time: '09:15',
           type: 'food',
-          title: '早午餐：Jeju Gwanghae 涯月店',
-          location: { name: 'Jeju Gwanghae 涯月店', query: '제주광해 애월점', lat: 33.4878, lng: 126.3904 },
-          desc: '10:00–20:00，最後點餐 19:00，全年無休；帶魚燉煮小份約 41,000 韓元；有停車場，適合 2 人。',
+          title: 'London Bagel Museum Jeju',
+          location: { name: 'London Bagel Museum Jeju', query: '런던베이글뮤지엄 제주점', lat: 33.5536, lng: 126.7156 },
+          desc: '舊左邑東福路 85（近月汀里，不在涯月），08:00–18:00；蘑菇濃湯比貝果更必點；勿停對面私人停車場（超貴）。',
           guide: {
-            menu: '<b>帶魚燉煮</b>（小份約 41,000 韓元）',
-            booking: 'CatchTable 取號'
+            food: '<b>蘑菇濃湯</b>必點＋招牌貝果',
+            booking: '可用 Catch Table App 候位'
           }
         },
         {
-          time: '11:40',
+          time: '10:45',
+          type: 'food',
+          title: 'Cafe Mou Moon（月汀里海景咖啡）',
+          location: { name: 'Cafe Mou Moon', query: '카페 모문', lat: 33.5560, lng: 126.7962 },
+          desc: '月汀里海景咖啡，麵包好吃、座位多，適合放空看海。'
+        },
+        {
+          time: '11:45',
           type: 'spot',
-          title: '涯月漢潭海岸步道',
-          location: { name: '涯月漢潭海岸步道', query: '애월 한담해안산책로', lat: 33.4591, lng: 126.3104 },
-          desc: '免費、全天開放。火山岩海岸與湛藍海水的經典步道，風大時可縮短停留。',
+          title: '月汀里海水浴場',
+          location: { name: '月汀里海水浴場', query: '월정리해변', lat: 33.5560, lng: 126.7962 },
+          desc: '免費、全天開放。白色風車與漸層海水，本程主推海岸之一。',
           guide: {
-            story: '漢潭海岸步道全長約 1.2 公里，沿黑色玄武岩海岸而建，可遠眺飛揚島。'
+            story: '岩石延伸入海、石縫小螃蟹；彩色椅子／畫框裝置，婚紗熱點。'
           }
         },
         {
           time: '13:00',
           type: 'food',
-          title: 'Haejigae Cafe 咖啡',
-          location: { name: 'Haejigae Cafe', query: '해지개 카페', lat: 33.4642, lng: 126.3090 },
-          desc: '09:00–21:00；海景咖啡及烘焙，現場入座；飲品約 6,000–8,500 韓元。',
-          guide: {
-            story: '海景第一排的韓屋風格咖啡廳，就在漢潭海岸步道旁。'
-          }
+          title: '月汀里／舊左午餐',
+          desc: '제주그리미（家庭料理、在地食材）或海鮮。'
         },
         {
-          time: '14:35',
-          type: 'spot',
-          title: '翰林公園',
-          location: { name: '翰林公園', query: '한림공원', lat: 33.3893, lng: 126.2403 },
-          desc: '9–10 月售票 09:00–17:00；成人 15,000 韓元；免費停車。熔岩洞窟與亞熱帶植物園。',
-          guide: {
-            booking: '成人 <b>15,000 韓元</b>，免費停車'
-          }
-        },
-        {
-          time: '17:25',
-          type: 'spot',
-          title: '協才海水浴場（日落）',
-          location: { name: '協才海水浴場', query: '협재해수욕장', lat: 33.3941, lng: 126.2397 },
-          desc: '免費、全天開放、免費停車。2026 泳季已於 9/6 結束，只作散步與日落攝影（日落約 18:20），不安排下水。'
-        },
-        {
-          time: '18:40',
+          time: '14:00',
           type: 'transport',
-          title: '返回濟州市',
-          desc: '約 50–55 分鐘，進城預留緩衝。'
+          title: '前往城山（約 40 分鐘）',
+          desc: '全程向東、零折返，順路東行。'
         },
         {
-          time: '19:45',
+          time: '14:45',
+          type: 'stay',
+          title: '城山酒店入住・休息',
+          location: { name: '城山酒店', query: '코업시티호텔 성산', lat: 33.4640, lng: 126.9350 },
+          desc: '入住城山（성산읍），唔再南下西歸浦。'
+        },
+        {
+          time: '15:30',
+          type: 'note',
+          title: '城山邑散步／海女博物館（選項）',
+          desc: '自由彈性；保留體力俾明日日出峰＋牛島。'
+        },
+        {
+          time: '17:30',
           type: 'food',
-          title: '晚餐：海鮮湯',
-          location: { name: '三星血海鮮湯 1 號店', query: '삼성혈 해물탕 1호점', lat: 33.5039, lng: 126.4654 },
-          desc: '11:00–21:00，15:00–17:00 休息，逢星期二休；海鮮湯小份約 60,000 韓元；可停車及預約，建議先電話訂位。'
+          title: '晚餐：吾照海女之家',
+          location: { name: '吾照海女之家', query: '오조해녀의집', lat: 33.4586, lng: 126.9406 },
+          desc: '烤鮑魚偏清蒸、非常新鮮帶淡鹹味，另有綜合拼盤＋鮑魚粥；連結 1 作者私心最愛。',
+          guide: {
+            menu: '<b>烤鮑魚</b>＋綜合拼盤＋鮑魚粥'
+          }
         }
       ]
     },
     {
       date: '2026-09-28',
       label: 'Day 3',
-      theme: '東部轉場日：萬丈窟 → 入住城山',
-      weatherCity: 'east',
+      theme: '城山日出峰（日出）・牛島一日',
+      weatherCity: 'seongsan',
       items: [
         {
-          time: '07:20',
-          type: 'transport',
-          title: '退房 → 咸德海灘',
-          desc: '行李留車內時不要外露，車程約 30–35 分鐘。'
-        },
-        {
-          time: '07:55',
+          time: '05:40',
           type: 'spot',
-          title: '咸德海水浴場',
-          location: { name: '鹹德海水浴場', query: '함덕해수욕장', lat: 33.5432, lng: 126.6699 },
-          desc: '免費、全天開放；大型停車場（費率未核實）。濟州最受歡迎的海水浴場之一，白沙灘與珊瑚砂。'
-        },
-        {
-          time: '08:55',
-          type: 'food',
-          title: 'London Bagel Museum Jeju 早餐',
-          location: { name: 'London Bagel Museum Jeju', query: '런던베이글뮤지엄 제주점', lat: 33.5536, lng: 126.7156 },
-          desc: '位於舊左邑東福路 85（不在涯月），08:00–18:00；從咸德約 15–20 分鐘。抵達後取號候位。',
+          title: '城山日出峰・睇日出',
+          location: { name: '城山日出峰', query: '성산일출봉', lat: 33.4581, lng: 126.9425 },
+          desc: '9–10 月 05:00–19:00，售票至 18:00；每月首個星期一休（9/28 為第 4 個星期一，正常開放）；成人 5,000；免費停車。步道約 30 分鐘登頂。',
           guide: {
-            booking: '可用 <b>Catch Table</b> App 候位',
-            food: '<b>招牌貝果</b>＋<b>奶油乳酪</b>'
+            booking: '成人 <b>5,000 韓元</b>，免費停車',
+            story: '世界自然遺產，10 萬年前海底火山噴發形成的巨大穹丘，濟州東端地標；14:00 左側步道有海女表演。'
           }
         },
         {
-          time: '10:35',
-          type: 'spot',
-          title: '月汀里海灘',
-          location: { name: '月汀里海水浴場', query: '월정리해변', lat: 33.5560, lng: 126.7962 },
-          desc: '免費、全天開放。白色風車與漸層海水，濟州最具代表性的海岸咖啡街。'
+          time: '07:30',
+          type: 'note',
+          title: '回酒店早餐・補眠',
+          desc: '日出後回城山酒店早餐／補眠，為牛島留力。'
         },
         {
-          time: '11:40',
-          type: 'spot',
-          title: '萬丈窟',
-          location: { name: '萬丈窟', query: '만장굴', lat: 33.5283, lng: 126.7701 },
-          desc: '09:00–18:00，最後入場 17:00；每月首個星期三休館（9/28 不受影響）；成人 4,000 韓元；135 個免費車位。',
+          time: '08:15',
+          type: 'transport',
+          title: '城山港停車・填申請書・買票',
+          location: { name: '城山港', query: '성산항', lat: 33.4703, lng: 126.9301 },
+          desc: '一般租車不可上牛島，車留城山港（當日上限 5,000 韓元）。攜帶護照正本，提早 45 分鐘到港。',
           guide: {
-            booking: '成人 <b>4,000 韓元</b>，免費停車',
-            story: '世界自然遺產，2026 年 5 月 30 日已重開。洞內濕滑，建議穿抓地鞋及薄外套。'
+            booking: '城山港電話 <b>064-782-5671</b>（確認船費及文件）'
           }
         },
         {
-          time: '13:40',
-          type: 'food',
-          title: '城山午餐',
-          desc: '從萬丈窟約 35–40 分鐘到城山，午餐後到城山酒店只需 10–15 分鐘。'
-        },
-        {
-          time: '14:50',
+          time: '09:00',
           type: 'transport',
-          title: '前往城山酒店（約 10–15 分鐘）',
-          desc: '終點城山（성산읍），唔再南下西歸浦；全程向東、零折返。'
+          title: '渡輪往牛島（下牛木洞港）',
+          desc: '船程約 30 分鐘；9 月船班約每 30 分鐘一班（牛島末班 18:00）。'
         },
         {
-          time: '15:10',
+          time: '09:30',
+          type: 'spot',
+          title: '牛島・環島（電動機車／單車）',
+          location: { name: '牛島', query: '우도', lat: 33.5073, lng: 126.9550 },
+          desc: '逆時針環島：西濱白沙海水浴場 → 東岸鯨窟 → 下古水洞海水浴場；可租電動機車（需國際駕照 A 類）或單車。',
+          guide: {
+            food: '<b>On-Off 炸豬排</b>、<b>BLANC ROCHER 花生冰淇淋</b>',
+            story: '牛島是濟州最大附屬島嶼，以花生、海女與黑色玄武岩海岸聞名，又稱「小濟州」。如停航改城山日出峰＋涉地可支慢遊。'
+          }
+        },
+        {
+          time: '15:00',
+          type: 'transport',
+          title: '回城山港取車',
+          desc: '勿搭末班船；取車後回城山酒店。'
+        },
+        {
+          time: '15:30',
           type: 'stay',
-          title: '入住城山酒店・休息',
-          location: { name: '城山酒店', query: '코업시티호텔 성산', lat: 33.4640, lng: 126.9350 },
-          desc: '入住後不再安排長車程，好好休息；早睡為明日城山日出峰與牛島留力。'
+          title: '城山酒店休息',
+          desc: '下午留城山休息，保留體力，不安排晚間景點。'
         },
         {
           time: '18:00',
           type: 'food',
-          title: '城山晚餐・早睡',
-          desc: '酒店附近餐廳用餐，今晚不安排景點，明日 08:00 城山日出峰。'
+          title: '晚餐：城山春粥・刀切麵',
+          location: { name: '城山春粥·刀切麵', query: '성산봄죽 칼국수', lat: 33.4600, lng: 126.9320 },
+          desc: '韓劇 Run On 取景地；辣炒黑豬肉拌麵很辣但超好吃（中辣水準）。',
+          guide: {
+            menu: '<b>辣炒黑豬肉拌麵</b>（中辣）'
+          }
         }
       ]
     },
     {
       date: '2026-09-29',
       label: 'Day 4',
-      theme: '城山日出峰・牛島・轉場西歸浦',
+      theme: '涉地可支（騎馬）・轉場西歸浦・南部瀑布',
       weatherCity: 'seongsan',
       items: [
         {
           time: '08:00',
+          type: 'transport',
+          title: '退房・行李上車 → 涉地可支',
+          desc: '車程約 10 分鐘。'
+        },
+        {
+          time: '08:30',
           type: 'spot',
-          title: '城山日出峰',
-          location: { name: '城山日出峰', query: '성산일출봉', lat: 33.4581, lng: 126.9425 },
-          desc: '由城山酒店步行或 5 分鐘車程。9–10 月 05:00–19:00，售票至 18:00；每月首個星期一休（9/29 星期二開放）；成人 5,000 韓元；免費停車。步道約 30 分鐘可登頂。',
-          guide: {
-            booking: '成人 <b>5,000 韓元</b>，免費停車',
-            story: '世界自然遺產，10 萬年前海底火山噴發形成的巨大穹丘，頂部是凹陷火山口，濟州東端的地標。'
-          }
-        },
-        {
-          time: '09:30',
-          type: 'transport',
-          title: '城山港停車・購票',
-          location: { name: '城山港', query: '성산항', lat: 33.4703, lng: 126.9301 },
-          desc: '一般租車不可上牛島，車留城山港。首 30 分鐘免費，之後每 30 分鐘 500 韓元，當日上限 5,000 韓元。攜帶護照正本，提早 45 分鐘到港。',
-          guide: {
-            booking: '城山港電話 <b>064-782-5671</b>（出發前確認船費及文件）'
-          }
-        },
-        {
-          time: '10:15',
-          type: 'transport',
-          title: '渡輪往牛島',
-          desc: '船程約 30 分鐘；9 月船班約每 30 分鐘一班（城山首班 08:00、末班 18:20；牛島末班 18:00）。'
-        },
-        {
-          time: '10:45',
-          type: 'spot',
-          title: '牛島（約 4 小時 30 分，含船程）',
-          location: { name: '牛島', query: '우도', lat: 33.5073, lng: 126.9550 },
-          desc: '島上可搭循環巴士（約 5,000 韓元一日券）或租單車（約 10,000／3 小時），午餐在島上解決。',
-          guide: {
-            food: '<b>海鮮麵</b>、<b>花生冰淇淋</b>（牛島必試）',
-            story: '牛島是濟州最大的附屬島嶼，以花生、海女與黑色玄武岩海岸聞名，又稱「小濟州」。如遇停航改城山日出峰＋涉地可支慢遊並提早入住西歸浦。'
-          }
-        },
-        {
-          time: '15:15',
-          type: 'transport',
-          title: '回城山港取車',
-          desc: '勿搭末班船；取車後往涉地可支。'
-        },
-        {
-          time: '15:45',
-          type: 'transport',
-          title: '前往涉地可支',
-          desc: '約 15–20 分鐘車程。'
-        },
-        {
-          time: '16:05',
-          type: 'spot',
-          title: '涉地可支',
+          title: '涉地可支（含騎馬體驗）',
           location: { name: '涉地可支', query: '섭지코지', lat: 33.4366, lng: 126.9221 },
-          desc: '免費入場、全天開放；停車首 30 分鐘 1,000 韓元，全日上限 3,000。海岸步道特別適合拍照。',
+          desc: '免費入場；停車全日上限 3,000。火山岩海角＋騎馬體驗（出發前電話確認當日有馬）；如無馬改 Day 5 中文區。',
           guide: {
-            story: '濟州東岸的火山岩海角，因韓劇《All In》在此取景而聲名大噪。'
+            story: '濟州東岸火山岩海角，因韓劇《All In》取景而聲名大噪；有安藤忠雄設計建築。'
           }
         },
         {
-          time: '17:15',
+          time: '10:00',
           type: 'transport',
-          title: '前往西歸浦・入住（約 70–75 分鐘）',
+          title: '南下西歸浦（約 70–75 分鐘）',
           location: { name: '西歸浦市', query: '서귀포', lat: 33.2544, lng: 126.5600 },
-          desc: '傍晚南下轉場西歸浦，本日不安排晚間景點，晚餐留在市內。'
+          desc: '順路南行，傍晚前入住西歸浦。'
         },
         {
-          time: '18:30',
-          type: 'food',
-          title: '西歸浦市內晚餐',
-          desc: '入住後晚餐，明日西歸浦市內慢遊日。'
-        }
-      ]
-    },
-    {
-      date: '2026-09-30',
-      label: 'Day 5',
-      theme: '西歸浦市內：正房瀑布・市場・天地淵夜景',
-      weatherCity: 'seogwipo',
-      items: [
+          time: '11:15',
+          type: 'stay',
+          title: '酒店寄存／入住',
+          desc: '西歸浦酒店第一晚（9/29）。'
+        },
         {
-          time: '09:00',
+          time: '12:00',
           type: 'spot',
           title: '正房瀑布',
           location: { name: '正房瀑布', query: '정방폭포', lat: 33.2449, lng: 126.5715 },
-          desc: '09:00–17:50，最後入場 17:30，全年無休；成人 2,000 韓元。亞洲少數直接落入海的瀑布，海邊石階濕滑，雨天改天地淵。',
+          desc: '09:00–17:50，最後入場 17:30，全年無休；成人 2,000。亞洲少數直接落入海的瀑布；海邊石階濕滑。',
           guide: {
             booking: '成人 <b>2,000 韓元</b>'
           }
         },
         {
-          time: '10:30',
+          time: '13:30',
           type: 'food',
-          title: '西歸浦每日偶來市場',
+          title: '每日偶來市場午餐',
           location: { name: '西歸浦每日偶來市場', query: '서귀포매일올레시장', lat: 33.2487, lng: 126.5641 },
-          desc: '在地市場小吃與咖啡，周邊有公營停車場。',
+          desc: '炸壽司（黑豬肉魷魚）＋老奶奶年糕必食；周邊公營停車場。',
           guide: {
-            food: '<b>市場小吃</b>、<b>黑豬肉湯飯</b>'
+            food: '<b>炸壽司</b>、<b>老奶奶年糕</b>'
           }
         },
         {
-          time: '12:45',
+          time: '15:00',
           type: 'spot',
-          title: '外돌개',
+          title: '外돌개 或咖啡',
           location: { name: '外돌개', query: '외돌개', lat: 33.2415, lng: 126.5482 },
-          desc: '全天開放、免費入場及免費停車。下午較適合海岸攝影。',
-          guide: {
-            story: '西歸浦海岸的孤立岩石柱，由火山岩長期受海浪侵蝕而成，是濟州南岸的代表性地標。'
-          }
-        },
-        {
-          time: '14:10',
-          type: 'spot',
-          title: '天帝淵瀑布或中文海岸散步',
-          location: { name: '天帝淵瀑布', query: '천제연폭포', lat: 33.2501, lng: 126.4165 },
-          desc: '天帝淵時間與票價出發前致電 064-740-6000 核實；若無法確認，改在中文海岸、柱狀節理附近外圍散步。'
+          desc: '全天開放、免費入場及停車；下午較適合海岸攝影。'
         },
         {
           time: '16:30',
           type: 'stay',
-          title: '返回西歸浦酒店・休息',
-          desc: '西歸浦酒店第二晚（9/30），全程最輕鬆的一天，稍作休息後晚餐。'
+          title: '酒店休息',
+          desc: '稍作休息後晚餐。'
         },
         {
           time: '18:00',
           type: 'food',
           title: '晚餐：海鮮湯',
           location: { name: '三星血海鮮湯 西歸浦店', query: '삼성혈 해물탕 서귀포점', lat: 33.2550, lng: 126.5660 },
-          desc: '10:30–15:00、16:00–22:30；時間出發前電話 064-739-7200 確認。'
+          desc: '10:30–15:00、16:00–22:30；電話 064-739-7200 確認。'
         },
         {
           time: '19:30',
           type: 'spot',
           title: '天地淵瀑布夜景',
           location: { name: '天地淵瀑布', query: '천지연폭포', lat: 33.2469, lng: 126.5545 },
-          desc: '09:00–22:00，最後入場 21:20，全年無休；成人 2,000 韓元；免費停車。夜晚燈光下的瀑布很值得一看。',
+          desc: '09:00–22:00，最後入場 21:20；成人 2,000；免費停車；夜間點燈。',
           guide: {
-            booking: '成人 <b>2,000 韓元</b>，免費停車',
-            story: '天地淵瀑布意為「天之淵」，高約 22 公尺，位於西歸浦市區附近、酒店步行可達。'
+            booking: '成人 <b>2,000 韓元</b>，免費停車'
           }
         }
       ]
     },
     {
-      date: '2026-10-01',
-      label: 'Day 6',
-      theme: '西南環線：花園・茶園・龍頭海岸',
+      date: '2026-09-30',
+      label: 'Day 5',
+      theme: '西南花海・綠茶・騎馬',
       weatherCity: 'south',
       items: [
         {
-          time: '08:15',
+          time: '08:30',
           type: 'transport',
-          title: '退房・行李上車 → Camellia Hill',
-          desc: '西歸浦退房、行李上車，往 Camellia Hill 約 30–35 分鐘。'
+          title: '前往 Camellia Hill（約 30–35 分鐘）',
+          desc: '西歸浦出發，往西南環線。'
         },
         {
           time: '09:05',
           type: 'spot',
-          title: 'Camellia Hill',
+          title: 'Camellia Hill（山茶花之丘）',
           location: { name: 'Camellia Hill', query: '카멜리아힐', lat: 33.2896, lng: 126.3699 },
-          desc: '3–10 月 08:30–18:30，最後入場 17:30，全年無休；成人 12,000 韓元；有停車場（費率未核實）。10 月主題為粉黛亂子草及蒲葦。',
+          desc: '3–10 月 08:30–18:30，最後入場 17:30；成人 12,000；有停車場。10 月主題粉黛亂子草＋蒲葦。',
           guide: {
             booking: '成人 <b>12,000 韓元</b>'
           }
@@ -549,48 +492,116 @@ const TRIP = {
         {
           time: '11:05',
           type: 'spot',
-          title: 'Osulloc 雪綠茶博物館',
+          title: 'Osulloc 綠茶博物館',
           location: { name: 'Osulloc 雪綠茶博物館', query: '오설록 티뮤지엄', lat: 33.3059, lng: 126.2894 },
-          desc: '09:00–18:00，全年無休；入場費以現場為準。茶園景觀與綠茶產品。',
+          desc: '09:00–18:00，全年無休；抹茶冰淇淋＋拿鐵；Innisfree 可一齊掃貨。',
           guide: {
+            food: '<b>抹茶冰淇淋</b>、<b>抹茶拿鐵</b>',
             gift: '<b>綠茶伴手禮</b>'
           }
         },
         {
-          time: '12:35',
+          time: '12:30',
           type: 'food',
-          title: 'Jejudang 咖啡及簡餐',
-          location: { name: 'Jejudang Bakery Cafe', query: '제주당' },
-          desc: '10:00–21:00，無固定休息日；大型停車場；招牌蔬菜造型麵包套裝約 19,800 韓元。'
+          title: '午餐：번네식당（烤白帶魚）',
+          location: { name: '번네식당', query: '번네식당', lat: 33.3100, lng: 126.2800 },
+          desc: '烤白帶魚專賣，超多韓國人推薦。'
         },
         {
           time: '14:00',
+          type: 'note',
+          title: '大浦柱狀節理帶（選項，可 skip）',
+          desc: '到此一遊型景點；連結 1 作者認為比正房更必去，但屬純觀光，可 skip。'
+        },
+        {
+          time: '15:15',
+          type: 'note',
+          title: 'Jeju Horse Riding Park 騎馬（互動）',
+          desc: '中文區森林騎馬；若 Day 4 涉地可支已騎過可 skip；出發前訂位。'
+        },
+        {
+          time: '17:00',
+          type: 'transport',
+          title: '返回西歸浦（約 35–40 分鐘）',
+          desc: '西歸浦酒店第二晚。'
+        },
+        {
+          time: '18:30',
+          type: 'food',
+          title: '自由晚餐',
+          desc: '西歸浦市內自由晚餐。'
+        }
+      ]
+    },
+    {
+      date: '2026-10-01',
+      label: 'Day 6',
+      theme: '西部涯月・9.81 賽車・黑面羊農場',
+      weatherCity: 'aewol',
+      items: [
+        {
+          time: '08:00',
+          type: 'transport',
+          title: '退房・行李上車 → 涯月漢潭',
+          desc: '西歸浦至涯月約 55–60 分鐘。'
+        },
+        {
+          time: '09:15',
           type: 'spot',
-          title: '龍頭海岸（或山房窟寺）',
-          location: { name: '龍頭海岸', query: '용머리해안', lat: 33.2333, lng: 126.3131 },
-          desc: '09:00–17:00，最後入場 16:30；成人 2,000 韓元。潮汐、風浪或天氣可令園區即日關閉，當天先查 Instagram @6sot_official 或致電 064-794-2940。',
+          title: '涯月漢潭海岸步道',
+          location: { name: '涯月漢潭海岸步道', query: '애월 한담해안산책로', lat: 33.4591, lng: 126.3104 },
+          desc: '免費、全天開放。本程主推海岸之一；附近多伴手禮／選物店（含濟州 Miffy 專賣店）。',
           guide: {
-            booking: '成人 <b>2,000 韓元</b>；關閉時改山房窟寺或山房山外圍'
+            story: '漢潭海岸步道全長約 1.2 公里，沿黑色玄武岩海岸而建，可遠眺飛揚島。'
+          }
+        },
+        {
+          time: '10:45',
+          type: 'food',
+          title: 'Haejigae Cafe（海景咖啡）',
+          location: { name: 'Haejigae Cafe', query: '해지개 카페', lat: 33.4642, lng: 126.3090 },
+          desc: '海景咖啡，先找位再點餐；有戶外位＋三層內用位，下午曬；備選春日咖啡 봄날（海景第一排）。'
+        },
+        {
+          time: '11:45',
+          type: 'food',
+          title: '涯月甜點＋選物',
+          desc: 'siso kaymak（土耳其奶油包，現場食）、집의기록상점（蛋塔）；Miffy 專賣店亦在此。'
+        },
+        {
+          time: '12:45',
+          type: 'transport',
+          title: '前往 9.81 公園（約 20–25 分鐘）',
+          desc: '西部單向，順路。'
+        },
+        {
+          time: '13:15',
+          type: 'note',
+          title: '9.81 重力賽車公園（互動）',
+          location: { name: '9.81 公園', query: '9.81파크', lat: 33.4000, lng: 126.2400 },
+          desc: '大型重力賽車，快感極限；建議 Klook／KKday 預約，停留約 2.5 小時。',
+          guide: {
+            booking: '建議 <b>Klook/KKday 預約</b>'
           }
         },
         {
           time: '15:45',
-          type: 'food',
-          title: 'Chunsimine 早晚餐',
-          location: { name: 'Chunsimine 本店', query: '춘심이네', lat: 33.2645, lng: 126.3705 },
-          desc: '營業時間資料有 10:30–20:50 與 11:00–20:20 兩版本，最後點餐約 20:30；整條烤帶魚約 78,000 韓元起；免費停車，適合 2 人。出發前致電 064-794-4010 確認。',
+          type: 'note',
+          title: 'SaeByeol Friends Zoo（黑面羊農場）',
+          location: { name: 'SaeByeol Friends Zoo', query: '새별프렌즈동물원', lat: 33.3900, lng: 126.3000 },
+          desc: '超可愛黑面羊（黑頭羊），室內空間、可餵食，動物種類多；位於새빌 Saebil 粉黛子草咖啡廳旁。',
           guide: {
-            menu: '<b>整條烤帶魚</b>（約 78,000 韓元起）'
+            food: '<b>餵食體驗</b>黑面羊'
           }
         },
         {
-          time: '17:15',
+          time: '17:30',
           type: 'transport',
-          title: '北返機場酒店（約 70–80 分鐘）',
-          desc: 'Chunsimine 後北上，入住機場附近酒店（Hotel JM／Sweet／Major）。'
+          title: '北返機場酒店（約 50–60 分鐘）',
+          desc: '入住機場附近酒店（Hotel JM／Sweet／Major）。'
         },
         {
-          time: '18:35',
+          time: '18:30',
           type: 'stay',
           title: '入住機場附近酒店',
           desc: '機場酒店第一晚（10/1、10/2 共 2 晚）。'
@@ -600,40 +611,46 @@ const TRIP = {
     {
       date: '2026-10-02',
       label: 'Day 7',
-      theme: '還車日：Waboda・最後採買・20:00 前還車',
+      theme: '北部還車日：東門市場採買・還車',
       weatherCity: 'jeju',
       items: [
         {
           time: '09:00',
           type: 'note',
           title: '酒店早餐・整理行李',
-          desc: '還車日由機場出發，無需南下，朝頭好鬆動。行李可先寄存酒店。'
+          desc: '還車日由機場出發，無需南下，朝頭好鬆動；行李可先寄存酒店。'
         },
         {
           time: '09:30',
-          type: 'food',
-          title: 'Waboda Bakery 早午餐',
-          location: { name: 'Waboda Bakery', query: '와보다', lat: 33.5197, lng: 126.4985 },
-          desc: '地址 제주시 서해안로 560，已找到 2025/12/30 營業登記，但無可靠官方營業時間。10/1 晚在 Naver Map 查看翌日營業狀態；若 10:00 前無法確認，直接改去 Abebe Bakery。',
-          guide: {
-            booking: '執行條件：10/1 晚核實營業狀態'
-          }
+          type: 'transport',
+          title: '前往東門市場',
+          desc: '約 20 分鐘車程。'
         },
         {
-          time: '11:00',
+          time: '10:15',
           type: 'food',
-          title: '東門市場・塔洞・午餐及採買',
+          title: '東門市場＋中央地下街 採買',
           location: { name: '東門市場', query: '동문재래시장', lat: 33.5122, lng: 126.5276 },
-          desc: '最後採買與市區散步（約 2.5 小時），公營停車場收費。',
+          desc: '最後採買（約 2.5 小時），公營停車場收費。',
           guide: {
-            gift: '<b>柑橘巧克力</b>、<b>石頭爺爺周邊</b>'
+            gift: '<b>柑橘巧克力</b>、<b>石頭爺爺周邊</b>、<b>Olive Young 保養品</b>'
           }
         },
         {
-          time: '13:30',
-          type: 'note',
-          title: '咖啡・酒店寄存行李・休息',
-          desc: '不再往東部，保留體力準備還車。'
+          time: '12:45',
+          type: 'food',
+          title: '午餐：熟成到 或 橡子廚房',
+          location: { name: '熟成到', query: '숙성도', lat: 33.5020, lng: 126.5270 },
+          desc: '熟成到黑豬肉（Day 1 或 Day 7 二選一）或橡子廚房（柑橘蕎麥麵）；旁有馬卡龍 Gomimi。',
+          guide: {
+            food: '<b>熟成到黑豬肉</b>｜備選 橡子廚房柑橘蕎麥麵'
+          }
+        },
+        {
+          time: '14:15',
+          type: 'food',
+          title: '甜點店巡禮',
+          desc: 'umu 布丁、Mochiron 達克瓦茲、Gomimi 馬卡龍，打包手信。'
         },
         {
           time: '15:45',
@@ -651,21 +668,15 @@ const TRIP = {
         {
           time: '17:50',
           type: 'note',
-          title: '補電・整理行李・拍攝車況',
+          title: '補電・整理・拍車況',
           desc: '依租車合約補足電量；取車及還車各拍完整環車影片。'
         },
         {
           time: '18:30',
           type: 'transport',
-          title: '前往 SK Rent-a-Car',
-          desc: '約 15 分鐘車程，避開最後一刻。'
-        },
-        {
-          time: '18:45',
-          type: 'transport',
-          title: '還車 SK Rent-a-Car（20:00 前）',
+          title: '前往 SK Rent-a-Car・還車',
           location: { name: 'SK Rent-a-Car 濟州', query: 'SK렌터카 제주', lat: 33.5041, lng: 126.5023 },
-          desc: '預留 45 分鐘還車及接駁，20:00 前完成。',
+          desc: '19:15 到店，20:00 前完成還車及接駁。',
           guide: {
             booking: '還車時間 <b>2026-10-02 20:00 前</b>'
           }
@@ -705,5 +716,142 @@ const TRIP = {
         }
       ]
     }
+  ]
+};
+
+/* ============================================================
+   後備方案資料庫 — 記錄所有備用景點／餐廳／活動／住宿
+   （★＝已排入主行程；☆＝備用，可隨時調動替換）
+   ============================================================ */
+const BACKUP = {
+  // 濟州各海岸評比（連結 3，2019/09 實地）
+  beaches: [
+    { rank: '①', name: '涯月漢潭散步路', ko: '애월한담산책로', note: '咖啡廳各具特色、多數臨海（春日＝海景第一排），較商業化但值得二訪' },
+    { rank: '②', name: '細花海邊', ko: '세화해변', note: '未開發、寧靜；堤防打卡點；可沿海走到海女博物館' },
+    { rank: '③', name: '月汀里海水浴場', ko: '월정리해수욕장', note: '岩石延伸入海、彩色椅子畫框裝置；婚紗熱點' },
+    { rank: '③', name: '咸德海水浴場', ko: '함덕해수욕장', note: '漸層海＋愛心沙灘；咸德犀牛峰（秋芒草、有馬）' },
+    { rank: '⑤', name: '挟才海邊', ko: '협재해변', note: '正對飛揚島、混貝殼砂；餐廳不在海灘旁，需遠眺' },
+    { rank: '⑤', name: '梨湖木筏海邊', ko: '이호테우해변', note: '紅白小馬燈塔（夜景美）；除小馬外特色較少' }
+  ],
+
+  // 備用景點（按方位）
+  spots: [
+    {
+      region: '北部／濟州市',
+      items: [
+        { name: '濟州民俗五日市場', note: '逢 2、7 日開的傳統市集' },
+        { name: '道頭洞彩虹海岸道路', note: '' },
+        { name: 'kakao friends 濟州總部', note: '' },
+        { name: '牧官衙', note: '' },
+        { name: '塔洞海旁', note: '' },
+        { name: '濟州 4·3 和平紀念館', note: '歷史沈重' },
+        { name: 'The Islander 紀念品店', note: '' }
+      ]
+    },
+    {
+      region: '東岸／城山',
+      items: [
+        { name: '咸德海灘', note: '降為快閃' },
+        { name: '細花海邊', note: '未開發、寧靜' },
+        { name: '萬丈窟', note: '成人 4,000；首個星期三休；雨天備案' },
+        { name: '山君不離', note: '芒草海' },
+        { name: '와흘메밀마을협의회', note: '蕎麥花季' },
+        { name: '海女博物館', note: '' }
+      ]
+    },
+    {
+      region: '南岸／西歸浦',
+      items: [
+        { name: '天帝淵瀑布', note: '出發前確認' },
+        { name: '大浦柱狀節理帶', note: '連結 1 作者認為比正房更必去' },
+        { name: '偶來七號小路', note: '健行' },
+        { name: 'Hill of Storms 懸崖海邊', note: '' },
+        { name: '漢拏山靈室登山路', note: '健行' },
+        { name: 'Blue Bottle Jeju 藍瓶', note: '' },
+        { name: 'analogue 柑橘農場', note: '採橘子咖啡' }
+      ]
+    },
+    {
+      region: '西南／西部',
+      items: [
+        { name: '翰林公園', note: '成人 15,000' },
+        { name: '協才海灘', note: '降為快閃' },
+        { name: '金陵海灘 Geumneung Beach', note: '' },
+        { name: '山房山／龍頭海岸', note: '成人 2,000；潮汐決定' },
+        { name: '새빌 Saebil 粉黛子草咖啡廳', note: '' },
+        { name: '春日咖啡館 BOMNAL', note: '' },
+        { name: 'Sunset Cliff', note: '峇里風 Cafe&Bar' }
+      ]
+    }
+  ],
+
+  // 備用餐廳／咖啡／甜點
+  food: [
+    { name: '돈사돈 본점 Donsadon', type: '黑豬肉', area: '濟州市', note: '400g 約 44,000；免費大停車場' },
+    { name: '黑豚家', type: '黑豬肉', area: '黑豬肉一條街', note: '' },
+    { name: 'Dolhareubang Ttukbaegi', type: '午市', area: '城山', note: '只供午市' },
+    { name: 'Haeilri Cafe', type: '咖啡', area: '城山', note: '' },
+    { name: '어조횟집', type: '生魚片', area: '城山', note: '' },
+    { name: 'Poong Won 풍원', type: '漢拏山炒飯', area: '牛島', note: '' },
+    { name: '방긋스낵 微笑小吃店', type: '海鮮年糕鍋', area: '月汀里', note: '' },
+    { name: 'STAY SALTY', type: '海景咖啡', area: '月汀里', note: '' },
+    { name: '去北村的話 북촌에 가면', type: '粉紅草咖啡', area: '北村', note: '' },
+    { name: '참솔식당', type: '韓式', area: '漢拏山附近', note: '' },
+    { name: '삼성혈 해물탕', type: '海鮮湯', area: '濟州／西歸浦', note: '電話 064-739-7200' },
+    { name: 'Cafe Tangerine Flower Attic', type: '柑橘咖啡', area: '西歸浦', note: '' },
+    { name: '橘花閣樓', type: '橘子主題咖啡', area: '中文', note: '' },
+    { name: 'volskafé', type: '咖啡', area: '中文', note: '' },
+    { name: '春日咖啡 봄날', type: '海景咖啡', area: '涯月', note: '海景第一排' },
+    { name: '紅色濟州 붉은제주', type: '海鮮盤', area: '涯月', note: '' },
+    { name: 'Sunset Cliff', type: 'Cafe&Bar', area: '涯月', note: '' },
+    { name: '你好挟才先生 안녕협재씨', type: '海鮮拌飯', area: '挟才', note: '' },
+    { name: '金滿福鮑魚紫菜飯捲', type: '飯捲', area: '—', note: '' },
+    { name: '桔品黑豬肉', type: '黑豬肉吃到飽', area: '濟州市', note: '平價' },
+    { name: '醬蟹 이게밥도둑', type: '醬蟹', area: '濟州市', note: '' },
+    { name: 'Bhc Chicken', type: '炸雞', area: '濟州市', note: '' },
+    { name: 'Abebe Bakery', type: '甜甜圈', area: '東門市場', note: '12 號門旁' },
+    { name: 'Jeju Gwanghae 제주광해', type: '帶魚燉煮', area: '涯月', note: '10:00–20:00' },
+    { name: 'Chunsimine 춘심이네', type: '烤帶魚', area: '西南', note: '' },
+    { name: 'Jejudang 제주당', type: '蔬菜麵包', area: '西南', note: '' },
+    { name: 'Waboda Bakery 와보다', type: '麵包', area: '機場附近', note: '營業時間未核實' },
+    { name: '장가네 일품순두부 한림점', type: '嫩豆腐鍋', area: '翰林', note: '' },
+    { name: 'Jeju Sicha', type: '下午茶', area: '—', note: '' },
+    { name: '온평바다한그릇', type: '海產', area: '城山／東岸', note: '' },
+    { name: '유동커피', type: '咖啡', area: '西歸浦', note: '' },
+    { name: '細花小姐文具店', type: '選物文具', area: '細花', note: '明信片框只此一家' },
+    { name: '咖啡漢拏山 카페한라산', type: '老屋咖啡', area: '細花', note: '' },
+    { name: '唯美蠟燭 위미캔들', type: '紀念品', area: '—', note: '全濟州最美紀念品' }
+  ],
+
+  // 備用互動活動（陸上為主）
+  activities: [
+    { name: '漢拏山健行', area: '中部', note: '靈室路線' },
+    { name: '偶來小路健行', area: '西歸浦', note: '偶來七號' },
+    { name: '海女表演', area: '城山日出峰', note: '每日 14:00；免費' }
+  ],
+
+  // 備用住宿（實住點評＋候選）
+  stays: [
+    { name: 'Elin Hotel', area: '蓮洞', note: '房小、停車位難停，環境舒服' },
+    { name: 'Bed Radio Dongmoon', area: '濟州市', note: '市區平價青旅' },
+    { name: '더베스트 제주 성산', area: '城山', note: '含早餐' },
+    { name: 'Sunrise Hotel Seongsan', area: '城山', note: '親民' },
+    { name: 'Breeze Bay Hotel', area: '城山', note: '❌ 不推（像辦公室）' },
+    { name: 'Nine Boutique', area: '西歸浦', note: '' },
+    { name: 'Poong Gyung Hotel', area: '西歸浦', note: '' },
+    { name: 'W Ocean Pension', area: '中文', note: '有廚房民宿，房床大' },
+    { name: 'Sweet Hotel', area: '機場附近', note: '' },
+    { name: 'Major Hotel', area: '機場附近', note: '' },
+    { name: 'Jeju Sky Resort', area: '翰林', note: '房小、環境舒服' }
+  ],
+
+  // 天氣／突發備案
+  weatherPlans: [
+    { scenario: '牛島停航', plan: '取消登島，保留城山日出峰、涉地可支＋長午餐，可提早南下西歸浦；有 4–5 天緩衝可改期' },
+    { scenario: '萬丈窟（雨天備案）', plan: '東岸下雨時取代海岸步道／月汀里，屬室內最佳選' },
+    { scenario: '大雨／強風', plan: '取消海岸步道與外돌개，優先 Osulloc、咖啡店、市場、黑面羊農場（室內）及酒店休息' },
+    { scenario: '涉地可支騎馬暫停', plan: '改 Day 5 中文區 Jeju Horse Riding Park' },
+    { scenario: '9.81／黑面羊調整', plan: '兩者均喺北部西部，可彈性移到 Day 7 早上' },
+    { scenario: '疲勞管理', plan: 'Day 1 下午固定休息；Day 3 下午留城山休息；延誤 60 分鐘以上先刪咖啡／次要景點' }
   ]
 };
