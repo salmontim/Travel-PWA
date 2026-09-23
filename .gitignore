@@ -9,3 +9,6 @@ _itinerary_tmp.pdf
 .itinerary_tmp.html
 .itinerary_tmp.pdf
 _edge_profile/
+
+# Trip.com 訂單存檔（含住客姓名、PIN 碼、訂單編號 — 只留本機，不上公開 repo）
+trip_com_day*.html

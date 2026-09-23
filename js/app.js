@@ -361,8 +361,15 @@
       BACKUP.activities.map((a) =>
         `<dt>${esc(a.name)}</dt><dd>${esc(a.area)} · ${esc(a.note)}</dd>`).join(''));
 
+    // 已訂住宿（2026-09-23 按 Trip.com 訂單核實）
+    if (BACKUP.bookedStays) {
+      html += backupSection('✅', '已訂住宿（Trip.com 訂單核實）',
+        BACKUP.bookedStays.map((s) =>
+          `<dt>${esc(s.name)}</dt><dd><span class="ic-sub">${esc(s.area)}</span> ${esc(s.note)}</dd>`).join(''));
+    }
+
     // 備用住宿
-    html += backupSection('🏨', '備用住宿',
+    html += backupSection('🏨', '備用住宿（未採用候選）',
       BACKUP.stays.map((s) =>
         `<dt>${esc(s.name)}</dt><dd>${esc(s.area)}${s.note ? ' · ' + esc(s.note) : ''}</dd>`).join(''));
 

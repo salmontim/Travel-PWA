@@ -69,49 +69,67 @@ const TRIP = {
   ],
 
   // ---------- 住宿 ----------
+  // 2026-09-23 按 Trip.com 訂單存檔核實（trip_com_day1/day23/day45/day67.html，只留本機、已 gitignore）
+  // 網站公開，PIN 碼顯示 ****、訂單編號只留末 4 位；完整值查本機訂單存檔
   stays: [
     {
-      title: '濟州市酒店（9/26・1 晚）',
-      sub: '首選 Hotel Leo',
-      location: { name: 'Hotel Leo Jeju', query: '호텔 레오 제주' },
+      title: '島嶼住宿酒店（9/26・1 晚）',
+      sub: '아일랜드 스테이 제주 · 濟州市',
+      location: { name: 'Island Stay Jeju', query: '아일랜드 스테이 제주' },
       fields: [
-        ['區域', '濟州市新濟州／塔洞一帶'],
-        ['備選', 'Elin Hotel（蓮洞）、Bed Radio Dongmoon（青旅）'],
-        ['自駕', '均有停車；位置方便抵達日'],
-        ['備註', 'Day 1 抵達後先寄存行李或提早 check-in']
+        ['區域', '濟州市 임항로（濟州港一帶）'],
+        ['房型', '特大床房 STAY S（201）・46 m²・1 張特大雙人床・禁煙有窗'],
+        ['入住', '16:00 後（最遲翌日 06:00）｜退房 11:00 前', true],
+        ['泊車', '可泊車（訂單已備註「需要泊車位」）'],
+        ['早餐', '房價不含早餐'],
+        ['訂單', 'Trip.com …9634・PIN ****・HK$854.86 已付款（不設退款）｜完整編號及 PIN 見本機存檔'],
+        ['提示', '行程 15:15 到 → 未夠 16:00 只可先寄存行李；訂單要求入住前 1 日電話聯絡住宿，自助入住須先問取房卡方式'],
+        ['備選', 'Hotel Leo、Elin Hotel（蓮洞）、Bed Radio Dongmoon']
       ]
     },
     {
-      title: '城山酒店（9/27–9/28・2 晚）',
-      sub: '首選 Co-op City Hotel Seongsan',
-      location: { name: 'Co-op City Hotel Seongsan', query: '코업시티호텔 성산' },
+      title: '城山瑪里納酒店（9/27–9/28・2 晚）',
+      sub: '성산 마리나 호텔 · 城山邑',
+      location: { name: 'Seongsan Marina Hotel', query: '성산마리나호텔' },
       fields: [
-        ['區域', '城山邑（성산읍）'],
-        ['備選', '더베스트 제주 성산 호텔、Sunrise Hotel Seongsan'],
-        ['自駕', '近日出峰＋城山港；泊車及充電出發前核實'],
-        ['備註', 'Day 2 到埗；Day 3 睇日出＋去牛島都唔使早起長途']
+        ['區域', '성산읍 고성오조로（성산邑；行政上屬西歸浦市，近城山日出峰／城山港）'],
+        ['房型', '部分景觀豪華房・29 m²・1 單人床＋1 雙人床'],
+        ['入住', '15:00–22:30（設自助入住機）｜退房 11:00 前', true],
+        ['泊車', '免費泊車＋免費行李寄存'],
+        ['早餐', '房價不含早餐（可加購額外早餐）'],
+        ['訂單', 'Trip.com …6471・PIN ****・HK$669.46 已付款｜完整編號及 PIN 見本機存檔'],
+        ['提示', '已備註 9/28 生日房間佈置驚喜；9/26 23:59 後取消收 HK$342.88；空調季節性開放、連住每日簡易清掃、不接受派對／商業拍攝'],
+        ['備選', 'Co-op City Hotel Seongsan、더베스트 제주 성산、Sunrise Hotel Seongsan']
       ]
     },
     {
-      title: '西歸浦酒店（9/29–9/30・2 晚）',
-      sub: '首選 Shinshin Hotel Seogwipo',
-      location: { name: 'Shinshin Hotel Seogwipo', query: '신신호텔 서귀포' },
+      title: '欣欣酒店天地淵（9/29–9/30・2 晚）',
+      sub: '신신호텔 천지연 · 西歸浦市',
+      location: { name: 'Shinshin Hotel Cheonjiyeon', query: '신신호텔 천지연' },
       fields: [
-        ['區域', '西歸浦市（近每日偶來市場）'],
-        ['備選', 'Nine Boutique、Poong Gyung Hotel'],
-        ['自駕', '均有停車；較方便市場及市內景點'],
-        ['備註', '9/29 傍晚由城山南下入住；9/30 西歸浦市內日；10/1 退房行李上車']
+        ['區域', '西歸浦市 서문로（近天地淵瀑布、每日偶來市場）'],
+        ['房型', '標準大床房・19 m²・1 張雙人床'],
+        ['入住', '15:00 後（最遲翌日 06:00）｜退房 11:00 前', true],
+        ['泊車', '免費泊車＋免費行李寄存'],
+        ['早餐', '房價不含早餐（可加購額外早餐）'],
+        ['訂單', 'Trip.com …6741・PIN ****・HK$376.11 已授權稍後付款｜完整編號及 PIN 見本機存檔'],
+        ['提示', '⚠️ 約 9/25 由 Visa ****3746 自動扣款，確保結餘充足；9/26 23:59 前免費取消；已備註高樓層、景觀、遠離電梯、無煙處理；前台有辦公時間限制'],
+        ['備選', 'Shinshin Hotel Seogwipo、Nine Boutique、Poong Gyung Hotel']
       ]
     },
     {
-      title: '機場附近酒店（10/1–10/2・2 晚）',
-      sub: '首選 Hotel JM',
-      location: { name: 'Hotel JM Jeju', query: '호텔 제이엠 제주' },
+      title: 'oceanpalade hotel（10/1–10/2・2 晚）',
+      sub: '오션팔레드 호텔 · 濟州市西（近機場）',
+      location: { name: 'Oceanpalade Hotel', query: '오션팔레드 호텔' },
       fields: [
-        ['區域', '濟州機場附近（約 5–10 分鐘車程）'],
-        ['備選', 'Sweet Hotel、Major Hotel'],
-        ['自駕', '均有停車；官方資料稱距機場 5–10 分鐘'],
-        ['備註', '10/3 約 05:00 酒店叫車到機場']
+        ['區域', '濟州市 서해안로 122（龍潭一帶，近濟州機場）'],
+        ['房型', '優質雙重海洋・42 m²・1 張大床'],
+        ['入住', '15:00 後（最遲翌日 06:00）｜退房 11:00 前', true],
+        ['泊車', '免費泊車・24 小時前台・免費行李寄存'],
+        ['早餐', '房價不含早餐'],
+        ['訂單', 'Trip.com …3078・PIN ****・HK$1,302.46 已付款｜完整編號及 PIN 見本機存檔'],
+        ['提示', '⚠️ 10/1 前確認是否保留（免費取消至 9/24 23:59）；如 21:00 後才抵達須提前電郵通知；10/3 約 05:00 酒店叫車到機場'],
+        ['備選', 'Hotel JM、Sweet Hotel、Major Hotel']
       ]
     }
   ],
@@ -201,8 +219,9 @@ const TRIP = {
         {
           time: '15:15',
           type: 'stay',
-          title: '酒店入住・休息',
-          desc: '入住或寄存後休息，把通宵航班疲勞留在酒店，傍晚再步行往東門市場一帶。'
+          title: '島嶼住宿酒店：寄存行李・休息',
+          location: { name: 'Island Stay Jeju', query: '아일랜드 스테이 제주' },
+          desc: '入住時間 16:00 後（最遲翌日 06:00），未夠時間先寄存行李再休息，把通宵航班疲勞留在酒店；傍晚再往東門市場一帶。'
         },
         {
           time: '17:00',
@@ -284,9 +303,9 @@ const TRIP = {
         {
           time: '14:45',
           type: 'stay',
-          title: '城山酒店入住・休息',
-          location: { name: '城山酒店', query: '코업시티호텔 성산', lat: 33.4640, lng: 126.9350 },
-          desc: '入住城山（성산읍），唔再南下西歸浦。'
+          title: '城山瑪里納酒店入住（15:00 起）',
+          location: { name: 'Seongsan Marina Hotel', query: '성산마리나호텔' },
+          desc: '入住時間 15:00–22:30（設自助入住機），免費泊車；入住城山（성산읍），唔再南下西歸浦。'
         },
         {
           time: '15:30',
@@ -412,8 +431,9 @@ const TRIP = {
         {
           time: '11:15',
           type: 'stay',
-          title: '酒店寄存／入住',
-          desc: '西歸浦酒店第一晚（9/29）。'
+          title: '欣欣酒店天地淵：寄存行李（15:00 後才入房）',
+          location: { name: 'Shinshin Hotel Cheonjiyeon', query: '신신호텔 천지연' },
+          desc: '西歸浦第一晚（9/29）；入住時間 15:00 後，先寄存行李再食午餐，免費泊車。'
         },
         {
           time: '12:00',
@@ -445,8 +465,9 @@ const TRIP = {
         {
           time: '16:30',
           type: 'stay',
-          title: '酒店休息',
-          desc: '稍作休息後晚餐。'
+          title: '欣欣酒店天地淵：正式入房・休息',
+          location: { name: 'Shinshin Hotel Cheonjiyeon', query: '신신호텔 천지연' },
+          desc: '15:00 後可辦入住，稍作休息後晚餐；已備註高樓層、遠離電梯、無煙處理。'
         },
         {
           time: '18:00',
@@ -523,7 +544,7 @@ const TRIP = {
           time: '17:00',
           type: 'transport',
           title: '返回西歸浦（約 35–40 分鐘）',
-          desc: '西歸浦酒店第二晚。'
+          desc: '欣欣酒店天地淵第二晚。'
         },
         {
           time: '18:30',
@@ -597,14 +618,15 @@ const TRIP = {
         {
           time: '17:30',
           type: 'transport',
-          title: '北返機場酒店（約 50–60 分鐘）',
-          desc: '入住機場附近酒店（Hotel JM／Sweet／Major）。'
+          title: '北返 oceanpalade hotel（約 50–60 分鐘）',
+          desc: '由涯月／西部北返濟州市西 서해안로 的 oceanpalade hotel，近濟州機場，免費泊車。'
         },
         {
           time: '18:30',
           type: 'stay',
-          title: '入住機場附近酒店',
-          desc: '機場酒店第一晚（10/1、10/2 共 2 晚）。'
+          title: '入住 oceanpalade hotel（15:00 後）',
+          location: { name: 'Oceanpalade Hotel', query: '오션팔레드 호텔' },
+          desc: '第一晚（10/1、10/2 共 2 晚）第 2 晚毋須搬酒店；如 21:00 後才到須提前電郵通知酒店。'
         }
       ]
     },
@@ -617,8 +639,8 @@ const TRIP = {
         {
           time: '09:00',
           type: 'note',
-          title: '酒店早餐・整理行李',
-          desc: '還車日由機場出發，無需南下，朝頭好鬆動；行李可先寄存酒店。'
+          title: '整理行李・早餐自理（房價不含早餐）',
+          desc: '還車日由機場附近出發，無需南下，朝頭好鬆動；行李可先寄存酒店（24 小時前台）。'
         },
         {
           time: '09:30',
@@ -684,8 +706,9 @@ const TRIP = {
         {
           time: '19:30',
           type: 'stay',
-          title: '入住機場附近酒店',
-          desc: '10/3 清晨約 05:00 酒店叫車到機場。'
+          title: '返回 oceanpalade hotel（第 2 晚）',
+          location: { name: 'Oceanpalade Hotel', query: '오션팔레드 호텔' },
+          desc: '還車後返酒店；10/3 清晨約 05:00 酒店叫車到機場。'
         }
       ]
     },
@@ -830,7 +853,15 @@ const BACKUP = {
     { name: '海女表演', area: '城山日出峰', note: '每日 14:00；免費' }
   ],
 
-  // 備用住宿（實住點評＋候選）
+  // 已訂住宿（2026-09-23 按 Trip.com 訂單核實）
+  bookedStays: [
+    { name: '島嶼住宿酒店 아일랜드 스테이 제주', area: '濟州市 임항로', note: '9/26・1 晚・46 m²・16:00 後入房' },
+    { name: '城山瑪里納酒店 성산 마리나 호텔', area: '城山邑', note: '9/27–9/28・2 晚・15:00–22:30 入住' },
+    { name: '欣欣酒店天地淵 신신호텔 천지연', area: '西歸浦市 서문로', note: '9/29–9/30・2 晚・15:00 後入房' },
+    { name: 'oceanpalade hotel 오션팔레드 호텔', area: '濟州市 서해안로', note: '10/1–10/2・2 晚・近機場' }
+  ],
+
+  // 備用住宿（未採用候選）
   stays: [
     { name: 'Elin Hotel', area: '蓮洞', note: '房小、停車位難停，環境舒服' },
     { name: 'Bed Radio Dongmoon', area: '濟州市', note: '市區平價青旅' },

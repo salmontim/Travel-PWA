@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-gen_pdf.py — 將「jeju_7day_itinerary.md」轉成 PDF
+gen_pdf.py — 將行程 Markdown 轉成 PDF
 
 用法（在專案根目錄）：
     .venv\\Scripts\\python.exe scripts\\gen_pdf.py
+    .venv\\Scripts\\python.exe scripts\\gen_pdf.py <來源.md> [輸出.pdf]
+
+預設來源為「jeju_7day_itinerary_v2.md」（現行順時針優化版，即 PWA js/data.js 對應版本）；
+舊版逆時針行程可用參數指定：scripts\\gen_pdf.py jeju_7day_itinerary.md
 
 原理：
     1. 用 Python markdown 庫把 MD 轉成 HTML（含表格、引用等）
@@ -13,6 +17,7 @@ gen_pdf.py — 將「jeju_7day_itinerary.md」轉成 PDF
 依賴：pip install markdown
 """
 
+import re
 import shutil
 import subprocess
 import sys
@@ -20,7 +25,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MD = ROOT / "jeju_7day_itinerary.md"
+MD = ROOT / "jeju_7day_itinerary_v2.md"
 PDF = ROOT / "jeju_7day_itinerary.pdf"
 HTML_TMP = ROOT / "_itinerary_tmp.html"
 
@@ -67,11 +72,21 @@ strong { color: #2e2c28; }
 def main() -> None:
     import markdown  # 延遲 import，方便提示缺少依賴
 
-    if not MD.exists():
-        print(f"找不到 {MD}")
+    md_path = Path(sys.argv[1]) if len(sys.argv) > 1 else MD
+    if not md_path.is_absolute():
+        md_path = ROOT / md_path
+    pdf_path = Path(sys.argv[2]) if len(sys.argv) > 2 else PDF
+    if not pdf_path.is_absolute():
+        pdf_path = ROOT / pdf_path
+
+    if not md_path.exists():
+        print(f"找不到 {md_path}")
         sys.exit(1)
 
-    md_text = MD.read_text(encoding="utf-8")
+    md_text = md_path.read_text(encoding="utf-8")
+
+    title_match = re.search(r'^title:\s*"?([^"\n]+)"?\s*$', md_text, re.MULTILINE)
+    doc_title = title_match.group(1).strip() if title_match else md_path.stem
 
     body = markdown.markdown(
         md_text,
@@ -83,7 +98,7 @@ def main() -> None:
         '<!DOCTYPE html>\n<html lang="zh-Hant">\n<head>\n'
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f"<title>濟州島 7 天自駕行程</title>\n<style>{CSS}</style>\n</head>\n"
+        f"<title>{doc_title}</title>\n<style>{CSS}</style>\n</head>\n"
         f"<body>{body}</body>\n</html>\n"
     )
     HTML_TMP.write_text(html, encoding="utf-8")
@@ -121,14 +136,14 @@ def main() -> None:
 
     # 覆寫目標（若被瀏覽器預覽鎖住，先刪除再移入）
     try:
-        shutil.move(str(tmp_pdf), str(PDF))
+        shutil.move(str(tmp_pdf), str(pdf_path))
     except PermissionError:
-        PDF.unlink(missing_ok=True)
-        shutil.move(str(tmp_pdf), str(PDF))
+        pdf_path.unlink(missing_ok=True)
+        shutil.move(str(tmp_pdf), str(pdf_path))
 
     HTML_TMP.unlink(missing_ok=True)
     shutil.rmtree(tmp_profile, ignore_errors=True)
-    print(f"✅ PDF 已生成：{PDF}")
+    print(f"✅ 來源：{md_path.name} → PDF 已生成：{pdf_path}")
 
 
 if __name__ == "__main__":
