@@ -396,6 +396,12 @@
   }
   const baseCur = () => TRIP.budget?.currency || 'TWD';
   const toBase = (e) => e.amount * rateOf(e.currency);
+
+  /** 本地時區的 YYYY-MM-DD（不要用 toISOString()，那是 UTC） */
+  function localDateStr(d = new Date()) {
+    const p = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  }
   const fmt = (n, code, digits = 0) =>
     `${code} ${n.toLocaleString(undefined, {
       minimumFractionDigits: digits,
@@ -458,8 +464,9 @@
     // 幣別下拉
     $('#exp-currency').innerHTML = (TRIP.currencies || [{ code: 'TWD' }])
       .map((c) => `<option value="${c.code}">${c.code}</option>`).join('');
-    // 預設日期 = 今天
-    $('#exp-date').value = new Date().toISOString().slice(0, 10);
+    // 預設日期 = 今天（必須用本地時區；toISOString() 是 UTC，
+    // 在韓國 UTC+9 早上 09:00 前會記成前一日的日期）
+    $('#exp-date').value = localDateStr();
 
     // 資料層
     const { mode } = ExpenseDB.init();
