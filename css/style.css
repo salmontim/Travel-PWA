@@ -513,6 +513,7 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   letter-spacing: .05em;
 }
 .sync-status.ok { color: var(--bamboo-deep); }
+.sync-status.warn { color: var(--tag-menu); }
 .sync-status.err { color: var(--tag-food); }
 
 .expense-list {

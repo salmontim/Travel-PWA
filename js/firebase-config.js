@@ -8,16 +8,26 @@
   Firebase Console > 專案設定 > 一般 > 你的應用程式。
 
   apiKey 在瀏覽器應用程式中不是機密。存取控制必須由
-  Firestore 安全規則處理。
+  Firestore 安全規則處理（詳見 README）。
+
+  ※ 變數名稱必須是 FIREBASE_CONFIG —— js/db.js 靠這個名字
+     決定要不要啟用 Firestore。名稱寫錯的話 App 會靜靜地
+     落回 localStorage（顯示「📱 本機儲存」）。
+     為了兼容 Firebase Console 複製出來的 `const firebaseConfig`
+     寫法，db.js 亦接受 firebaseConfig 這個備選名稱。
   ============================================================ */
 
 const FIREBASE_CONFIG = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_SENDER_ID',
-  appId: 'YOUR_APP_ID'
+  apiKey: "AIzaSyBsUFyKXlTurZ43BLc9pjJ95hyqFXqDcck",
+  authDomain: "travel-pwa-f6c24.firebaseapp.com",
+  projectId: "travel-pwa-f6c24",
+  storageBucket: "travel-pwa-f6c24.firebasestorage.app",
+  messagingSenderId: "831763074802",
+  appId: "1:831763074802:web:351f3c13d886f8450e8a6b"
 };
+
+// Firebase Console 的 snippet 用 firebaseConfig 這個名字，一併別名到同一物件
+// （避免日後直接貼上 Console 內容時又要改名）
+var firebaseConfig = FIREBASE_CONFIG;
 
 const FIRESTORE_COLLECTION = 'expenses';

@@ -40,25 +40,84 @@ Hosting 使用 GitHub Pages；Firestore 只負責記帳資料同步。兩者可�
 1. 到 [Firebase Console](https://console.firebase.google.com/) 建立專案
 2. 專案設定 → 一般 → **新增網頁應用程式**
 3. 複製 `firebaseConfig`，貼到 [js/firebase-config.js](js/firebase-config.js) 的 `FIREBASE_CONFIG`
+   - ⚠️ 變數名稱必須是 `FIREBASE_CONFIG`（`js/db.js` 靠這個名字決定是否啟用 Firestore）。
+     名稱寫錯不會報錯，App 會靜靜地落回 localStorage，狀態顯示「📱 本機儲存」。
+     為了兼容 Console 複製出來的 `const firebaseConfig`，`db.js` 亦接受 `firebaseConfig` 這個備選名稱。
 4. 左側 **Firestore Database** → 建立資料庫
-5. 資料集合名稱預設是 `expenses`，可在 [js/firebase-config.js](js/firebase-config.js) 的 `FIRESTORE_COLLECTION` 修改
+5. 左側 **Firestore Database → 規則** → 貼上下面任一組規則並 **發佈**
+   - 預設規則會拒絕所有讀寫（403），未發佈規則的話 App 會顯示
+     「⚠ 雲端讀取失敗（多為安全規則）」
+6. 資料集合名稱預設是 `expenses`，可在 [js/firebase-config.js](js/firebase-config.js) 的 `FIRESTORE_COLLECTION` 修改
 
-### 測試用 Firestore Rules
+### Firestore 安全規則
 
-個人測試可先用以下規則，確認兩部 iPhone 可以同步：
+#### 方案一：公開讀寫（最簡單，先求可用）
 
 ```text
 rules_version = '2';
 service cloud.firestore {
-   match /databases/{database}/documents {
-      match /expenses/{doc} {
-         allow read, write: if true;
-      }
-   }
+  match /databases/{database}/documents {
+    match /expenses/{docId} {
+      // 任何人（知道 projectId 的人）都可以讀寫
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(
+                        ['title','amount','currency','category','date','ts'])
+                    && request.resource.data.title is string
+                    && request.resource.data.title.size() > 0
+                    && request.resource.data.title.size() <= 100
+                    && request.resource.data.amount is number
+                    && request.resource.data.amount >= 0
+                    && request.resource.data.amount <= 1000000
+                    && request.resource.data.ts is int;
+      allow update: if false;   // 記帳不需要編輯，禁止改寫
+      allow delete: if true;
+    }
+  }
 }
 ```
 
-這組規則是公開讀寫，只適合短期測試。正式旅行使用前，建議加入 Firebase Authentication 或 App Check，再限制只有你自己的裝置/帳號可以存取。
+⚠️ **風險（請務必了解）**：`apiKey` 同 `projectId` 會出現喺公開嘅 `js/firebase-config.js`，
+所以任何人只要知道 projectId 就可以讀取、新增、刪除你嘅記帳紀錄。以上規則只係
+阻擋亂七八糟嘅資料格式同禁止修改，**不能阻止別人讀取或刪除**。
+
+實際建議：
+- 記帳「項目」欄唔好寫敏感資料（唔好寫卡號、完整姓名、地址）。
+- 發現被亂寫時，去 Console → Firestore → `expenses` 逐筆刪除，或者改名 `FIRESTORE_COLLECTION`
+  再發佈新規則。
+- 想真正安全就要用方案二。
+
+#### 方案二：電郵密碼登入（真正安全，需要加登入 UI）
+
+1. Console → **Authentication** → 開始使用 → Sign-in method → **電子郵件/密碼** → 啟用
+2. **Users** → 新增使用者（你自己的 email + 密碼；兩部手機共用同一組）
+3. 規則改為每位用戶只可存取自己的資料：
+
+```text
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/expenses/{docId} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
+```
+
+4. App 需要加入登入畫面（`firebase-auth-compat.js`）並把資料路徑改為
+   `users/{uid}/expenses`，目前程式碼**尚未實作**這部分。
+
+### 排查同步問題
+
+| 狀態顯示 | 原因 | 處理 |
+|---|---|---|
+| 📱 本機儲存 | 未填設定，或變數名稱不是 `FIREBASE_CONFIG` / `firebaseConfig` | 檢查 `js/firebase-config.js` |
+| ☁ 連線中… | 已初始化，等第一次雲端回應 | 正常，數秒內會變 |
+| ☁ Firestore 同步 | 正常運作 | — |
+| ⚠ 雲端讀取／寫入失敗（多為安全規則） | 規則未發佈或拒絕存取（403） | 見上方「Firestore 安全規則」 |
+| ⚠ 部分紀錄只存本機，未上雲端 | 有紀錄寫入雲端失敗，暫存本機 | 修正規則後重新輸入該筆 |
+
+寫入失敗時 App 會自動暫存本機並保留在畫面上（不會白填），修正規則後不會自動補上傳，
+需要重新輸入一次。
 
 ## 部署到 GitHub Pages
 

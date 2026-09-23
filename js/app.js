@@ -464,12 +464,25 @@
     // 資料層
     const { mode } = ExpenseDB.init();
     dbMode = mode;
-    setSync(mode === 'firestore' ? 'ok' : '', mode === 'firestore' ? '☁ Firestore 同步' : '📱 本機儲存');
+    // 未收到雲端回應前不應自稱同步成功，先顯示「連線中」
+    if (mode === 'firestore') {
+      setSync('', '☁ 連線中…');
+    } else {
+      setSync('', '📱 本機儲存');
+    }
     ExpenseDB.subscribe((items, source) => {
       expenses = items;
       renderExpenses();
       if (source === 'cloud') setSync('ok', '☁ Firestore 同步');
-      if (source === 'local-error') setSync('err', '☁ 連線失敗，顯示本機資料');
+      else if (source === 'cloud-partial') setSync('warn', '⚠ 部分紀錄只存本機，未上雲端');
+      else if (source === 'local-error') setSync('err', '⚠ 雲端讀取失敗（多為安全規則）－顯示本機資料');
+      else if (source === 'write-error') setSync('err', '⚠ 雲端寫入失敗（多為安全規則）');
+    });
+    ExpenseDB.setErrorHandler((where, code) => {
+      const hint = code === 'permission-denied'
+        ? '－請檢查 Firestore 安全規則'
+        : (code === 'unavailable' ? '－離線，稍後自動重試' : '');
+      setSync('err', `⚠ 雲端${where}失敗${hint}`);
     });
 
     // 新增
@@ -490,7 +503,8 @@
         $('#exp-title').value = '';
         $('#exp-amount').value = '';
         $('#exp-title').focus();
-        if (dbMode !== 'firestore') {
+        // 只存到本機的（_cloud 不為 true）要自己推入畫面，否則會看不到剛記的一筆
+        if (!saved._cloud) {
           expenses.unshift(saved);
           renderExpenses();
         }
@@ -510,8 +524,8 @@
       const id = li.dataset.id;
       li.style.opacity = '.35';
       try {
-        await ExpenseDB.remove(id);
-        if (dbMode !== 'firestore') {
+        const res = await ExpenseDB.remove(id);
+        if (!res || !res._cloud) {
           expenses = expenses.filter((item) => item.id !== id);
           renderExpenses();
         }
