@@ -24,6 +24,8 @@
   --tag-gift-bg: #e8f0e6;
   --tag-booking: #4a5f8a;
   --tag-booking-bg: #e6ebf5;
+  --tag-activity: #6a5f8a;      /* 紫：互動體驗（非食） */
+  --tag-activity-bg: #ece8f4;
   --shadow: 0 1px 2px rgba(46, 44, 40, .05), 0 4px 14px rgba(46, 44, 40, .06);
   --radius: 16px;
   --radius-sm: 10px;
@@ -367,18 +369,20 @@ main {
   border-radius: 6px;
   white-space: nowrap;
 }
-.tag-label.food    { background: var(--tag-food-bg);    color: var(--tag-food); }
-.tag-label.menu    { background: var(--tag-menu-bg);    color: var(--tag-menu); }
-.tag-label.gift    { background: var(--tag-gift-bg);    color: var(--tag-gift); }
-.tag-label.booking { background: var(--tag-booking-bg); color: var(--tag-booking); }
+.tag-label.food     { background: var(--tag-food-bg);     color: var(--tag-food); }
+.tag-label.menu     { background: var(--tag-menu-bg);     color: var(--tag-menu); }
+.tag-label.gift     { background: var(--tag-gift-bg);     color: var(--tag-gift); }
+.tag-label.activity { background: var(--tag-activity-bg); color: var(--tag-activity); }
+.tag-label.booking  { background: var(--tag-booking-bg);  color: var(--tag-booking); }
 .tag-value { color: var(--ink-soft); line-height: 1.6; }
 .tag-value b, .tag-value strong { color: var(--ink); }
 
 /* 行程描述內的重點標記 */
-mark.hl-food    { background: var(--tag-food-bg);    color: var(--tag-food);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
-mark.hl-menu    { background: var(--tag-menu-bg);    color: var(--tag-menu);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
-mark.hl-gift    { background: var(--tag-gift-bg);    color: var(--tag-gift);    padding: 0 3px; border-radius: 4px; font-weight: 600; }
-mark.hl-booking { background: var(--tag-booking-bg); color: var(--tag-booking); padding: 0 3px; border-radius: 4px; font-weight: 600; }
+mark.hl-food     { background: var(--tag-food-bg);     color: var(--tag-food);     padding: 0 3px; border-radius: 4px; font-weight: 600; }
+mark.hl-menu     { background: var(--tag-menu-bg);     color: var(--tag-menu);     padding: 0 3px; border-radius: 4px; font-weight: 600; }
+mark.hl-gift     { background: var(--tag-gift-bg);     color: var(--tag-gift);     padding: 0 3px; border-radius: 4px; font-weight: 600; }
+mark.hl-activity { background: var(--tag-activity-bg); color: var(--tag-activity); padding: 0 3px; border-radius: 4px; font-weight: 600; }
+mark.hl-booking  { background: var(--tag-booking-bg);  color: var(--tag-booking);  padding: 0 3px; border-radius: 4px; font-weight: 600; }
 
 /* ---------- 旅行資訊分頁 ---------- */
 .info-block { margin-bottom: 8px; }

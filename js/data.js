@@ -19,7 +19,7 @@ const TRIP = {
   startDate: '2026-09-26',          // 日期格式：YYYY-MM-DD
 
   // 記帳設定（rate 代表 1 單位外幣可兌換多少港幣 HKD）
-  budget: { total: 18000, currency: 'HKD' },
+  budget: { total: 8000, currency: 'HKD' },
   currencies: [
     { code: 'HKD', rate: 1 },
     { code: 'JPY', rate: 0.052 },
@@ -140,7 +140,7 @@ const TRIP = {
     { label: '韓國緊急電話（救護/火警）', value: '119', tel: 'tel:119' },
     { label: '韓國旅遊諮詢熱線（24h 外語）', value: '1330', tel: 'tel:1330' },
     { label: '入境處協助在外港人 24h 熱線', value: '+852 1868', tel: 'tel:+8521868' },
-    { label: '同行家人', value: '+852-9123-4567', tel: 'tel:+85291234567' }
+    { label: '同行家人', value: '+852-6838-3923', tel: 'tel:+85268383923' }
   ],
 
   // ---------- 每日行程 ----------
@@ -612,7 +612,8 @@ const TRIP = {
           location: { name: 'SaeByeol Friends Zoo', query: '새별프렌즈동물원', lat: 33.3900, lng: 126.3000 },
           desc: '超可愛黑面羊（黑頭羊），室內空間、可餵食，動物種類多；位於새빌 Saebil 粉黛子草咖啡廳旁。',
           guide: {
-            food: '<b>餵食體驗</b>黑面羊'
+            activity: '<b>餵食體驗</b>黑面羊、羊駝等室內動物',
+            story: '重點不是食，是餵：可買飼料親手餵黑面羊；室內場地不受天氣影響，落雨照去得。'
           }
         },
         {
@@ -848,6 +849,7 @@ const BACKUP = {
 
   // 備用互動活動（陸上為主）
   activities: [
+    { name: 'SaeByeol Friends Zoo 새별프렌즈동물원', area: '西部（새빌 旁）', note: '黑面羊農場；室內可餵食' },
     { name: '漢拏山健行', area: '中部', note: '靈室路線' },
     { name: '偶來小路健行', area: '西歸浦', note: '偶來七號' },
     { name: '海女表演', area: '城山日出峰', note: '每日 14:00；免費' }

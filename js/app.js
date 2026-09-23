@@ -131,11 +131,12 @@
   };
 
   const GUIDE_TAGS = [
-    ['food',    'food',    '必吃美食'],
-    ['menu',    'menu',    '必點菜單'],
-    ['gift',    'gift',    '必買伴手禮'],
-    ['booking', 'booking', '預約代號'],
-    ['story',   null,      null]   // 景點故事獨立渲染
+    ['food',     'food',     '必吃美食'],
+    ['menu',     'menu',     '必點菜單'],
+    ['gift',     'gift',     '必買伴手禮'],
+    ['activity', 'activity', '互動體驗'],
+    ['booking',  'booking',  '預約代號'],
+    ['story',    null,       null]   // 景點故事獨立渲染
   ];
 
   /* ================= 行程渲染 ================= */
