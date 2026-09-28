@@ -261,6 +261,7 @@ main {
 .card--food::before     { background: var(--tag-food); }
 .card--transport::before{ background: var(--indigo); }
 .card--stay::before     { background: var(--accent); }
+.card--shopping::before { background: var(--tag-gift); }
 .card--note::before     { background: var(--ink-faint); }
 
 .card-head {
@@ -281,6 +282,7 @@ main {
 .card--food .card-type-badge      { background: var(--tag-food-bg); color: var(--tag-food); }
 .card--transport .card-type-badge { background: #e8ebf0; color: var(--indigo); }
 .card--stay .card-type-badge      { background: var(--accent-soft); color: var(--accent); }
+.card--shopping .card-type-badge  { background: var(--tag-gift-bg); color: var(--tag-gift); }
 .card--note .card-type-badge      { background: var(--paper-2); color: var(--ink-soft); }
 
 .card-head h3 {

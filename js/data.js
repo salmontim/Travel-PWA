@@ -450,51 +450,41 @@ const TRIP = {
     {
       date: '2026-09-29',
       label: 'Day 4',
-      theme: '涉地可支・轉場西歸浦・南部瀑布',
+      theme: '涉地可支・轉場西歸浦・南部瀑布・UNIQLO',
       weatherCity: 'seongsan',
       items: [
         {
-          time: '08:00',
+          time: '09:30',
           type: 'transport',
-          title: '退房・行李上車 → 涉地可支',
-          desc: '車程約 10 分鐘。'
+          title: '退房・行李上車 → 涉地可支（睡遲版）',
+          desc: '城山瑪里納酒店最遲 11:00 退房——11:00 係死線，唔係起身時間。今日冇清晨景點（日出峰已於 Day 3 完成），可以睡到 09:00。車程約 10 分鐘。'
         },
         {
-          time: '08:30',
+          time: '09:45',
           type: 'spot',
           title: '涉地可支',
           location: { name: '涉地可支', query: '섭지코지', lat: 33.4366, lng: 126.9221 },
-          desc: '免費入場；停車全日上限 3,000。火山岩海角＋安藤忠雄設計建築，沿步道輕鬆行即可。（本版不安排騎馬）',
+          desc: '免費入場；停車全日上限 3,000。火山岩海角＋安藤忠雄設計建築，沿步道行 90 分鐘。行完直接南行，唔使折返城山。（本版不安排騎馬）',
           guide: {
             story: '濟州東岸火山岩海角，因韓劇《All In》取景而聲名大噪；有安藤忠雄設計建築。'
           }
         },
         {
-          time: '10:00',
+          time: '11:15',
           type: 'transport',
           title: '南下西歸浦（約 70–75 分鐘）',
           location: { name: '西歸浦市', query: '서귀포', lat: 33.2544, lng: 126.5600 },
-          desc: '順路南行，傍晚前入住西歸浦。'
+          desc: '由涉地可支直接南行，經表善／南元，唔使返城山。'
         },
         {
-          time: '11:15',
+          time: '12:30',
           type: 'stay',
           title: '欣欣酒店天地淵：寄存行李（15:00 後才入房）',
           location: { name: 'Shinshin Hotel Cheonjiyeon', query: '신신호텔 천지연' },
           desc: '西歸浦第一晚（9/29）；入住時間 15:00 後，先寄存行李再食午餐，免費泊車。'
         },
         {
-          time: '12:00',
-          type: 'spot',
-          title: '正房瀑布',
-          location: { name: '正房瀑布', query: '정방폭포', lat: 33.2449, lng: 126.5715 },
-          desc: '09:00–17:50，最後入場 17:30，全年無休；成人 2,000。亞洲少數直接落入海的瀑布；海邊石階濕滑。',
-          guide: {
-            booking: '成人 <b>2,000 韓元</b>'
-          }
-        },
-        {
-          time: '13:30',
+          time: '13:00',
           type: 'food',
           title: '每日偶來市場午餐',
           location: { name: '西歸浦每日偶來市場', query: '서귀포매일올레시장', lat: 33.2487, lng: 126.5641 },
@@ -504,14 +494,38 @@ const TRIP = {
           }
         },
         {
-          time: '15:00',
+          time: '14:00',
           type: 'spot',
-          title: '外돌개 或咖啡',
-          location: { name: '外돌개', query: '외돌개', lat: 33.2415, lng: 126.5482 },
-          desc: '全天開放、免費入場及停車；下午較適合海岸攝影。'
+          title: '正房瀑布',
+          location: { name: '正房瀑布', query: '정방폭포', lat: 33.2449, lng: 126.5715 },
+          desc: '09:00–17:50，最後入場 17:30，全年無休；成人 2,000。亞洲少數直接落入海的瀑布；海邊石階濕滑。',
+          guide: {
+            booking: '成人 <b>2,000 韓元</b>'
+          }
         },
         {
-          time: '16:30',
+          time: '15:30',
+          type: 'shopping',
+          title: 'UNIQLO 서귀포점（濟州限定 T-shirt）',
+          location: { name: '유니클로 서귀포점', query: '유니클로 서귀포점' },
+          desc: '제주 서귀포시 516로 12（토평동），☎ 064-733-1206。⚠️ <b>11:00 才開門</b>，所以只能排下午。濟州限定貨：<b>한라봉 T-shirt</b>（漢拏峰柑橘）、<b>제주 한정 UT</b> 聯乘，本店另有 <b>UTme!</b> 自訂 T-shirt。⚠️ 官網講明庫存實時變動、不接受電話保留，所以越早去越好。',
+          guide: {
+            gift: '濟州限定 <b>한라봉 T-shirt</b>、<b>제주 한정 UT</b>；本店另有 <b>UTme!</b> 自訂 T-shirt',
+            booking: '11:00–20:30（一–四）／11:00–21:00（五–日）· 電話 064-733-1206'
+          }
+        },
+        {
+          time: '16:45',
+          type: 'spot',
+          title: '外돌개（彈性：順路有時間才去）',
+          location: { name: '外돌개', query: '외돌개', lat: 33.2415, lng: 126.5482 },
+          desc: 'UNIQLO 回酒店順路。免費、全天開放、有停車。唔同角度形狀唔同，唔好影一張就走；如果 UNIQLO 逛久了，直接跳過回酒店休息。',
+          guide: {
+            story: '외돌개（獨立岩／孤石岩）＝ 韓國國家指定「名勝」。高約 20 m、闊 7–10 m 的海蝕石柱，火山熔岩台地經海浪侵蝕形成，旁有垂直海蝕崖同海蝕洞。位於 서홍동 三梅峰山腳，距西歸浦市中心約 2 km，올레 7 號路線經過；對面係 황우지해안（黃牛地海岸）。'
+          }
+        },
+        {
+          time: '17:15',
           type: 'stay',
           title: '欣欣酒店天地淵：正式入房・休息',
           location: { name: 'Shinshin Hotel Cheonjiyeon', query: '신신호텔 천지연' },
@@ -817,7 +831,8 @@ const BACKUP = {
         { name: '牧官衙', note: '' },
         { name: '塔洞海旁', note: '' },
         { name: '濟州 4·3 和平紀念館', note: '歷史沈重' },
-        { name: 'The Islander 紀念品店', note: '' }
+        { name: 'The Islander 紀念品店', note: '' },
+        { name: 'UNIQLO 제주 도남점', note: '제주시 연북로 392（도남동）·貨最齊、有停車場·一–四 11:00–20:30／五–日 11:00–21:00' }
       ]
     },
     {
@@ -843,7 +858,8 @@ const BACKUP = {
         { name: 'Hill of Storms 懸崖海邊', note: '' },
         { name: '漢拏山靈室登山路', note: '健行' },
         { name: 'Blue Bottle Jeju 藍瓶', note: '' },
-        { name: 'analogue 柑橘農場', note: '採橘子咖啡' }
+        { name: 'analogue 柑橘農場', note: '採橘子咖啡' },
+        { name: 'UNIQLO 서귀포점', note: '제주 서귀포시 516로 12（토평동）·11:00 開門·064-733-1206·有 UTme! 自訂 T-shirt' }
       ]
     },
     {
