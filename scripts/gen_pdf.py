@@ -7,7 +7,8 @@ gen_pdf.py — 將行程 Markdown 轉成 PDF
     .venv\\Scripts\\python.exe scripts\\gen_pdf.py <來源.md> [輸出.pdf]
 
 預設來源為「jeju_7day_itinerary_v2.md」（現行順時針優化版，即 PWA js/data.js 對應版本）；
-舊版逆時針行程可用參數指定：scripts\\gen_pdf.py jeju_7day_itinerary.md
+如要轉其他 Markdown，用參數指定：scripts\\gen_pdf.py <來源.md> [輸出.pdf]
+（舊版逆時針 v1 的 `jeju_7day_itinerary.md` 已於 2026-09-28 移除，不再保留。）
 
 原理：
     1. 用 Python markdown 庫把 MD 轉成 HTML（含表格、引用等）
