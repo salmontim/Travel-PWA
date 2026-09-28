@@ -25,17 +25,29 @@
 
   /**
    * Naver Map 導航連結（濟州自駕導航用）
-   * - 有 lat/lng 時：直接開「出發地 → 目的地」路線
-   * - 沒有經緯度時：以韓文關鍵字搜尋，點選結果即可規劃路線
+   *
+   * ⚠️ 舊寫法 `m.map.naver.com/mapLink?menu=route&...` 已被 Naver 停用，
+   *    開出嚟只會係「페이지를 찾을 수 없습니다」(404)，所以全部改用以下兩種現行有效格式：
+   *
+   *   1) 有 lat/lng → /p/directions/-/{lng},{lat},{名稱}/-/car
+   *      自駕路線頁，目的地已預填，起點留空（手機／網頁會用「目前位置」）。
+   *      ⚠️ 座標順序係「經度,緯度」(lng,lat)，調轉會去錯地方。
+   *      起點位的 `-` 代表「目前位置」，唔可以刪。
+   *
+   *   2) 冇 lat/lng → /p/search/{韓文關鍵字}
+   *      開搜尋結果頁，點第一個結果即可規劃路線。
+   *
+   * 兩者都會經 universal link 自動喚起 Naver Map App（已安裝的話）。
    */
-  const navUrl = (loc) => {
-    const q = encodeURIComponent(loc.query || loc.name);
-    if (loc.lat && loc.lng) {
-      return `https://m.map.naver.com/mapLink?menu=route&mapType=0&pathType=0` +
-             `&destName=${q}&destLng=${loc.lng}&destLat=${loc.lat}`;
-    }
-    return 'https://map.naver.com/p/search/' + q;
-  };
+  const naverRouteUrl = (loc) =>
+    `https://map.naver.com/p/directions/-/${loc.lng},${loc.lat},` +
+    `${encodeURIComponent(loc.query || loc.name)}/-/car`;
+
+  const naverSearchUrl = (loc) =>
+    'https://map.naver.com/p/search/' + encodeURIComponent(loc.query || loc.name);
+
+  const navUrl = (loc) =>
+    (loc.lat && loc.lng ? naverRouteUrl(loc) : naverSearchUrl(loc));
 
   /**
    * Google Maps 地點捷徑（出發前查看景點地址用；
@@ -53,15 +65,24 @@
       </svg>`;
 
   /** 地點按鈕組：Naver 導航（自駕）＋ Google 地圖（出發前查看地址） */
-  const navActions = (loc) => `
+  const navActions = (loc) => {
+    const hasCoord = Boolean(loc.lat && loc.lng);
+    const label = hasCoord ? 'Naver 導航' : 'Naver 搜尋';
+    const hint = hasCoord
+      ? 'Naver Map 自駕路線（目的地已預填，起點用目前位置）'
+      : 'Naver Map 以韓文關鍵字搜尋，點結果即可規劃路線';
+    return `
     <div class="card-actions">
-      <a class="btn-nav" href="${navUrl(loc)}" target="_blank" rel="noopener">
-        <span class="pin">${PIN_SVG}</span>Naver 導航
+      <a class="btn-nav" href="${navUrl(loc)}" target="_blank" rel="noopener noreferrer"
+         title="${hint}">
+        <span class="pin">${PIN_SVG}</span>${label}
       </a>
-      <a class="btn-nav btn-google" href="${googleUrl(loc)}" target="_blank" rel="noopener">
+      <a class="btn-nav btn-google" href="${googleUrl(loc)}" target="_blank" rel="noopener noreferrer"
+         title="Google Maps 查看地址（南韓不支援實際駕車導航）">
         <span class="pin">${PIN_SVG}</span>Google 地圖
       </a>
     </div>`;
+  };
 
   /* ================= 每日路線地圖（嵌入 Google Maps 顯示真實地名） ================= */
   /** 收集當日有經緯度嘅地點（有 lat/lng 先會標示喺地圖上） */
