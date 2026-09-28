@@ -8,6 +8,7 @@
 
 const ExpenseDB = (() => {
   const LS_KEY = 'travel-expenses-v1';
+  const LS_SETTINGS_KEY = 'travel-settings-v1';
   let firestore = null;
   let ready = false;
 
@@ -18,6 +19,15 @@ const ExpenseDB = (() => {
   }
   function lsWrite(items) {
     try { localStorage.setItem(LS_KEY, JSON.stringify(items)); } catch {}
+  }
+
+  /* ---------- 本機儲存（旅程設定：總預算等） ---------- */
+  function settingsRead() {
+    try { return JSON.parse(localStorage.getItem(LS_SETTINGS_KEY)) || {}; }
+    catch { return {}; }
+  }
+  function settingsWrite(s) {
+    try { localStorage.setItem(LS_SETTINGS_KEY, JSON.stringify(s)); } catch {}
   }
 
   function config() {
@@ -53,6 +63,8 @@ const ExpenseDB = (() => {
   }
 
   const col = () => firestore.collection(FIRESTORE_COLLECTION);
+  const settingsDoc = () =>
+    firestore.collection(FIRESTORE_SETTINGS_COLLECTION).doc(FIRESTORE_SETTINGS_DOC);
 
   /* ---------- 錯誤回報 ---------- */
   let onError = null;
@@ -138,5 +150,50 @@ const ExpenseDB = (() => {
     return { _cloud: false };
   }
 
-  return { init, subscribe, add, remove, setErrorHandler, isCloud: () => ready };
+  /* ---------- 旅程設定：總預算（可調式） ---------- */
+
+  /** 訂閱設定。回呼格式：(settings, source)
+   *  source: local | cloud | local-error
+   *  未設定過時 settings 為 {}，呼叫方自行沿用 TRIP 內的預設值 */
+  function subscribeSettings(callback) {
+    callback(settingsRead(), 'local');
+
+    if (!ready) return () => {};
+
+    return settingsDoc().onSnapshot(
+      (doc) => {
+        // 雲端未建立過這份文件 → 保留本機／預設值，不強行覆蓋
+        if (!doc.exists) return;
+        const s = doc.data() || {};
+        settingsWrite(s);
+        callback(s, 'cloud');
+      },
+      (err) => {
+        console.warn('Firestore 讀取設定失敗，沿用本機值', err);
+        callback(settingsRead(), 'local-error');
+      }
+    );
+  }
+
+  /** 儲存總預算。本機先寫（即時生效），雲端失敗也不丟資料 */
+  async function saveBudgetTotal(total) {
+    settingsWrite({ ...settingsRead(), budgetTotal: total });
+
+    if (ready) {
+      try {
+        await settingsDoc().set({ budgetTotal: total, updatedAt: Date.now() }, { merge: true });
+        return { _cloud: true };
+      } catch (e) {
+        reportError('設定寫入', e);
+        return { _cloud: false };
+      }
+    }
+
+    return { _cloud: false };
+  }
+
+  return {
+    init, subscribe, add, remove, setErrorHandler, isCloud: () => ready,
+    subscribeSettings, saveBudgetTotal
+  };
 })();

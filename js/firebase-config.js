@@ -31,3 +31,8 @@ const FIREBASE_CONFIG = {
 var firebaseConfig = FIREBASE_CONFIG;
 
 const FIRESTORE_COLLECTION = 'expenses';
+
+/* 旅程設定（總預算等）。存在 `settings/trip` 這一份文件裡，
+   與 expenses 分開，方便安全規則各自收緊。 */
+const FIRESTORE_SETTINGS_COLLECTION = 'settings';
+const FIRESTORE_SETTINGS_DOC = 'trip';

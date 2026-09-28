@@ -418,6 +418,9 @@
   const baseCur = () => TRIP.budget?.currency || 'TWD';
   const toBase = (e) => e.amount * rateOf(e.currency);
 
+  /** 總預算：預設用 TRIP 的值，可在畫面上調整（存本機＋雲端） */
+  let budgetTotal = Number(TRIP.budget?.total) || 0;
+
   /** 本地時區的 YYYY-MM-DD（不要用 toISOString()，那是 UTC） */
   function localDateStr(d = new Date()) {
     const p = (n) => String(n).padStart(2, '0');
@@ -430,14 +433,19 @@
     })}`;
 
   function renderBudget() {
-    const total = TRIP.budget?.total || 0;
+    const total = budgetTotal;
     const spent = expenses.reduce((s, e) => s + toBase(e), 0);
     const remain = total - spent;
     const pct = total ? Math.min(100, (spent / total) * 100) : 0;
     $('#budget-summary').innerHTML = `
       <div class="budget-cell wide">
-        <div class="b-label">總預算 (${baseCur()})</div>
-        <div class="b-value">${fmt(total, baseCur())}</div>
+        <div class="b-label">總預算 (${baseCur()}) <span class="b-hint">可隨時調整</span></div>
+        <div class="b-edit">
+          <span class="b-cur">${baseCur()}</span>
+          <input type="number" id="budget-total-input" class="b-input"
+                 value="${total}" min="0" step="any" inputmode="decimal"
+                 aria-label="調整總預算">
+        </div>
         <div class="budget-bar"><i class="${pct >= 100 ? 'over' : ''}" style="width:${pct}%"></i></div>
       </div>
       <div class="budget-cell">
@@ -482,9 +490,10 @@
   }
 
   function initExpenses() {
-    // 幣別下拉
+    // 幣別下拉（以 KRW 為首選：旅途中主要用韓元）
     $('#exp-currency').innerHTML = (TRIP.currencies || [{ code: 'TWD' }])
       .map((c) => `<option value="${c.code}">${c.code}</option>`).join('');
+    $('#exp-currency').value = TRIP.defaultExpenseCurrency || baseCur();
     // 預設日期 = 今天（必須用本地時區；toISOString() 是 UTC，
     // 在韓國 UTC+9 早上 09:00 前會記成前一日的日期）
     $('#exp-date').value = localDateStr();
@@ -511,6 +520,30 @@
         ? '－請檢查 Firestore 安全規則'
         : (code === 'unavailable' ? '－離線，稍後自動重試' : '');
       setSync('err', `⚠ 雲端${where}失敗${hint}`);
+    });
+
+    // 總預算：可調式（本機即時生效，雲端同步）
+    ExpenseDB.subscribeSettings((settings, source) => {
+      const v = Number(settings && settings.budgetTotal);
+      if (isFinite(v) && v >= 0) {
+        budgetTotal = v;
+        // 正在輸入時不要蓋掉使用者打的數字
+        const el = $('#budget-total-input');
+        if (!el || document.activeElement !== el) renderBudget();
+      }
+    });
+
+    // 調整總預算（事件委派：budget 區塊每次重繪都會換掉 input）
+    $('#budget-summary').addEventListener('change', async (ev) => {
+      if (ev.target.id !== 'budget-total-input') return;
+      const v = parseFloat(ev.target.value);
+      if (!(v >= 0)) { renderBudget(); return; }
+      budgetTotal = v;
+      renderBudget();
+      const res = await ExpenseDB.saveBudgetTotal(v);
+      if (res && !res._cloud && ExpenseDB.isCloud()) {
+        setSync('warn', '⚠ 總預算只存本機，未上雲端');
+      }
     });
 
     // 新增

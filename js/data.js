@@ -19,14 +19,16 @@ const TRIP = {
   startDate: '2026-09-26',          // 日期格式：YYYY-MM-DD
 
   // 記帳設定（rate 代表 1 單位外幣可兌換多少港幣 HKD）
+  // budget.total 只是預設值；App 記帳頁可以隨時調整（存本機＋雲端）
   budget: { total: 8000, currency: 'HKD' },
+  defaultExpenseCurrency: 'KRW',   // 新增支出時幣別下拉的預設值（旅途主要用韓元）
   currencies: [
+    { code: 'KRW', rate: 0.0057 },
     { code: 'HKD', rate: 1 },
     { code: 'JPY', rate: 0.052 },
     { code: 'TWD', rate: 0.243 },
     { code: 'USD', rate: 7.8 },
     { code: 'CNY', rate: 1.08 },
-    { code: 'KRW', rate: 0.0057 },
     { code: 'EUR', rate: 9.1 },
     { code: 'GBP', rate: 10.5 },
     { code: 'SGD', rate: 6.05 },
@@ -250,9 +252,17 @@ const TRIP = {
     {
       date: '2026-09-27',
       label: 'Day 2',
-      theme: '東岸南下：London Bagel・月汀里・入住城山',
+      theme: '東岸南下：London Bagel・萬丈窟・月汀里・城山',
       weatherCity: 'east',
       items: [
+        {
+          type: 'note',
+          title: '本日安排（2026-09-27 記錄）',
+          desc: '實際路線：London Bagel Museum → 萬丈窟 → 月汀里（午餐＋海水浴場＋海景咖啡）→ 城山青雲食堂晚餐 → 約 20:30 才入住城山瑪里納酒店。注意：萬丈窟在 김녕，位於 London Bagel 與月汀里之間（需向西南回走約 12–15 分鐘）；城山瑪里納酒店入住時間 15:00–22:30，20:30 到恰好趕得上。全天向東走，零折返（除萬丈窟那一小段）。',
+          guide: {
+            booking: '城山瑪里納酒店有自助入住機；如需延遲入房，先用訂單頁「聯絡酒店」講一聲'
+          }
+        },
         {
           time: '08:30',
           type: 'transport',
@@ -272,13 +282,29 @@ const TRIP = {
         },
         {
           time: '10:45',
-          type: 'food',
-          title: 'Cafe Mou Moon（月汀里海景咖啡）',
-          location: { name: 'Cafe Mou Moon', query: '카페 모문', lat: 33.5560, lng: 126.7962 },
-          desc: '月汀里海景咖啡，麵包好吃、座位多，適合放空看海。'
+          type: 'transport',
+          title: '前往萬丈窟（約 12–15 分鐘）',
+          desc: '往 김녕 方向回走一小段，是全日唯一折返。'
         },
         {
-          time: '11:45',
+          time: '11:00',
+          type: 'spot',
+          title: '萬丈窟',
+          location: { name: '萬丈窟', query: '만장굴' },
+          desc: '09:00–18:00（最後入場 17:00），每月第一個星期三休；成人 4,000，135 個免費車位。全球最長熔岩洞、UNESCO 世界自然遺產（2026/5/30 重開）。洞內單程約 1 km，陰冷濕滑，需抓地鞋＋薄外套。',
+          guide: {
+            booking: '成人 <b>4,000 韓元</b>，免費車位 135 個',
+            story: '屬「行＋睇」型景點，對非地質迷而言略悶；今日行程已排入，所以早上先走完，下午才有時間看海。'
+          }
+        },
+        {
+          time: '12:45',
+          type: 'food',
+          title: '月汀里午餐',
+          desc: '제주그리미（家庭料理、在地食材）或海鮮；食完直接接海水浴場。'
+        },
+        {
+          time: '13:45',
           type: 'spot',
           title: '月汀里海水浴場',
           location: { name: '月汀里海水浴場', query: '월정리해변', lat: 33.5560, lng: 126.7962 },
@@ -288,39 +314,47 @@ const TRIP = {
           }
         },
         {
-          time: '13:00',
+          time: '15:15',
           type: 'food',
-          title: '月汀里／舊左午餐',
-          desc: '제주그리미（家庭料理、在地食材）或海鮮。'
+          title: 'Cafe Mou Moon（月汀里海景咖啡）',
+          location: { name: 'Cafe Mou Moon', query: '카페 모문', lat: 33.5560, lng: 126.7962 },
+          desc: '月汀里海景咖啡，麵包好吃、座位多，適合放空看海。'
         },
         {
-          time: '14:00',
+          time: '16:00',
           type: 'transport',
           title: '前往城山（約 40 分鐘）',
           desc: '全程向東、零折返，順路東行。'
         },
         {
-          time: '14:45',
-          type: 'stay',
-          title: '城山瑪里納酒店入住（15:00 起）',
-          location: { name: 'Seongsan Marina Hotel', query: '성산마리나호텔' },
-          desc: '入住時間 15:00–22:30（設自助入住機），免費泊車；入住城山（성산읍），唔再南下西歸浦。'
-        },
-        {
-          time: '15:30',
+          time: '16:45',
           type: 'note',
           title: '城山邑散步／海女博物館（選項）',
-          desc: '自由彈性；保留體力俾明日日出峰＋牛島。'
+          desc: '自由彈性，打發入房前時間；行李可以放車內，或者先問酒店可否寄存。'
         },
         {
-          time: '17:30',
+          time: '18:00',
           type: 'food',
-          title: '晚餐：吾照海女之家',
-          location: { name: '吾照海女之家', query: '오조해녀의집', lat: 33.4586, lng: 126.9406 },
-          desc: '烤鮑魚偏清蒸、非常新鮮帶淡鹹味，另有綜合拼盤＋鮑魚粥；連結 1 作者私心最愛。',
+          title: '晚餐：城山青雲食堂',
+          location: { name: '성산일출봉 청운식당', query: '성산일출봉 청운식당' },
+          desc: 'Naver Map 全名「성산일출봉 청운식당」（성산읍 일출로 285、해물·생선요리、리뷰 2,415、09:00 開始營業）。招牌 전복뚝배기（鮑魚陶鍋）及 갈치조림（燉帶魚）；近城山日出峰，食完落酒店只需幾分鐘。',
           guide: {
-            menu: '<b>烤鮑魚</b>＋綜合拼盤＋鮑魚粥'
+            menu: '<b>전복뚝배기</b>（鮑魚陶鍋）、<b>갈치조림</b>（燉帶魚）',
+            food: '海鮮／鮮魚為主打；有 안심식당 認證'
           }
+        },
+        {
+          time: '19:30',
+          type: 'note',
+          title: '城山邑散步／便利店買早餐',
+          desc: '城山瑪里納酒店房價不含早餐；先在便利店補水買早餐，再去入房。'
+        },
+        {
+          time: '20:30',
+          type: 'stay',
+          title: '城山瑪里納酒店入住',
+          location: { name: 'Seongsan Marina Hotel', query: '성산마리나호텔' },
+          desc: '入住時間 15:00–22:30（設自助入住機）、免費泊車＋免費行李寄存；20:30 到還在窗口內。連住兩晚（9/27–9/28），不用搬酒店。'
         }
       ]
     },
@@ -428,7 +462,7 @@ const TRIP = {
     {
       date: '2026-09-29',
       label: 'Day 4',
-      theme: '涉地可支（騎馬）・轉場西歸浦・南部瀑布',
+      theme: '涉地可支・轉場西歸浦・南部瀑布',
       weatherCity: 'seongsan',
       items: [
         {
@@ -440,9 +474,9 @@ const TRIP = {
         {
           time: '08:30',
           type: 'spot',
-          title: '涉地可支（含騎馬體驗）',
+          title: '涉地可支',
           location: { name: '涉地可支', query: '섭지코지', lat: 33.4366, lng: 126.9221 },
-          desc: '免費入場；停車全日上限 3,000。火山岩海角＋騎馬體驗（出發前電話確認當日有馬）；如無馬改 Day 5 中文區。',
+          desc: '免費入場；停車全日上限 3,000。火山岩海角＋安藤忠雄設計建築，沿步道輕鬆行即可。（本版不安排騎馬）',
           guide: {
             story: '濟州東岸火山岩海角，因韓劇《All In》取景而聲名大噪；有安藤忠雄設計建築。'
           }
@@ -804,9 +838,9 @@ const BACKUP = {
         { name: '牛島 검멀레해변 檢默里黑沙灘', note: 'Day 3 主站；黑沙＋岩壁' },
         { name: '牛島 서빈백사 西濱白沙', note: '最近碼頭；白珊瑚砂' },
         { name: '牛島 하고수동해수욕장 下高水洞', note: 'Day 3 午餐站' },
+        { name: '萬丈窟 만장굴', note: '★ 已排入 Day 2；4,000；首個星期三休' },
         { name: '咸德海灘', note: '降為快閃' },
         { name: '細花海邊', note: '未開發、寧靜' },
-        { name: '萬丈窟', note: '成人 4,000；首個星期三休；雨天備案' },
         { name: '山君不離', note: '芒草海' },
         { name: '와흘메밀마을협의회', note: '蕎麥花季' },
         { name: '海女博物館', note: '' }
@@ -845,6 +879,7 @@ const BACKUP = {
     { name: 'Dolhareubang Ttukbaegi', type: '午市', area: '城山', note: '只供午市' },
     { name: 'Haeilri Cafe', type: '咖啡', area: '城山', note: '' },
     { name: '어조횟집', type: '生魚片', area: '城山', note: '' },
+    { name: '성산일출봉 청운식당', type: '海鮮／鮮魚', area: '城山 성산읍', note: '★ Day 2 晚餐；전복뚝배기、갈치조림；리뷰 2,415' },
     { name: '우도해적식당', type: '韓式／海鮮麵', area: '牛島 우도면', note: 'Naver 可搜到（리뷰 210、09:00 開）；Day 3 午膳首選區' },
     { name: "지미스 Jimmy's", type: '花生雪糕', area: '牛島（檢默里附近）', note: 'Day 3 甜品首選；約 08:30–18:00' },
     { name: '우도 왕자 이야기', type: '花生雪糕', area: '牛島（檢默里一帶）', note: '約 08:30–18:00' },
@@ -916,9 +951,8 @@ const BACKUP = {
   weatherPlans: [
     { scenario: '牛島停航', plan: '取消登島，保留城山日出峰、涉地可支＋長午餐，可提早南下西歸浦；有 4–5 天緩衝可改期' },
     { scenario: 'Day 3 趕唔到 10:30 前船班', plan: '改搭 10:30 後最早一班，刪甜品與下高水洞，只做西濱白沙＋檢默里；最遲 14:00 前離島，保住 17:15 前上日出峰' },
-    { scenario: '萬丈窟（雨天備案）', plan: '東岸下雨時取代海岸步道／月汀里，屬室內最佳選' },
+    { scenario: '萬丈窟', plan: '已排入 Day 2（09:00–18:00、最後入場 17:00、每月首個星期三休）；如遇大雨改去室內咖啡或提早去城山' },
     { scenario: '大雨／強風', plan: '取消海岸步道與外돌개，優先 Osulloc、咖啡店、市場、黑面羊農場（室內）及酒店休息' },
-    { scenario: '涉地可支騎馬暫停', plan: '改 Day 5 中文區 Jeju Horse Riding Park' },
     { scenario: '9.81／黑面羊調整', plan: '兩者均喺北部西部，可彈性移到 Day 7 早上' },
     { scenario: '疲勞管理', plan: 'Day 1 下午固定休息；Day 3 下午留城山休息；延誤 60 分鐘以上先刪咖啡／次要景點' }
   ]

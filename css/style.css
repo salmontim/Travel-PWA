@@ -442,6 +442,48 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
 .budget-cell .b-value { font-size: 1.3rem; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 2px; }
 .budget-cell .b-value.neg { color: var(--tag-food); }
 .budget-cell .b-sub { font-size: .72rem; color: var(--ink-soft); margin-top: 2px; }
+
+/* ---------- 可調式總預算 ---------- */
+.budget-cell .b-hint {
+  font-size: .68rem;
+  color: var(--ink-faint);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+.budget-cell .b-edit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.budget-cell .b-cur {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.budget-cell .b-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+.budget-cell .b-input:focus {
+  outline: none;
+  border-color: var(--bamboo);
+  background: var(--card);
+}
+/* 隱藏 number input 的上下箭頭（手機沒用、又會擋住數字） */
+.budget-cell .b-input::-webkit-outer-spin-button,
+.budget-cell .b-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.budget-cell .b-input[type='number'] { -moz-appearance: textfield; appearance: textfield; }
 .budget-bar {
   height: 6px;
   background: var(--paper-2);
