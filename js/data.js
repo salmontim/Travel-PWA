@@ -256,14 +256,6 @@ const TRIP = {
       weatherCity: 'east',
       items: [
         {
-          type: 'note',
-          title: '本日安排（2026-09-27 記錄）',
-          desc: '實際路線：London Bagel Museum → 萬丈窟 → 月汀里（午餐＋海水浴場）→ 城山青雲食堂晚餐 → 約 20:30 才入住城山瑪里納酒店。注意：萬丈窟在 김녕，位於 London Bagel 與月汀里之間（需向西南回走約 12–15 分鐘）；城山瑪里納酒店入住時間 15:00–22:30，20:30 到恰好趕得上。全天向東走，零折返（除萬丈窟那一小段）。**無去 Cafe Mou Moon，亦無去海女博物館。**',
-          guide: {
-            booking: '城山瑪里納酒店有自助入住機；如需延遲入房，先用訂單頁「聯絡酒店」講一聲'
-          }
-        },
-        {
           time: '08:30',
           type: 'transport',
           title: '退房 → London Bagel（舊左邑）',
@@ -347,7 +339,10 @@ const TRIP = {
           type: 'stay',
           title: '城山瑪里納酒店入住',
           location: { name: 'Seongsan Marina Hotel', query: '성산마리나호텔' },
-          desc: '入住時間 15:00–22:30（設自助入住機）、免費泊車＋免費行李寄存；20:30 到還在窗口內。連住兩晚（9/27–9/28），不用搬酒店。'
+          desc: '入住時間 15:00–22:30（設自助入住機）、免費泊車＋免費行李寄存；20:30 到還在窗口內。連住兩晚（9/27–9/28），不用搬酒店。',
+          guide: {
+            booking: '自助入住機取卡；如需延遲入房，先用訂單頁「聯絡酒店」講一聲'
+          }
         }
       ]
     },
@@ -880,7 +875,7 @@ const BACKUP = {
     { name: 'Poong Won 풍원', type: '漢拏山炒飯', area: '牛島', note: '牛島午餐備選' },
     { name: '방긋스낵 微笑小吃店', type: '海鮮年糕鍋', area: '月汀里', note: '' },
     { name: 'STAY SALTY', type: '海景咖啡', area: '月汀里', note: '' },
-    { name: 'Cafe Mou Moon', type: '海景咖啡', area: '月汀里', note: 'Day 2 冇去，留作備選' },
+    { name: 'Cafe Mou Moon', type: '海景咖啡', area: '月汀里', note: '' },
     { name: '去北村的話 북촌에 가면', type: '粉紅草咖啡', area: '北村', note: '' },
     { name: '참솔식당', type: '韓式', area: '漢拏山附近', note: '' },
     { name: '삼성혈 해물탕', type: '海鮮湯', area: '濟州／西歸浦', note: '電話 064-739-7200' },
