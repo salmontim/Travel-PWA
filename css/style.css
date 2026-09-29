@@ -262,6 +262,7 @@ main {
 .card--transport::before{ background: var(--indigo); }
 .card--stay::before     { background: var(--accent); }
 .card--shopping::before { background: var(--tag-gift); }
+.card--activity::before { background: var(--tag-activity); }
 .card--note::before     { background: var(--ink-faint); }
 
 .card-head {
@@ -283,6 +284,7 @@ main {
 .card--transport .card-type-badge { background: #e8ebf0; color: var(--indigo); }
 .card--stay .card-type-badge      { background: var(--accent-soft); color: var(--accent); }
 .card--shopping .card-type-badge  { background: var(--tag-gift-bg); color: var(--tag-gift); }
+.card--activity .card-type-badge  { background: var(--tag-activity-bg); color: var(--tag-activity); }
 .card--note .card-type-badge      { background: var(--paper-2); color: var(--ink-soft); }
 
 .card-head h3 {

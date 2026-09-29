@@ -149,6 +149,7 @@
     transport: { badge: '交通', cls: 'card--transport' },
     stay:      { badge: '住宿', cls: 'card--stay' },
     shopping:  { badge: '購物', cls: 'card--shopping' },
+    activity:  { badge: '體驗', cls: 'card--activity' },
     note:      { badge: '備忘', cls: 'card--note' }
   };
 
