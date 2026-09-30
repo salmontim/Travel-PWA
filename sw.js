@@ -1,11 +1,14 @@
 /* Service Worker — Travel PWA 離線優先快取
-   注意：每次修改 js/ 或 css/ 後，請遞增 VERSION，
-   否則舊快取會讓使用者看到過期程式碼。 */
-const VERSION = 'travel-pwa-v38';
+   版本號的唯一出處是 js/version.js（index.html 的右上角水印
+   亦讀同一個檔），所以改版本只需改那個檔一個地方。 */
+importScripts('./js/version.js');
+
+const VERSION = 'travel-pwa-' + APP_VERSION;
 const APP_SHELL = [
   './',
   './index.html',
   './css/style.css',
+  './js/version.js',
   './js/data.js',
   './js/app.js',
   './js/db.js',

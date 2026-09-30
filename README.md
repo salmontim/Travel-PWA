@@ -17,6 +17,7 @@
 | 記帳 | 多幣別選擇（**預設 KRW**）、每筆同步顯示港幣換算、分類、預算進度條；Firestore 跨裝置同步，未設定時自動落回 localStorage |
 | 可調式總預算 | 記帳頁「總預算」可直接輸入修改，即時重算進度條／剩餘，超支轉紅；存 localStorage 並同步 Firestore `settings/trip` |
 | 消費明細排序／篩選 | 可按**日期（新→舊，預設／舊→新）**或**金額（高→低／低→高）**排序，並可按**分類**篩選；顯示筆數與篩選後合計。以日期排序時每日加**小計標題**。選擇存 localStorage |
+| 版本水印 | 頁首右上角顯示目前版本（例如 `v39`），**撳一下即手動檢查更新**；用來確認手機是否已更新 |
 | PWA | 可安裝到主畫面、Service Worker 離線快取、深色模式 |
 
 ## 換成你的行程
@@ -191,7 +192,7 @@ https://salmontim.github.io/Travel-PWA/
 
 - `manifest.webmanifest` 的 `start_url` / `scope` 已使用 `./`，可以在 `/Travel-PWA/` 子路徑正常運作。
 - Service Worker 只會控制 GitHub Pages 網址底下的 `/Travel-PWA/` 範圍，這是正常行為。
-- 每次修改 `js/` 或 `css/` 後，請遞增 [sw.js](sw.js) 裡的 `VERSION`，避免手機繼續讀到舊快取。
+- **每次修改 `js/` 或 `css/` 後，只需要改 [js/version.js](js/version.js) 裡的 `APP_VERSION`**，例如 `v39` → `v40`。這是版本號的唯一出處：右上角版本水印及 `sw.js` 的快取名都讀同一個檔，唔需要再手動同步兩個地方。（未遞增的話手機仍會讀到舊快取。）
 - GitHub Pages 只負責 hosting；記帳同步由 Firestore 負責。
 - 未設定 Firestore 時，記帳資料只存在目前瀏覽器的 localStorage；換手機或清除瀏覽器資料後不會自動同步。
 
@@ -213,9 +214,17 @@ https://salmontim.github.io/Travel-PWA/
 - **首次安裝唔會 reload** —— `hadController` 分辨「第一次安裝」同「版本更新」。⚠️ 這個旗標必須在首次接管後設為 `true`，否則同一個頁面（iOS App 可以連開幾日唔關）之後每次更新都會被誤判成首次安裝，永遠不會自動重載。
 - **正在輸入時唔打斷** —— 如果焦點在 `INPUT` / `TEXTAREA` / `SELECT`，改為顯示「🔄 有新版本，撳此更新」浮動按鈕（`#sw-update-pill`），避免記帳打到一半被清空。新版快取已同時在背景更新，使用者一撳即換版。
 
-> 測試方法：本機改 `sw.js` 的 `VERSION`，然後在已開啟的頁面執行
+> 測試方法：本機改 [js/version.js](js/version.js) 的 `APP_VERSION`，然後在已開啟的頁面執行
 > `(await navigator.serviceWorker.getRegistration()).update()`，
 > 應該會見到頁面自動重載；若焦點在輸入框，則會出現更新提示按鈕。
+
+### 右上角版本水印
+
+頁首右上角有一個細小的版本膠囊（例如 `v39`），顯示**目前頁面正在跑的版本**：
+
+- 數值來自 [js/version.js](js/version.js) 的 `APP_VERSION`（單一來源，與 `sw.js` 快取名一致）
+- **撳一下可以手動檢查更新**：顯示「檢查中…」→ 有新版就「更新中…」並自動重載；已是最新則短暫顯示「已是最新」再變回版本號
+- 對照 GitHub 上 `js/version.js` 的數值，即可確認手機是否已更新到最新版
 
 ## Netlify（後續可選）
 
@@ -246,10 +255,11 @@ python -m http.server 8080
 ├── css/style.css           # 日式簡約、手機優先、深色模式
 ├── js/
 │   ├── data.js             # ⭐ 你的行程資料（改這個）
+│   ├── version.js          # ⭐ 版本號單一來源（每次更新改這裡）
 │   ├── firebase-config.js  # ⭐ Firestore 同步設定（改這個）
 │   ├── db.js               # 記帳資料層（Firestore ⇄ localStorage）＋ 總預算設定同步
 │   └── app.js              # 渲染、天氣、導航、記帳 UI
-├── sw.js                   # Service Worker（離線快取）
+├── sw.js                   # Service Worker（離線快取；版本號 importScripts 自 version.js）
 ├── manifest.webmanifest    # PWA 安裝資訊
 └── icons/                  # App 圖示
 ```

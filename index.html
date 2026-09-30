@@ -19,8 +19,12 @@
   <!-- 頁首 -->
   <header class="app-header">
     <div class="header-inner">
-      <h1 class="app-title" id="trip-title">旅</h1>
-      <p class="app-subtitle" id="trip-dates"></p>
+      <div class="header-text">
+        <h1 class="app-title" id="trip-title">旅</h1>
+        <p class="app-subtitle" id="trip-dates"></p>
+      </div>
+      <button class="app-version" id="app-version" type="button"
+              title="App 版本（撳一下檢查更新）">—</button>
     </div>
   </header>
 
@@ -162,6 +166,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
   <script src="js/firebase-config.js"></script>
+  <script src="js/version.js"></script>
   <script src="js/data.js"></script>
   <script src="js/db.js"></script>
   <script src="js/app.js"></script>
@@ -187,6 +192,10 @@
       //    被誤判成「首次安裝」，就永遠唔會自動 reload。
       let hadController = !!navigator.serviceWorker.controller;
       let reloading = false;
+
+      /** 右上角版本水印（讀 js/version.js 的 APP_VERSION） */
+      const verEl = document.getElementById('app-version');
+      if (verEl) verEl.textContent = typeof APP_VERSION !== 'undefined' ? APP_VERSION : '—';
 
       /** 正在輸入時唔打斷使用者，改為顯示提示按鈕 */
       function showUpdatePill() {
@@ -222,6 +231,32 @@
           .register('sw.js', { updateViaCache: 'none' })
           .then((reg) => {
             const check = () => reg.update().catch(() => {});
+
+            // 撳右上角版本水印 = 手動檢查更新
+            // （有新版本時會自動 reload，見 controllerchange）
+            let revertTimer = null;
+            const setVerText = (txt) => {
+              if (!verEl) return;
+              verEl.textContent = txt;
+            };
+            const showVersion = () => {
+              setVerText(typeof APP_VERSION !== 'undefined' ? APP_VERSION : '—');
+            };
+            if (verEl) {
+              verEl.addEventListener('click', async () => {
+                if (revertTimer) clearTimeout(revertTimer);
+                setVerText('檢查中…');
+                await check();
+                // update() 完成後若仍在安裝／等待，代表有新版本，稍後會自動重載
+                if (reg.installing || reg.waiting) {
+                  setVerText('更新中…');
+                  return;
+                }
+                setVerText('已是最新');
+                revertTimer = setTimeout(showVersion, 1600);
+              });
+            }
+
             // 由背景返回前景時檢查（iOS 最主要的更新時機）
             document.addEventListener('visibilitychange', () => {
               if (document.visibilityState === 'visible') check();

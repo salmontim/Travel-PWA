@@ -69,7 +69,12 @@ body {
   max-width: 680px;
   margin: 0 auto;
   padding: 14px 20px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
 }
+.header-text { min-width: 0; }
 .app-title {
   font-family: var(--serif);
   font-size: 1.35rem;
@@ -81,6 +86,31 @@ body {
   color: var(--ink-soft);
   letter-spacing: .08em;
   margin-top: 1px;
+}
+
+/* ---------- 右上角版本水印（可撳一下檢查更新） ---------- */
+.app-version {
+  flex: 0 0 auto;
+  font-family: inherit;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 9px;
+  margin-top: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .15s ease, border-color .15s ease;
+}
+.app-version:active,
+.app-version:focus-visible {
+  color: var(--bamboo-deep);
+  border-color: var(--bamboo);
+  outline: none;
 }
 
 /* ---------- 版面與分頁 ---------- */
