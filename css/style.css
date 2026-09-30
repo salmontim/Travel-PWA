@@ -658,6 +658,27 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   padding: 26px 0 30px;
 }
 
+/* ---------- 新版本提示（正在輸入時延後更新） ---------- */
+#sw-update-pill {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 78px;
+  z-index: 60;
+  font-family: inherit;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--bamboo-deep);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .22);
+  cursor: pointer;
+  animation: fadeUp .25s ease both;
+}
+#sw-update-pill:active { transform: translateX(-50%) scale(.97); opacity: .9; }
+
 /* ---------- 底部導覽列 ---------- */
 .bottom-nav {
   position: fixed;

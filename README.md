@@ -195,6 +195,28 @@ https://salmontim.github.io/Travel-PWA/
 - GitHub Pages 只負責 hosting；記帳同步由 Firestore 負責。
 - 未設定 Firestore 時，記帳資料只存在目前瀏覽器的 localStorage；換手機或清除瀏覽器資料後不會自動同步。
 
+### 主畫面 App 的更新行為（iOS）
+
+**加到主畫面之後唔需要重新「pin」過**。內容更新係自動的；只有**圖示、App 名稱、`start_url`** 改變時，才需要移除再重新加入主畫面。
+
+更新流程由 [index.html](index.html) 底部的註冊程式碼處理，四點齊做才能確保 iOS 主畫面 App 食到新版：
+
+| 做法 | 原因 |
+|---|---|
+| `register('sw.js', { updateViaCache: 'none' })` | GitHub Pages 對 `sw.js` 發 `Cache-Control: max-age=600`，不快取才會即時偵測到新版 |
+| `visibilitychange` → `reg.update()` | iOS 主畫面 App 多數係被**喚醒**而非重新啟動，唔會自動觸發更新檢查 |
+| `setInterval(reg.update, 30 分鐘)` | 長時間停留在前景時的保險 |
+| `controllerchange` → `location.reload()` | 新 SW 接管後，畫面仍然跑舊 JS，必須重載才會更新 |
+
+兩個安全機制：
+
+- **首次安裝唔會 reload** —— `hadController` 分辨「第一次安裝」同「版本更新」。⚠️ 這個旗標必須在首次接管後設為 `true`，否則同一個頁面（iOS App 可以連開幾日唔關）之後每次更新都會被誤判成首次安裝，永遠不會自動重載。
+- **正在輸入時唔打斷** —— 如果焦點在 `INPUT` / `TEXTAREA` / `SELECT`，改為顯示「🔄 有新版本，撳此更新」浮動按鈕（`#sw-update-pill`），避免記帳打到一半被清空。新版快取已同時在背景更新，使用者一撳即換版。
+
+> 測試方法：本機改 `sw.js` 的 `VERSION`，然後在已開啟的頁面執行
+> `(await navigator.serviceWorker.getRegistration()).update()`，
+> 應該會見到頁面自動重載；若焦點在輸入框，則會出現更新提示按鈕。
+
 ## Netlify（後續可選）
 
 測試 GitHub Pages 成功後，可以再把同一個 GitHub 儲存庫接到 Netlify：

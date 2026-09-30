@@ -166,9 +166,70 @@
   <script src="js/db.js"></script>
   <script src="js/app.js"></script>
   <script>
+    /* Service Worker 更新流程
+       ------------------------------------------------------------
+       目標：加到 iOS 主畫面之後，「唔需要重新 pin 過」都食到新版。
+
+       iOS 主畫面 App 多數只係被「喚醒」而唔係重新啟動，
+       所以唔可以單靠瀏覽器預設嘅更新時機。以下四點齊做：
+         1. updateViaCache:'none' —— 唔用 HTTP 快取載入 sw.js
+            （GitHub Pages 對 sw.js 發 max-age=600，會拖慢偵測最多 10 分鐘）
+         2. 回到前景即 reg.update()
+         3. 每 30 分鐘背景檢查一次
+         4. 新 SW 接管（controllerchange）即自動 reload，
+            否則畫面仍然跑舊 JS
+       ------------------------------------------------------------ */
     if ('serviceWorker' in navigator) {
+      // 首次安裝時 controller 為 null；之後為既有 SW，用嚟分辨
+      // 「第一次安裝」同「版本更新」，避免首開 App 多餘 reload。
+      // ⚠️ 必須用 let 並在首次接管後設為 true：否則同一個頁面
+      //    （iOS 主畫面 App 可以連續開幾日唔關）之後每次更新都會
+      //    被誤判成「首次安裝」，就永遠唔會自動 reload。
+      let hadController = !!navigator.serviceWorker.controller;
+      let reloading = false;
+
+      /** 正在輸入時唔打斷使用者，改為顯示提示按鈕 */
+      function showUpdatePill() {
+        if (document.getElementById('sw-update-pill')) return;
+        const btn = document.createElement('button');
+        btn.id = 'sw-update-pill';
+        btn.type = 'button';
+        btn.textContent = '🔄 有新版本，撳此更新';
+        btn.addEventListener('click', () => {
+          reloading = true;
+          window.location.reload();
+        });
+        document.body.appendChild(btn);
+      }
+
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (reloading) return;
+        const isFirstClaim = !hadController;
+        hadController = true;   // 由此刻起本頁已被 SW 接管
+        if (isFirstClaim) return;  // 首次安裝內容已是最新，毋須 reload
+
+        const ae = document.activeElement;
+        if (ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) {
+          showUpdatePill();
+          return;
+        }
+        reloading = true;
+        window.location.reload();
+      });
+
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
+        navigator.serviceWorker
+          .register('sw.js', { updateViaCache: 'none' })
+          .then((reg) => {
+            const check = () => reg.update().catch(() => {});
+            // 由背景返回前景時檢查（iOS 最主要的更新時機）
+            document.addEventListener('visibilitychange', () => {
+              if (document.visibilityState === 'visible') check();
+            });
+            // 長時間停留在前景時的保險
+            setInterval(check, 30 * 60 * 1000);
+          })
+          .catch(() => {});
       });
     }
   </script>
