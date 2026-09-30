@@ -568,6 +568,55 @@ a.tel-link::after { content: " ↗"; font-size: .8em; }
   gap: 8px;
   padding-bottom: 24px;
 }
+
+/* ---------- 排序／篩選工具列 ---------- */
+.expense-tools {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+.expense-tools select {
+  flex: 1 1 0;
+  min-width: 0;
+  font-family: inherit;
+  font-size: .78rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  cursor: pointer;
+}
+.expense-tools select:focus {
+  outline: none;
+  border-color: var(--bamboo);
+}
+.expense-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: .72rem;
+  color: var(--ink-soft);
+  margin: 8px 2px 6px;
+  font-variant-numeric: tabular-nums;
+}
+.expense-summary b { color: var(--ink); font-weight: 700; }
+
+/* 日期分組標題（連每日小計） */
+.expense-day {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  padding: 12px 4px 4px;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+.expense-day:first-child { padding-top: 2px; }
+
 .expense-item {
   background: var(--card);
   border: 1px solid var(--line);

@@ -410,8 +410,25 @@
 
   /* ================= 記帳 ================= */
   const CAT_ICON = { food: '🍜', transport: '🚌', shopping: '🛍', ticket: '🎫', stay: '🏨', other: '📦' };
+  const CAT_LABEL = { food: '餐飲', transport: '交通', shopping: '購物', ticket: '門票', stay: '住宿', other: '其他' };
   let expenses = [];
   let dbMode = 'local';
+
+  /** 排序／篩選狀態（存 localStorage，重開 App 仍生效） */
+  const SORT_KEY = 'travel-expense-sort-v1';
+  const SORT_MODES = ['date-desc', 'date-asc', 'amount-desc', 'amount-asc'];
+  let sortMode = 'date-desc';
+  let filterCat = 'all';
+  try {
+    const saved = JSON.parse(localStorage.getItem(SORT_KEY)) || {};
+    if (SORT_MODES.includes(saved.sort)) sortMode = saved.sort;
+    if (typeof saved.filter === 'string' && (saved.filter === 'all' || CAT_ICON[saved.filter])) {
+      filterCat = saved.filter;
+    }
+  } catch {}
+  function saveSortPrefs() {
+    try { localStorage.setItem(SORT_KEY, JSON.stringify({ sort: sortMode, filter: filterCat })); } catch {}
+  }
 
   function rateOf(code) {
     const c = (TRIP.currencies || []).find((x) => x.code === code);
@@ -462,26 +479,100 @@
       </div>`;
   }
 
-  function renderExpenses() {
-    const ul = $('#expense-list');
-    if (!expenses.length) {
-      ul.innerHTML = `<li class="expense-empty">還沒有紀錄，記下第一筆吧 ✍️</li>`;
-      renderBudget();
-      return;
-    }
-    ul.innerHTML = expenses.map((e) => `
+  /**
+   * 依目前排序／篩選狀態整理支出。
+   * - 金額比較一律換算成基準貨幣（toBase），否則 KRW 與 HKD 混合會排錯
+   * - 同值時以 ts 作次級排序，保持穩定
+   */
+  function visibleExpenses() {
+    const list = filterCat === 'all'
+      ? expenses.slice()
+      : expenses.filter((e) => (e.category || 'other') === filterCat);
+
+    const cmpDate = (a, b) =>
+      String(a.date || '').localeCompare(String(b.date || '')) ||
+      (Number(a.ts) || 0) - (Number(b.ts) || 0);
+    const cmpAmount = (a, b) =>
+      toBase(a) - toBase(b) ||
+      (Number(a.ts) || 0) - (Number(b.ts) || 0);
+
+    if (sortMode === 'date-desc') list.sort((a, b) => -cmpDate(a, b));
+    else if (sortMode === 'date-asc') list.sort(cmpDate);
+    else if (sortMode === 'amount-desc') list.sort((a, b) => -cmpAmount(a, b));
+    else list.sort(cmpAmount);
+
+    return list;
+  }
+
+  /** 單筆紀錄的 HTML */
+  const expenseItemHtml = (e) => `
       <li class="expense-item" data-id="${e.id}">
         <span class="e-cat">${CAT_ICON[e.category] || '📦'}</span>
         <div class="e-main">
           <div class="e-title">${esc(e.title)}</div>
-          <div class="e-date">${esc(e.date)}</div>
+          <div class="e-date">${esc(e.date)} · ${CAT_LABEL[e.category] || '其他'}</div>
         </div>
         <span class="e-amount">
           <strong>${esc(e.currency)} ${Number(e.amount).toLocaleString()}</strong>
           <small>≈ ${fmt(toBase(e), baseCur(), 2)}</small>
         </span>
         <button class="e-del" aria-label="刪除" title="刪除">✕</button>
-      </li>`).join('');
+      </li>`;
+
+  /** 篩選結果的筆數／合計 */
+  function renderExpenseSummary(list) {
+    const el = $('#expense-summary');
+    if (!el) return;
+    if (!expenses.length) { el.textContent = ''; return; }
+    const sum = list.reduce((s, e) => s + toBase(e), 0);
+    const scope = filterCat === 'all'
+      ? `全部 ${list.length} 筆`
+      : `${CAT_ICON[filterCat]} ${CAT_LABEL[filterCat]} ${list.length} 筆`;
+    const filtered = filterCat !== 'all'
+      ? `（總共 ${expenses.length} 筆）`
+      : '';
+    el.innerHTML = `<span>${scope} ${filtered}</span>` +
+      `<span>合計 <b>${fmt(sum, baseCur(), 2)}</b></span>`;
+  }
+
+  function renderExpenses() {
+    const ul = $('#expense-list');
+    const list = visibleExpenses();
+    renderExpenseSummary(list);
+
+    if (!expenses.length) {
+      ul.innerHTML = `<li class="expense-empty">還沒有紀錄，記下第一筆吧 ✍️</li>`;
+      renderBudget();
+      return;
+    }
+    if (!list.length) {
+      ul.innerHTML = `<li class="expense-empty">此分類暫時沒有紀錄</li>`;
+      renderBudget();
+      return;
+    }
+
+    // 以日期排序時，插入每日小計標題，方便對帳
+    const isDateMode = sortMode.startsWith('date');
+    const dayTotal = new Map();
+    if (isDateMode) {
+      for (const e of list) {
+        dayTotal.set(e.date, (dayTotal.get(e.date) || 0) + toBase(e));
+      }
+    }
+
+    let html = '';
+    let lastDate = null;
+    for (const e of list) {
+      if (isDateMode && e.date !== lastDate) {
+        lastDate = e.date;
+        html += `<li class="expense-day">` +
+          `<span>${esc(e.date)}</span>` +
+          `<span>${fmt(dayTotal.get(e.date) || 0, baseCur(), 2)}</span>` +
+          `</li>`;
+      }
+      html += expenseItemHtml(e);
+    }
+    ul.innerHTML = html;
     renderBudget();
   }
 
@@ -499,6 +590,20 @@
     // 預設日期 = 今天（必須用本地時區；toISOString() 是 UTC，
     // 在韓國 UTC+9 早上 09:00 前會記成前一日的日期）
     $('#exp-date').value = localDateStr();
+
+    // 排序／篩選下拉（狀態由 localStorage 還原）
+    $('#exp-sort').value = sortMode;
+    $('#exp-filter').value = filterCat;
+    $('#exp-sort').addEventListener('change', (ev) => {
+      sortMode = ev.target.value;
+      saveSortPrefs();
+      renderExpenses();
+    });
+    $('#exp-filter').addEventListener('change', (ev) => {
+      filterCat = ev.target.value;
+      saveSortPrefs();
+      renderExpenses();
+    });
 
     // 資料層
     const { mode } = ExpenseDB.init();

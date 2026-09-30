@@ -84,6 +84,25 @@
         <h2 class="section-title"><span class="section-icon">計</span>消費明細</h2>
         <span id="sync-status" class="sync-status"></span>
       </div>
+
+      <div class="expense-tools">
+        <select id="exp-sort" aria-label="排序方式">
+          <option value="date-desc">📅 日期 新→舊</option>
+          <option value="date-asc">📅 日期 舊→新</option>
+          <option value="amount-desc">💰 金額 高→低</option>
+          <option value="amount-asc">💰 金額 低→高</option>
+        </select>
+        <select id="exp-filter" aria-label="篩選分類">
+          <option value="all">全部分類</option>
+          <option value="food">🍜 餐飲</option>
+          <option value="transport">🚌 交通</option>
+          <option value="shopping">🛍 購物</option>
+          <option value="ticket">🎫 門票</option>
+          <option value="stay">🏨 住宿</option>
+          <option value="other">📦 其他</option>
+        </select>
+      </div>
+      <div class="expense-summary" id="expense-summary"></div>
       <ul id="expense-list" class="expense-list"></ul>
     </section>
 
